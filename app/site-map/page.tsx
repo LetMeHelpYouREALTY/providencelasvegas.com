@@ -3,23 +3,28 @@ import Footer from "@/components/layouts/Footer";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { providenceNeighborhoods } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Site Map | Providence Las Vegas Real Estate",
   description:
     "Browse all pages on Providence Las Vegas Real Estate. Find neighborhoods, services, contact information, and more.",
   alternates: { canonical: "https://www.providencelasvegas.com/site-map" },
+  ...pageImageMetadata("hero-services"),
 };
 
 export default function SiteMapPage() {
   return (
     <>
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-services"
+          title="Site Map"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2">
-            Site Map
-          </h1>
           <p className="text-slate-600 mb-12">
             Explore all pages on Providence Las Vegas Real Estate. Dr. Jan Duffy serves all 27 Providence neighborhoods.
           </p>

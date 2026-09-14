@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export interface FAQ {
   question: string;
@@ -68,12 +69,11 @@ export default function FAQSection({
   return (
     <section className={`py-16 md:py-24 bg-white ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            {title}
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
-        </div>
+        <SectionMedia
+          imageKey="section-faq"
+          heading={title}
+          subtitle={subtitle}
+        />
 
         <div className="max-w-3xl mx-auto">
           {faqs.map((faq, index) => (

@@ -14,6 +14,8 @@ import { Phone, ExternalLink, MapPin } from "lucide-react";
 import { providenceCommunity, providenceNeighborhoods, marketStats } from "@/lib/site-config";
 import { getRelatedPages } from "@/lib/related-pages";
 import { getExternalResources } from "@/lib/external-resources";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Providence Las Vegas Community | Dr. Jan Duffy, REALTOR®",
@@ -27,6 +29,7 @@ export const metadata: Metadata = {
     "Providence HOA",
     "homes for sale Providence Las Vegas",
   ],
+  ...pageImageMetadata("hero-providence-community"),
 };
 
 export default function ProvidencePage() {
@@ -38,23 +41,14 @@ export default function ProvidencePage() {
       <Navbar />
       <Breadcrumbs items={[{ label: "Providence Las Vegas" }]} />
       <main>
+        <PageHero
+          compact
+          imageKey="hero-providence-community"
+          title="Providence, Las Vegas"
+          subtitle={`Providence is a master-planned community in the northwest Las Vegas Valley with ${providenceCommunity.neighborhoodCount} neighborhoods and more than ${providenceCommunity.homeCount} homes. Three community parks—The Promenade, Knickerbocker Park, and Huckleberry Park—plus a master HOA.`}
+        />
         <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-slate-50">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Providence, Las Vegas
-            </h1>
-            <p className="text-lg text-slate-700 max-w-3xl mb-4">
-              Providence Las Vegas is a master-planned community in the northwest Las Vegas
-              Valley with <strong>{providenceCommunity.neighborhoodCount} neighborhoods</strong> and
-              more than <strong>{providenceCommunity.homeCount} homes</strong>. Each Providence
-              neighborhood has its own unique amenities. Residents enjoy three community
-              parks—The Promenade, Knickerbocker Park, and Huckleberry Park—and the Providence
-              Master HOA keeps the community well maintained. Providence Las Vegas real estate
-              is served by Dr. Jan Duffy at{" "}
-              <InlineLink href="/why-berkshire-hathaway">
-                Berkshire Hathaway HomeServices Nevada Properties
-              </InlineLink>.
-            </p>
             <p className="text-slate-700 max-w-3xl">
               Whether you are{" "}
               <InlineLink href="/buyers">buying</InlineLink> or{" "}

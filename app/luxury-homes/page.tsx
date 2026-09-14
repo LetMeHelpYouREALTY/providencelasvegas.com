@@ -16,6 +16,8 @@ import type { Metadata } from "next";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Premium Providence Homes | Providence Las Vegas Real Estate",
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
     "Providence luxury homes",
     "Providence Las Vegas premium",
   ],
+  ...pageImageMetadata("hero-luxury"),
 };
 
 const luxurySchema = {
@@ -79,27 +82,24 @@ export default function LuxuryHomesPage() {
       />
       <FAQSchema faqs={luxuryFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-luxury"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Providence Las Vegas Real Estate
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Premium Providence Homes
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              Discover Providence&apos;s finest properties in Oxford Commons, Saratoga Highlands, and other 
-              premier neighborhoods. Custom upgrades, larger lots, and move-in ready luxury.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Custom Upgrades</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Larger Lots</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Move-In Ready</span>
-            </div>
+          }
+          title="Premium Providence Homes"
+          subtitle="Discover Providence's finest properties in Oxford Commons, Saratoga Highlands, and other premier neighborhoods. Custom upgrades, larger lots, and move-in ready homes."
+        >
+          <div className="flex flex-wrap gap-4 text-sm text-white/90">
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Custom Upgrades</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Larger Lots</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Move-In Ready</span>
           </div>
-
-          <RealScoutListings />
+        </PageHero>
+        <div className="container mx-auto px-4 pt-12">
 
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">

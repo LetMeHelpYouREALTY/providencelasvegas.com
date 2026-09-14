@@ -16,6 +16,8 @@ import {
 import type { Metadata } from "next";
 import { realscoutUrls } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Active Adult Living Near Providence | Age-Restricted Options",
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
     "Providence single-story homes",
     "downsizing Providence Las Vegas",
   ],
+  ...pageImageMetadata("hero-55-plus"),
 };
 
 const localBusinessSchema = {
@@ -60,7 +63,12 @@ export default function FiftyFiveCommunitiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-55-plus"
+          title="Age-Restricted Options Near Providence"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto mb-6">
             <nav className="text-sm text-slate-500">
@@ -77,9 +85,6 @@ export default function FiftyFiveCommunitiesPage() {
               <Sun className="h-4 w-4 mr-2" />
               Active Adult Living Near Providence
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Age-Restricted Options Near Providence
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               While Providence itself doesn&apos;t have dedicated 55+ communities, nearby options include 
               Sun City Aliante (5 miles north) and Del Webb properties. For Providence single-story, 

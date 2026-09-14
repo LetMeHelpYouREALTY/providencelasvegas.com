@@ -9,6 +9,8 @@ import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
 import { getFAQsForPage } from "@/lib/faq-library";
 import Image from "next/image";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata, getSiteImage } from "@/lib/images";
 import { 
   Phone, 
   Mail, 
@@ -38,6 +40,7 @@ export const metadata: Metadata = {
     "Providence Las Vegas real estate agent",
     "Providence Las Vegas homes",
   ],
+  ...pageImageMetadata("hero-about"),
 };
 
 // Person Schema for Dr. Jan Duffy
@@ -125,25 +128,18 @@ export default function AboutPage() {
       />
       <FAQSchema faqs={aboutFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-about"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Your Providence Las Vegas Real Estate Agent
-            </h1>
-            <p className="text-xl text-slate-600">
-              Dr. Jan Duffy is the leading Providence Las Vegas real estate expert, specializing
-              in all 27 Providence neighborhoods since 2008. Providence HOA requirements, new
-              construction options, and neighborhood-specific market trends—backed by Berkshire
-              Hathaway HomeServices. Expert guidance with integrity and professionalism.
-            </p>
-          </div>
-
-          <RealScoutListings />
+          }
+          title="Your Providence Las Vegas Real Estate Agent"
+          subtitle="Dr. Jan Duffy specializes in all 27 Providence neighborhoods since 2008—HOA resale certificates, new construction, and neighborhood-specific market guidance. License S.0197614.LLC."
+        />
+        <div className="container mx-auto px-4 pt-12">
 
           {/* Agent Profile */}
           <section className="mb-16">
@@ -232,10 +228,10 @@ export default function AboutPage() {
               {/* Stats & Credentials */}
               <div className="space-y-6">
                 {/* Agent Headshot */}
-                <div className="relative aspect-square rounded-lg overflow-hidden border border-slate-200 shadow-md">
+                <div className="relative aspect-[4/3] rounded-lg overflow-hidden border border-slate-200 shadow-md">
                   <Image
-                    src="/agent1.jpg"
-                    alt="Dr. Jan Duffy, Providence Las Vegas REALTOR® - Berkshire Hathaway HomeServices Nevada Properties"
+                    src={getSiteImage("hero-about").src}
+                    alt={getSiteImage("hero-about").alt}
                     fill
                     sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover"
@@ -243,8 +239,8 @@ export default function AboutPage() {
                   />
                 </div>
                 <div className="text-center mt-4">
-                  <p className="text-slate-600 font-semibold">Dr. Jan Duffy</p>
-                  <p className="text-sm text-slate-500">BHHS Nevada Properties</p>
+                  <p className="text-slate-600 font-semibold">Providence Real Estate</p>
+                  <p className="text-sm text-slate-500">7181 N Hualapai Way #135, Las Vegas, NV 89166</p>
                 </div>
 
                 {/* Stats Grid */}

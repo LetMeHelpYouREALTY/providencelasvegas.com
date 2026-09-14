@@ -18,6 +18,8 @@ import type { Metadata } from "next";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Las Vegas Real Estate Market Insights 2026 | Berkshire Hathaway HomeServices",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
     "Las Vegas tech hub",
     "Berkshire Hathaway market insights",
   ],
+  ...pageImageMetadata("hero-market-insights"),
 };
 
 const reportSchema = {
@@ -60,7 +63,12 @@ export default function MarketInsightsPage() {
       />
       <FAQSchema faqs={marketInsightsFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-market-insights"
+          title="Las Vegas Market Insights"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -77,9 +85,6 @@ export default function MarketInsightsPage() {
               <TrendingUp className="h-4 w-4 mr-2" />
               2026 Economic & Real Estate Analysis
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas Market Insights
-            </h1>
             <p className="text-xl text-slate-600">
               Technology trends, economic forces, and market dynamics shaping Las Vegas
               real estate in 2026 and beyond.

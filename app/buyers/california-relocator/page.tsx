@@ -14,6 +14,8 @@ import {
 import type { Metadata } from "next";
 import { realscoutUrls } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "California to Providence, Las Vegas | Relocate to Providence",
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
     "Providence master-planned community",
     "Providence homes California buyers",
   ],
+  ...pageImageMetadata("hero-california-relocator"),
 };
 
 const realEstateAgentSchema = {
@@ -56,7 +59,12 @@ export default function CaliforniaRelocatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateAgentSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-california-relocator"
+          title="California to Providence, Las Vegas"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto mb-6">
             <nav className="text-sm text-slate-500">
@@ -73,9 +81,6 @@ export default function CaliforniaRelocatorPage() {
               <Sun className="h-4 w-4 mr-2" />
               California Buyers Love Providence
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              California to Providence, Las Vegas
-            </h1>
             <p className="text-xl md:text-2xl text-slate-600 mb-8">
               Why California buyers choose Providence: master-planned community feel, 27 neighborhoods, 
               $300K–$700K price range (vs $1M+ in CA), modern construction, and low maintenance.

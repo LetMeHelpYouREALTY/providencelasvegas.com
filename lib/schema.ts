@@ -94,8 +94,12 @@ export function generateRealEstateAgentSchema() {
       "Providence Real Estate",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/agent1.jpg`,
-    image: `${BASE_URL}/agent1.jpg`,
+    logo: `${BASE_URL}/images/generated/og-providence-default.png`,
+    image: [
+      `${BASE_URL}/images/generated/og-providence-default.png`,
+      `${BASE_URL}/images/generated/hero-homes-for-sale.png`,
+      `${BASE_URL}/images/generated/hero-providence-community.png`,
+    ],
     description: "Providence Las Vegas real estate specialist serving all 27 Providence neighborhoods",
     telephone: officeInfo.phoneTel.replace(/^tel:/, ""),
     email: agentInfo.email,
@@ -126,6 +130,7 @@ export function generateRealEstateAgentSchema() {
       },
     },
     openingHoursSpecification: gbpOpeningHoursSpecification,
+    hasMap: gbpUrls.maps,
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
       credentialCategory: "Real Estate License",

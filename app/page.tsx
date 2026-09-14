@@ -15,6 +15,8 @@ import type { Metadata } from "next";
 import { Phone } from "lucide-react";
 import { providenceNeighborhoods, providenceCommunity, realscoutUrls } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Providence Real Estate | Homes for Sale in Providence Las Vegas",
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
     "Providence neighborhoods",
     "89166 homes",
   ],
+  ...pageImageMetadata("hero-homes-for-sale"),
 };
 
 // RealEstateAgent schema from root layout; ReviewSchema adds JSON-LD with itemReviewed for GSC
@@ -71,9 +74,12 @@ export default function Home() {
         {/* Services + Locations - Providence Real Estate */}
         <section className="py-12 md:py-16 bg-white" aria-labelledby="services-locations">
           <div className="container mx-auto px-4">
-            <h2 id="services-locations" className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
-              Services &amp; Locations
-            </h2>
+            <SectionMedia
+              imageKey="section-services"
+              heading="Services & Locations"
+              headingId="services-locations"
+              subtitle="Buy, sell, or search homes across Providence and North Las Vegas, NV 89166."
+            />
             <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
               <div>
                 <h3 className="text-xl font-semibold text-slate-800 mb-4">Providence Services</h3>
@@ -105,31 +111,30 @@ export default function Home() {
 
         {/* Value Proposition - Providence Real Estate */}
         <section className="py-12 md:py-16 bg-slate-50">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-4">
-                Providence Real Estate
-              </h2>
-              <p className="text-slate-700 leading-relaxed">
-                <strong>Providence Real Estate</strong> serves Providence and North Las Vegas, NV 89166. 
-                Homes for sale in Providence Las Vegas. Buy or sell with expert local guidance. 
-                Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada Properties.
-              </p>
-            </div>
+          <div className="container mx-auto px-4 max-w-4xl">
+            <SectionMedia
+              imageKey="hero-homes-for-sale"
+              heading="Providence Real Estate"
+              subtitle={
+                <p className="text-slate-700 leading-relaxed">
+                  <strong>Providence Real Estate</strong> serves Providence and North Las Vegas, NV 89166.
+                  Homes for sale in Providence Las Vegas. Buy or sell with expert local guidance.
+                  Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada Properties.
+                </p>
+              }
+            />
           </div>
         </section>
 
         {/* Market Stats Section */}
         <section className="py-16 bg-slate-900 text-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Providence Real Estate Market
-              </h2>
-              <p className="text-slate-300">
-                Current market data for Providence Las Vegas and North Las Vegas.
-              </p>
-            </div>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Providence Real Estate Market"
+              invert
+              subtitle="Current market data for Providence Las Vegas and North Las Vegas."
+            />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">$450K</div>
@@ -163,20 +168,23 @@ export default function Home() {
         {/* The Neighborhoods of Providence */}
         <section className="py-16 md:py-20 bg-white">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                The Neighborhoods of Providence
-              </h2>
-              <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-                Providence is a master-planned community of {providenceCommunity.neighborhoodCount}{" "}
-                neighborhoods and more than {providenceCommunity.homeCount} homes. Each neighborhood
-                has its own amenities.
-              </p>
-            </div>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="The Neighborhoods of Providence"
+              subtitle={
+                <p className="text-lg">
+                  Providence is a master-planned community of {providenceCommunity.neighborhoodCount}{" "}
+                  neighborhoods and more than {providenceCommunity.homeCount} homes. Each neighborhood
+                  has its own amenities.
+                </p>
+              }
+            />
             <div className="mb-8">
-              <h3 className="text-xl font-semibold text-slate-800 mb-4 text-center">
-                Community Parks
-              </h3>
+              <SectionMedia
+                imageKey="section-parks"
+                heading="Community Parks"
+                as="h3"
+              />
               <div className="flex flex-wrap justify-center gap-4">
                 {providenceCommunity.parks.map((park) => (
                   <span

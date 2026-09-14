@@ -11,7 +11,8 @@
     "start": "next start",
     "lint": "next lint",
     "type-check": "tsc --noEmit",
-    "schema:validate": "node scripts/validate-schema.mjs"
+    "schema:validate": "node scripts/validate-schema.mjs",
+    "images:cloudflare": "node scripts/upload-cloudflare-images.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.4",

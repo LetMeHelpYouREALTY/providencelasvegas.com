@@ -48,9 +48,14 @@ public/
 2. **Videos**: FFmpeg/HandBrake; consider Git LFS for &gt;50MB
 3. **Usage**: `next/image` for all images
 
-## Docs
+## Generated heading photos (2026-09-14)
 
-- `public/images/README.md` - Image specs
+Custom photographs for page H1/H2/H3 live in `public/images/generated/`.
+
+- **Git:** backup and current live source
+- **Cloudflare Images:** primary CDN after `npm run images:cloudflare`
+- Helper: `lib/images.ts` (`getSiteImage`)
+
 - `public/images/providence/README.md` - Providence HOA asset URLs
 - `public/videos/README.md` - Video specs & Git LFS
 - `public/logos/README.md` - Logo usage

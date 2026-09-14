@@ -25,6 +25,8 @@ import {
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls, providenceNeighborhoods } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Buy a Providence Home | Providence Las Vegas Real Estate",
@@ -39,6 +41,7 @@ export const metadata: Metadata = {
     "first time home buyer Providence",
     "California to Providence",
   ],
+  ...pageImageMetadata("hero-buyers"),
 };
 
 const buyerSchema = {
@@ -104,29 +107,24 @@ export default function BuyersPage() {
       />
       <FAQSchema faqs={buyersFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-buyers"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold no-underline">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Buy Your Providence Home
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              When you work with a <strong>Berkshire Hathaway HomeServices</strong> buyer's agent,
-              you're backed by the most trusted name in real estate—and it costs you nothing.
-              The seller pays the commission, but the representation is yours.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Free Buyer Representation</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Full MLS Access</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Expert Negotiation</span>
-            </div>
+          }
+          title="Buy Your Providence Home"
+          subtitle="When you work with a Berkshire Hathaway HomeServices buyer's agent, you're backed by a trusted brand—and buyer representation typically costs you nothing. The seller pays the commission; the advocacy is yours."
+        >
+          <div className="flex flex-wrap gap-4 text-sm text-white/90">
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Free Buyer Representation</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Full MLS Access</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Expert Negotiation</span>
           </div>
-
-          <RealScoutListings />
+        </PageHero>
+        <div className="container mx-auto px-4 pt-12">
 
           {/* Value Prop */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

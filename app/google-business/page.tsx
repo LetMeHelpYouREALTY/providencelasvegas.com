@@ -28,6 +28,8 @@ import {
   generateFAQSchema,
 } from "@/lib/gbp-schema";
 import { gbpUrls } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { getSiteImage, ogImageFor } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Dr. Jan Duffy, Providence Las Vegas REALTOR® | Berkshire Hathaway HomeServices",
@@ -48,6 +50,7 @@ export const metadata: Metadata = {
     description: "Providence Las Vegas real estate expert serving since 2008. All 27 Providence neighborhoods, premium homes, California relocation.",
     url: "https://www.providencelasvegas.com/google-business",
     type: "profile",
+    images: [ogImageFor("hero-google-business")],
   },
 };
 
@@ -66,8 +69,13 @@ export default function GoogleBusinessPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-google-business"
+          title="Providence Real Estate on Google"
+          subtitle="NAP matches Google Business Profile: Providence Real Estate, 7181 N Hualapai Way #135, Las Vegas, NV 89166, (702) 744-2993."
+        />
+        <div className="container mx-auto px-4 pt-12">
           {/* Hero - NAP Prominent */}
           <section className="max-w-5xl mx-auto mb-16">
             <div className="bg-gradient-to-br from-slate-900 to-blue-900 text-white rounded-2xl p-8 md:p-12">
@@ -75,8 +83,8 @@ export default function GoogleBusinessPage() {
                 <div>
                   <div className="relative w-24 h-24 rounded-full overflow-hidden border-2 border-blue-400 mb-4">
                     <Image
-                      src="/agent1.jpg"
-                      alt="Dr. Jan Duffy, REALTOR®"
+                      src={getSiteImage("hero-about").src}
+                      alt="Providence Real Estate office, Las Vegas NV 89166"
                       fill
                       sizes="96px"
                       className="object-cover"
@@ -87,9 +95,9 @@ export default function GoogleBusinessPage() {
                     <Award className="h-6 w-6 text-yellow-400" />
                     <span className="text-yellow-400 font-semibold">Berkshire Hathaway HomeServices</span>
                   </div>
-                  <h1 className="text-4xl md:text-5xl font-bold mb-4">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">
                     Dr. Jan Duffy
-                  </h1>
+                  </h2>
                   <p className="text-xl text-blue-200 mb-2">REALTOR® | License {businessInfo.license}</p>
                   <p className="text-slate-300 mb-6">Nevada Properties</p>
                   

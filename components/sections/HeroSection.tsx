@@ -3,18 +3,22 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import { realscoutUrls } from "@/lib/site-config";
+import GbpActionBar from "@/components/gbp/GbpActionBar";
+import { getSiteImage, type SiteImageKey } from "@/lib/images";
+
+const HERO_KEYS: SiteImageKey[] = [
+  "hero-homes-for-sale",
+  "hero-providence-community",
+  "hero-listings",
+];
 
 export default function HeroSection() {
   const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    "/Image/hero_bg_1.jpg",
-    "/Image/hero_bg_2.jpg",
-    "/Image/hero_bg_3.jpg",
-  ];
+  const images = HERO_KEYS.map((key) => getSiteImage(key));
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
+      setCurrentImage((prev) => (prev + 1) % HERO_KEYS.length);
     }, 5000);
     return () => clearInterval(intervalId);
   }, []);
@@ -23,16 +27,16 @@ export default function HeroSection() {
     <div className="relative w-full h-screen overflow-hidden">
       {/* Background Images */}
       <div className="absolute inset-0">
-        {images.map((src, index) => (
+        {images.map((image, index) => (
           <div
-            key={index}
+            key={image.key}
             className={`absolute inset-0 transition-opacity duration-1000 ${
               index === currentImage ? "opacity-100" : "opacity-0"
             }`}
           >
             <Image
-              src={src}
-              alt={index === 0 ? "Providence Las Vegas homes for sale - Providence Real Estate" : `Providence Las Vegas real estate hero - homes across 27 Providence neighborhoods ${index + 1}`}
+              src={image.src}
+              alt={image.alt}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
               className="object-cover"
@@ -68,10 +72,11 @@ export default function HeroSection() {
           href={realscoutUrls.searchHero}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-white/90 hover:text-white text-sm underline transition-colors mb-2"
+          className="text-white/90 hover:text-white text-sm underline transition-colors mb-4"
         >
           Open full search →
         </a>
+        <GbpActionBar variant="onDark" className="max-w-4xl" />
 
         {/* Trust Indicators - Services + Locations focus */}
         <div className="mt-8 flex flex-wrap justify-center gap-6 text-white/90 text-sm">

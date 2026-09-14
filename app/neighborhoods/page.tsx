@@ -8,6 +8,8 @@ import { MapPin, Phone, ExternalLink } from "lucide-react";
 import type { Metadata } from "next";
 import { providenceNeighborhoods, providenceCommunity } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "All 27 Providence Neighborhoods | Providence Las Vegas Real Estate",
@@ -21,6 +23,7 @@ export const metadata: Metadata = {
     "Saratoga Highlands",
     "Providence community",
   ],
+  ...pageImageMetadata("hero-providence-community"),
 };
 
 export default function NeighborhoodsPage() {
@@ -30,31 +33,18 @@ export default function NeighborhoodsPage() {
     <>
       <FAQSchema faqs={neighborhoodsFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-providence-community"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Providence Real Estate
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Providence Real Estate | Neighborhoods
-            </h1>
-            <p className="text-xl text-slate-600 mb-4">
-              <strong>Providence Real Estate</strong> serves Providence Las Vegas—a master-planned community of{" "}
-              <strong>{providenceCommunity.neighborhoodCount} neighborhoods</strong> and more than{" "}
-              <strong>{providenceCommunity.homeCount} homes</strong>. Each Providence Las Vegas
-              neighborhood has its own amenities. All Providence neighborhoods have access to
-              Knickerbocker Park, Huckleberry Park, and The Promenade. Providence, North Las Vegas, NV 89166.
-            </p>
-            <p className="text-slate-600 max-w-2xl mx-auto">
-              Whether you are buying or selling in Providence Las Vegas—from Oxford Commons and
-              Saratoga Highlands to Auburn & Bradford and all 27 neighborhoods—Dr. Jan Duffy
-              offers hyperlocal expertise and HOA resale guidance for Providence Las Vegas.
-            </p>
-          </div>
-
-          <RealScoutListings />
+          }
+          title="Providence Real Estate | Neighborhoods"
+          subtitle={`Providence Real Estate serves Providence Las Vegas—a master-planned community of ${providenceCommunity.neighborhoodCount} neighborhoods and more than ${providenceCommunity.homeCount} homes. Each neighborhood has its own amenities, plus access to Knickerbocker Park, Huckleberry Park, and The Promenade.`}
+        />
+        <div className="container mx-auto px-4 pt-12">
 
           {/* Community Parks */}
           <section className="mb-12 max-w-4xl mx-auto">

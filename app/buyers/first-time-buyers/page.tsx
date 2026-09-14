@@ -20,6 +20,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "First-Time Home Buyers Las Vegas | Berkshire Hathaway HomeServices",
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
     "VA loans Las Vegas",
     "Berkshire Hathaway HomeServices first time buyer",
   ],
+  ...pageImageMetadata("hero-first-time"),
 };
 
 export default function FirstTimeBuyersPage() {
@@ -42,7 +45,12 @@ export default function FirstTimeBuyersPage() {
     <>
       <FAQSchema faqs={firstTimeBuyersFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-first-time"
+          title="Your First Home in Las Vegas Starts Here"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -61,10 +69,6 @@ export default function FirstTimeBuyersPage() {
               <Key className="h-4 w-4 mr-2" />
               Down Payment Assistance Available
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Your First Home in Las Vegas<br />
-              <span className="text-blue-600">Starts Here</span>
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               Down payment assistance. Builder incentives. Expert guidance every step of the way.
             </p>

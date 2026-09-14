@@ -18,6 +18,8 @@ import {
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Relocation Home Sales | Providence Las Vegas | Berkshire Hathaway HomeServices",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
     "Berkshire Hathaway relocation services",
     "corporate relocation Nevada",
   ],
+  ...pageImageMetadata("hero-relocation"),
 };
 
 export default function RelocationPage() {
@@ -40,7 +43,12 @@ export default function RelocationPage() {
     <>
       <FAQSchema faqs={relocationFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-relocation"
+          title="New Opportunity? We Handle Your Sale."
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -59,9 +67,6 @@ export default function RelocationPage() {
               <Plane className="h-4 w-4 mr-2" />
               Nationwide BHHS Network
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              New Opportunity?<br />We Handle Your Sale.
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               Sell your Providence Las Vegas home while you focus on your new chapter.
               Whether you're in one of Providence's 27 neighborhoods or elsewhere in the valley,

@@ -17,6 +17,8 @@ import type { Metadata } from "next";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const revalidate = 86400;
 
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
     "Henderson real estate market",
     "Las Vegas home prices",
   ],
+  ...pageImageMetadata("hero-market"),
 };
 
 const articleSchema = {
@@ -68,7 +71,12 @@ export default function MarketUpdatePage() {
       />
       <FAQSchema faqs={marketUpdateFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-market"
+          title="Berkshire Hathaway HomeServices Las Vegas Market Update"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-4xl mx-auto mb-6">
@@ -87,9 +95,6 @@ export default function MarketUpdatePage() {
               <Calendar className="h-4 w-4 mr-2" />
               Week of January 20, 2026
             </div>
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
-              Berkshire Hathaway HomeServices Las Vegas Market Update
-            </h1>
             <p className="text-xl text-slate-600">
               Your weekly insider report on Las Vegas Valley real estate from{" "}
               <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>

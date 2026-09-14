@@ -8,6 +8,8 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getRelatedPages } from "@/lib/related-pages";
 import { officeInfo, gbpUrls } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 const DirectionsMap = dynamic(
   () =>
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
     "7181 N Hualapai Way",
     "plan visit Providence real estate",
   ],
+  ...pageImageMetadata("hero-directions"),
 };
 
 export default function DirectionsPage() {
@@ -46,16 +49,14 @@ export default function DirectionsPage() {
         ]}
       />
       <main>
+        <PageHero
+          compact
+          imageKey="hero-directions"
+          title="Directions to Providence Real Estate"
+          subtitle="Plan your visit to 7181 N Hualapai Way #135, Las Vegas, NV 89166. Enter a starting address for driving, walking, transit, or bicycling routes."
+        />
         <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-slate-50">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Directions to Providence Real Estate
-            </h1>
-            <p className="text-lg text-slate-700 max-w-3xl mb-6">
-              Plan your visit to our office. Enter your starting address and choose your preferred
-              mode of travel—driving, walking, transit, or bicycling—to see the route and estimated
-              travel time.
-            </p>
             <DirectionsMap />
           </div>
         </section>

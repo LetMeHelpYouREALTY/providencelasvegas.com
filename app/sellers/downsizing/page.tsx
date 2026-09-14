@@ -18,6 +18,8 @@ import {
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Downsizing | Providence Las Vegas | Berkshire Hathaway HomeServices",
@@ -31,6 +33,7 @@ export const metadata: Metadata = {
     "empty nester Las Vegas",
     "Berkshire Hathaway HomeServices downsizing",
   ],
+  ...pageImageMetadata("hero-downsizing"),
 };
 
 export default function DownsizingPage() {
@@ -40,7 +43,12 @@ export default function DownsizingPage() {
     <>
       <FAQSchema faqs={downsizingFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-downsizing"
+          title="Simplify. Downsize. Enjoy."
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -59,9 +67,6 @@ export default function DownsizingPage() {
               <Heart className="h-4 w-4 mr-2" />
               Embrace Low-Maintenance Living
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Simplify. Downsize. Enjoy.
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               Dr. Jan Duffy helps Providence Las Vegas homeowners extract equity and transition to
               low-maintenance living—whether you're in Providence Las Vegas or another Southern
@@ -195,7 +200,7 @@ export default function DownsizingPage() {
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                    <span>Professional staging that showcases family-friendly features</span>
+                    <span>Professional staging that highlights single-story living, storage, and low-maintenance yards</span>
                   </li>
                   <li className="flex items-start">
                     <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />

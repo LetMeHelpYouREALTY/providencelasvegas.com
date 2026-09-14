@@ -7,6 +7,8 @@ import Link from "next/link";
 import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Why Choose Berkshire Hathaway HomeServices | Providence Las Vegas Real Estate",
@@ -19,6 +21,7 @@ export const metadata: Metadata = {
     "trusted real estate brand",
     "BHHS Nevada Properties",
   ],
+  ...pageImageMetadata("hero-why-bhhs"),
 };
 
 // Organization Schema
@@ -48,16 +51,18 @@ export default function WhyBerkshireHathawayPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-why-bhhs"
+          title="Why Choose Berkshire Hathaway HomeServices?"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero Section */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               The Most Trusted Name in Real Estate
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Why Choose Berkshire Hathaway HomeServices?
-            </h1>
             <p className="text-xl text-slate-600 leading-relaxed">
               When you work with a <strong>Berkshire Hathaway HomeServices</strong> agent for your
               Providence Las Vegas real estate needs, you're backed by a name synonymous with trust,

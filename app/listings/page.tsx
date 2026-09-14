@@ -23,6 +23,8 @@ import type { Metadata } from "next";
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { realscoutUrls, providenceNeighborhoods, marketStats } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const revalidate = 3600;
 
@@ -43,6 +45,7 @@ export const metadata: Metadata = {
     "Oxford Commons homes",
     "Saratoga Highlands",
   ],
+  ...pageImageMetadata("hero-listings"),
 };
 
 const listingsSchema = {
@@ -69,7 +72,7 @@ const popularSearches = [
 
 const priceRanges = [
   { range: "Under $400K", description: "Starter homes, condos, townhomes", count: "1,500+" },
-  { range: "$400K - $600K", description: "Family homes, established neighborhoods", count: "2,100+" },
+  { range: "$400K - $600K", description: "Single-family homes, HOA streetscapes", count: "2,100+" },
   { range: "$600K - $1M", description: "Premium locations, larger homes", count: "1,200+" },
   { range: "$1M - $2M", description: "Luxury homes, guard-gated communities", count: "450+" },
   { range: "$2M+", description: "Ultra-luxury estates, custom builds", count: "180+" },
@@ -95,38 +98,32 @@ export default function ListingsPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-12">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-listings"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Providence Homes for Sale
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              Search Providence Las Vegas properties across all 27 neighborhoods with live MLS 
-              listings. Find your dream home with expert guidance from Dr. Jan Duffy at 
-              <strong> Berkshire Hathaway HomeServices</strong>.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500 mb-4">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Live MLS Data</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Updated Every 15 Min</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> 5,000+ Active Listings</span>
-            </div>
-            <a
-              href={realscoutUrls.searchListingsPage}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
-            >
-              <Search className="h-4 w-4" />
-              Open full search in new tab →
-            </a>
+          }
+          title="Providence Homes for Sale"
+          subtitle="Search Providence Las Vegas properties across all 27 neighborhoods with live MLS listings. Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
+        >
+          <div className="flex flex-wrap gap-4 text-sm text-white/90 mb-4">
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Live MLS Data</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Updated Every 15 Min</span>
           </div>
-
-          {/* RealScout Widget - Live MLS Listings */}
+          <a
+            href={realscoutUrls.searchListingsPage}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-white no-underline hover:underline font-semibold"
+          >
+            <Search className="h-4 w-4" />
+            Open full search in new tab →
+          </a>
+        </PageHero>
+        <div className="container mx-auto px-4 pt-12">
           <section className="mb-16">
             <div className="max-w-7xl mx-auto">
               <div
@@ -148,11 +145,9 @@ export default function ListingsPage() {
               Popular Property Searches in Providence
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Providence offers 27 diverse neighborhoods for every lifestyle and budget. Whether you're 
-              seeking luxury estates in guard-gated communities, family homes near top-rated schools, 
-              or affordable new construction, our comprehensive search tools help you find exactly 
-              what you're looking for. Browse the most popular searches below or use the advanced 
-              filters to customize your home search experience.
+              Providence offers 27 neighborhoods across a range of price points. Search premium homes,
+              new construction, or resale inventory across Oxford Commons, Saratoga Highlands, Auburn & Bradford,
+              and every Providence community. Use the tools below or call (702) 744-2993.
             </p>
             <div className="grid md:grid-cols-3 gap-4">
               {popularSearches.map((search) => (

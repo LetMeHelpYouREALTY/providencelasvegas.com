@@ -1,7 +1,8 @@
 "use client";
 
 import { Star, Quote } from "lucide-react";
-import Image from "next/image";
+import { gbpUrls } from "@/lib/site-config";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export interface Review {
   id: number;
@@ -21,7 +22,6 @@ export const defaultReviews: Review[] = [
     location: "Oxford Commons, Providence",
     rating: 5,
     text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Providence market is unmatched, and she guided us through every step with professionalism and care.",
-    image: "/Image/person1.jpeg",
     date: "2025-11-15",
   },
   {
@@ -30,7 +30,6 @@ export const defaultReviews: Review[] = [
     location: "Saratoga Highlands, Providence",
     rating: 5,
     text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    image: "/Image/person_2-min.jpg",
     date: "2025-10-22",
   },
   {
@@ -39,7 +38,6 @@ export const defaultReviews: Review[] = [
     location: "Auburn & Bradford, Providence",
     rating: 5,
     text: "As first-time homebuyers, we were nervous about the process. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!",
-    image: "/Image/person_4-min.jpg",
     date: "2025-09-08",
   },
 ];
@@ -69,19 +67,19 @@ export default function ReviewsSection({
   reviews = defaultReviews,
   title = "What Our Clients Say",
   subtitle = "Real testimonials from satisfied Providence homeowners",
-  googleReviewsUrl = "https://g.page/r/heyberkshire/review",
+  googleReviewsUrl = gbpUrls.review,
   className = "",
 }: ReviewsSectionProps) {
   return (
     <section className={`py-16 md:py-24 bg-slate-50 ${className}`}>
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            {title}
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">{subtitle}</p>
-          {/* Aggregate Rating Display */}
-          <div className="flex items-center justify-center gap-2 mt-4">
+        <SectionMedia
+          imageKey="section-reviews"
+          heading={title}
+          subtitle={subtitle}
+        />
+        {/* Aggregate Rating Display */}
+        <div className="flex items-center justify-center gap-2 mb-12">
             <div className="flex">
               {[...Array(5)].map((_, i) => (
                 <Star
@@ -100,7 +98,6 @@ export default function ReviewsSection({
             <span className="text-slate-600">
               ({aggregateRating.reviewCount}+ reviews)
             </span>
-          </div>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -110,19 +107,14 @@ export default function ReviewsSection({
               className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow"
             >
               <div className="flex items-center mb-4">
-                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-                  {review.image ? (
-                    <Image
-                      src={review.image}
-                      alt={review.name}
-                      fill
-                      className="object-cover"
-                    />
-                  ) : (
-                    <div className="w-full h-full bg-slate-200 flex items-center justify-center">
-                      <span className="text-slate-400 text-sm">{review.name[0]}</span>
-                    </div>
-                  )}
+                <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 bg-blue-100 flex items-center justify-center">
+                  <span className="text-blue-700 text-lg font-bold" aria-hidden>
+                    {review.name
+                      .split(" ")
+                      .map((part) => part[0])
+                      .slice(0, 2)
+                      .join("")}
+                  </span>
                 </div>
                 <div>
                   <h3 className="font-bold text-slate-900">{review.name}</h3>

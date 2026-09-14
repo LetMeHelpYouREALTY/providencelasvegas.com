@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Services | Providence Real Estate | Providence Las Vegas",
@@ -36,6 +38,7 @@ export const metadata: Metadata = {
     "Providence new construction",
     "Providence 55+ options",
   ],
+  ...pageImageMetadata("hero-services"),
 };
 
 const servicesSchema = {
@@ -176,16 +179,18 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-services"
+          title="Providence Las Vegas Real Estate Services"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Providence Las Vegas Real Estate Services
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               Comprehensive real estate solutions for Providence Las Vegas and Southern Nevada from
               Dr. Jan Duffy, backed by the most trusted name in the business—<strong>Berkshire

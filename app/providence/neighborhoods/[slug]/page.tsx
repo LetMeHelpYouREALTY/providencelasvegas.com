@@ -13,6 +13,8 @@ import { providenceNeighborhoods, providenceCommunity, marketStats } from "@/lib
 import { generateBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { neighborhoodImageKey, ogImageFor } from "@/lib/images";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -34,6 +36,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Providence Las Vegas homes",
     ],
     alternates: { canonical },
+    openGraph: {
+      images: [ogImageFor(neighborhoodImageKey(slug))],
+    },
   };
 }
 
@@ -56,7 +61,14 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
       <FAQSchema faqs={providenceFaqs} />
       <Navbar />
       <main>
-        <section className="pt-24 pb-12 md:pt-28 md:pb-16 bg-slate-50">
+        <PageHero
+          compact
+          imageKey={neighborhoodImageKey(slug)}
+          imageAlt={`${neighborhood.name} homes in Providence Las Vegas, NV 89166`}
+          title={`${neighborhood.name}, Providence Las Vegas`}
+          subtitle={`${neighborhood.name} is one of ${providenceCommunity.neighborhoodCount} neighborhoods in Providence Las Vegas, a master-planned community with more than ${providenceCommunity.homeCount} homes, three community parks, and HOA-maintained streetscapes.`}
+        />
+        <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-slate-50">
           <div className="container mx-auto px-4">
             <nav className="text-sm text-slate-600 mb-4">
               <Link href="/" className="hover:text-blue-600">
@@ -69,14 +81,8 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
               {" / "}
               <span className="text-slate-900">{neighborhood.name}</span>
             </nav>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              {neighborhood.name}, Providence Las Vegas
-            </h1>
             <p className="text-lg text-slate-700 max-w-3xl mb-4">
-              {neighborhood.name} is one of {providenceCommunity.neighborhoodCount} neighborhoods
-              in Providence Las Vegas, a master-planned community in the northwest Las Vegas
-              Valley with more than {providenceCommunity.homeCount} homes. Each Providence Las
-              Vegas neighborhood has its own amenities and character. Explore{" "}
+              Explore{" "}
               <Link href="/amenities" className="text-blue-600 hover:text-blue-700 font-medium">
                 nearby restaurants, parks, and shopping
               </Link>{" "}

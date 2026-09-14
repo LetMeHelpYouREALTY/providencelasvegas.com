@@ -21,6 +21,7 @@ import {
   generateWebSiteSchema,
   combineSchemas,
 } from "@/lib/schema";
+import { ogImageFor } from "@/lib/images";
 
 const title = "Providence Las Vegas Real Estate | All 27 Neighborhoods | Dr. Jan Duffy";
 const description =
@@ -51,13 +52,13 @@ export const metadata: Metadata = {
     siteName: "Providence Real Estate | Homes for Sale in Providence Las Vegas",
     type: "website",
     locale: "en_US",
-    images: [{ url: "/Image/hero_bg_1.jpg", width: 1200, height: 630, alt: "Providence Real Estate | Homes for Sale in Providence Las Vegas" }],
+    images: [ogImageFor("og-providence-default")],
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
-    images: ["/Image/hero_bg_1.jpg"],
+    images: [ogImageFor("og-providence-default").url],
   },
   icons: {
     icon: "/favicon-32x32.png",

@@ -1,4 +1,5 @@
 import { Shield, TrendingUp, Users, Award, Clock, Home } from "lucide-react";
+import SectionMedia from "@/components/media/SectionMedia";
 
 const features = [
   {
@@ -43,14 +44,11 @@ export default function WhyChooseUs() {
   return (
     <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Why Providence Real Estate
-          </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Providence Real Estate serves Providence and North Las Vegas, NV 89166. Expert local guidance for buying and selling homes in Providence Las Vegas.
-          </p>
-        </div>
+        <SectionMedia
+          imageKey="section-why-choose"
+          heading="Why Providence Real Estate"
+          subtitle="Providence Real Estate serves Providence and North Las Vegas, NV 89166. Expert local guidance for buying and selling homes in Providence Las Vegas."
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature) => {

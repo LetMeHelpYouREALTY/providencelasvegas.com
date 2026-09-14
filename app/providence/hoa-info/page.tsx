@@ -11,6 +11,8 @@ import { Phone, ExternalLink } from "lucide-react";
 import { providenceCommunity } from "@/lib/site-config";
 import { getRelatedPages } from "@/lib/related-pages";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Providence HOA Information | Providence Las Vegas Real Estate",
@@ -24,6 +26,7 @@ export const metadata: Metadata = {
     "Providence Design Review",
     "Providence neighborhoods HOA",
   ],
+  ...pageImageMetadata("hero-hoa"),
 };
 
 export default function ProvidenceHOAInfoPage() {
@@ -34,11 +37,12 @@ export default function ProvidenceHOAInfoPage() {
       <FAQSchema faqs={hoaFAQs} />
       <Navbar />
       <Breadcrumbs items={[{ label: "Providence Las Vegas", href: "/providence" }, { label: "HOA Information" }]} />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-hoa"
+          title="Providence HOA Information"
+        />
+      <main className="pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Providence HOA Information
-          </h1>
           <p className="text-lg text-slate-700 mb-8">
             The Providence Master HOA oversees all {providenceCommunity.neighborhoodCount} Providence Las Vegas
             neighborhoods. Whether you&apos;re buying or selling, understanding HOA requirements, resale

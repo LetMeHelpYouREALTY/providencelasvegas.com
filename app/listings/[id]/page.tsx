@@ -39,7 +39,7 @@ async function getProperty(_id: string) {
     location: "Providence, North Las Vegas, NV 89166",
     price: "$850,000",
     priceNumber: 850000,
-    image: "/Image/hero_bg_1.jpg",
+    image: "/images/generated/hero-listings.png",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,

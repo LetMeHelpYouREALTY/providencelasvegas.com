@@ -3,6 +3,10 @@ const nextConfig = {
   images: {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [390, 640, 750, 828, 1080, 1200, 1920, 2048],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'imagedelivery.net' },
+      { protocol: 'https', hostname: 'images.providencelasvegas.com' },
+    ],
   },
   async redirects() {
     const providenceRedirects = [
@@ -80,7 +84,7 @@ const nextConfig = {
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://em.realscout.com https://www.realscout.com https://assets.calendly.com https://www.googletagmanager.com https://www.google-analytics.com https://maps.googleapis.com",
               "style-src 'self' 'unsafe-inline' https://em.realscout.com https://www.realscout.com https://assets.calendly.com",
-              "img-src 'self' data: blob: https: http: https://maps.googleapis.com https://maps.gstatic.com",
+              "img-src 'self' data: blob: https: http: https://imagedelivery.net https://images.providencelasvegas.com https://maps.googleapis.com https://maps.gstatic.com",
               "font-src 'self' data: https://assets.calendly.com",
               "connect-src 'self' https://em.realscout.com https://www.realscout.com https://openrouter.ai https://api.openai.com https://calendly.com https://www.google-analytics.com https://analytics.google.com https://maps.googleapis.com",
               "frame-src 'self' https://em.realscout.com https://www.realscout.com https://calendly.com https://assets.calendly.com https://www.google.com https://maps.google.com https://*.google.com",

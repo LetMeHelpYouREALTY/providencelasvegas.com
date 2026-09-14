@@ -179,9 +179,9 @@ const faqLibrary: Record<string, FAQItem[]> = {
         "Dr. Jan serves all 27 Providence Las Vegas neighborhoods—Oxford Commons, Saratoga Highlands, Auburn & Bradford, and more. She has deep expertise in Providence HOA resale certificates, Design Review, new construction, and neighborhood comparisons.",
     },
     {
-      question: "Which Providence neighborhood is best for families?",
+      question: "Which Providence neighborhoods have parks and nearby schools?",
       answer:
-        "Oxford Commons, Saratoga Highlands, Auburn & Bradford, and many other Providence neighborhoods are popular for families due to top-rated schools, three community parks, and family-friendly amenities. Dr. Jan can help you compare Providence neighborhoods based on your priorities.",
+        "Oxford Commons, Saratoga Highlands, Auburn & Bradford, and other Providence neighborhoods sit near three community parks and Clark County School District campuses. Dr. Jan can help you compare commute times, park access, and current inventory. Call (702) 744-2993.",
     },
     {
       question: "Where are the premium Providence neighborhoods?",
@@ -325,9 +325,9 @@ const faqLibrary: Record<string, FAQItem[]> = {
         "Mountains Edge has a mix of resale and new construction. The area has grown significantly with added shopping and services. Dr. Jan Duffy provides current market data—call (702) 744-2993.",
     },
     {
-      question: "Is Mountains Edge good for families?",
+      question: "What outdoor amenities does Mountains Edge have?",
       answer:
-        "Yes. Mountains Edge offers parks, trails, and family-friendly amenities. Schools are part of the Clark County School District. Dr. Jan can provide specific school and neighborhood information.",
+        "Mountains Edge offers parks and trails. Schools in the area are part of the Clark County School District. Dr. Jan can provide campus names and commute times for specific addresses.",
     },
   ],
 

@@ -7,6 +7,9 @@ import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
 import { getRelatedPages } from "@/lib/related-pages";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 const AmenityMap = dynamic(
   () => import("@/components/location/AmenityMap").then((m) => ({ default: m.default })),
@@ -32,6 +35,7 @@ export const metadata: Metadata = {
     "shopping near Providence 89166",
     "Providence area map",
   ],
+  ...pageImageMetadata("hero-amenities"),
 };
 
 export default function AmenitiesPage() {
@@ -40,26 +44,24 @@ export default function AmenitiesPage() {
       <Navbar />
       <Breadcrumbs items={[{ label: "Providence Las Vegas" }, { label: "Nearby Amenities" }]} />
       <main>
+        <PageHero
+          compact
+          imageKey="hero-amenities"
+          title="Nearby Amenities in Providence Las Vegas"
+          subtitle="Explore restaurants, parks, grocery stores, and daily conveniences near Providence, NV 89166. Use the map to see what's nearby."
+        />
         <section className="pt-8 pb-12 md:pt-12 md:pb-16 bg-slate-50">
           <div className="container mx-auto px-4">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Nearby Amenities in Providence Las Vegas
-            </h1>
-            <p className="text-lg text-slate-700 max-w-3xl mb-6">
-              Use the map below to explore restaurants, parks, parking, grocery stores, schools,
-              and more near Providence Las Vegas. Select a place type from the dropdown to see
-              what&apos;s nearby. This tool helps buyers and sellers understand the area&apos;s
-              lifestyle amenities.
-            </p>
             <AmenityMap defaultType="restaurant" />
           </div>
         </section>
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-              Providence Las Vegas Lifestyle
-            </h2>
+            <SectionMedia
+              imageKey="section-parks"
+              heading="Providence Las Vegas Lifestyle"
+            />
             <p className="text-slate-700 max-w-3xl mb-6">
               Providence is a master-planned community with easy access to dining, recreation,
               shopping, and services. The community offers three parks—The Promenade,

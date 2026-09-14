@@ -237,7 +237,11 @@ export function generateLocalBusinessSchema() {
     "@type": "RealEstateAgent",
     "@id": "https://www.providencelasvegas.com/#organization",
     name: businessInfo.name,
-    image: "https://www.providencelasvegas.com/agent1.jpg",
+    image: [
+      "https://www.providencelasvegas.com/images/generated/og-providence-default.png",
+      "https://www.providencelasvegas.com/images/generated/hero-about.png",
+      "https://www.providencelasvegas.com/images/generated/hero-contact.png",
+    ],
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,
     email: businessInfo.email,

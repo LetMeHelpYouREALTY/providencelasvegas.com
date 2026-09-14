@@ -23,6 +23,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Sell Your Providence Home | Providence Las Vegas Real Estate",
@@ -37,6 +39,7 @@ export const metadata: Metadata = {
     "Providence real estate agent",
     "sell home Providence Las Vegas",
   ],
+  ...pageImageMetadata("hero-sellers"),
 };
 
 const sellerSchema = {
@@ -138,34 +141,29 @@ export default function SellersPage() {
       />
       <FAQSchema faqs={sellersFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-sellers"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Sell Your Providence Las Vegas Home for Top Dollar
-            </h1>
-            <p className="text-xl text-slate-600 mb-8">
-              When you list with <strong>Berkshire Hathaway HomeServices</strong>, you get
-              world-class marketing, expert pricing, and a name that buyers trust. Dr. Jan Duffy
-              has been serving Providence Las Vegas and its 27 neighborhoods since 2008—helping
-              sellers achieve top-dollar results with proven marketing strategies and skilled
-              negotiation.
-            </p>
-            <div className="flex flex-wrap justify-center gap-4 text-sm text-slate-500">
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Free Home Valuation</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> World-Class Marketing</span>
-              <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-500 mr-1" /> Expert Negotiation</span>
-            </div>
-            <div className="mt-8 max-w-2xl mx-auto bg-slate-50 rounded-xl p-6 border-l-4 border-blue-600">
-              <blockquote className="text-slate-700 italic">
-                "Pricing is everything. I've seen overpriced homes sit for months while well-priced listings get multiple offers in weeks. My job is to get you the highest net—and that starts with getting the price right."
-              </blockquote>
-              <cite className="text-slate-900 font-semibold not-italic block mt-2">— Dr. Jan Duffy, BHHS Nevada Properties</cite>
-            </div>
+          }
+          title="Sell Your Providence Las Vegas Home for Top Dollar"
+          subtitle="When you list with Berkshire Hathaway HomeServices, you get expert pricing, marketing, and a name buyers recognize. Dr. Jan Duffy has served all 27 Providence neighborhoods since 2008."
+        >
+          <div className="flex flex-wrap gap-4 text-sm text-white/90">
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Free Home Valuation</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> World-Class Marketing</span>
+            <span className="flex items-center"><CheckCircle className="h-4 w-4 text-green-400 mr-1" /> Expert Negotiation</span>
+          </div>
+        </PageHero>
+        <div className="container mx-auto px-4 pt-12">
+          <div className="max-w-2xl mx-auto bg-slate-50 rounded-xl p-6 border-l-4 border-blue-600 mb-12">
+            <blockquote className="text-slate-700 italic">
+              &quot;Pricing is everything. I&apos;ve seen overpriced homes sit for months while well-priced listings get multiple offers in weeks. My job is to get you the highest net—and that starts with getting the price right.&quot;
+            </blockquote>
+            <cite className="text-slate-900 font-semibold not-italic block mt-2">— Dr. Jan Duffy, BHHS Nevada Properties</cite>
           </div>
 
           <RealScoutListings />

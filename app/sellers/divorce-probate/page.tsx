@@ -17,6 +17,8 @@ import {
 } from "lucide-react";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Divorce & Probate Home Sales Las Vegas | Berkshire Hathaway HomeServices",
@@ -29,6 +31,7 @@ export const metadata: Metadata = {
     "court ordered sale Nevada",
     "Berkshire Hathaway HomeServices divorce",
   ],
+  ...pageImageMetadata("hero-divorce-probate"),
 };
 
 export default function DivorceProbatePage() {
@@ -38,7 +41,12 @@ export default function DivorceProbatePage() {
     <>
       <FAQSchema faqs={divorceProbateFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-divorce-probate"
+          title="Difficult Situations, Expert Guidance"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -57,9 +65,6 @@ export default function DivorceProbatePage() {
               <Shield className="h-4 w-4 mr-2" />
               Handled with Discretion & Professionalism
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Difficult Situations,<br />Expert Guidance
-            </h1>
             <p className="text-xl text-slate-600 mb-8">
               When life gets complicated, you need an agent who handles sensitive transactions
               with discretion, expertise, and compassion.

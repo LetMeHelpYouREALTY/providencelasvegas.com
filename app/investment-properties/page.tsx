@@ -7,6 +7,8 @@ import type { Metadata } from "next";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Las Vegas Investment Properties | Berkshire Hathaway HomeServices",
@@ -20,6 +22,7 @@ export const metadata: Metadata = {
     "1031 exchange Las Vegas",
     "cash flow properties Las Vegas",
   ],
+  ...pageImageMetadata("hero-investment"),
 };
 
 const investmentAreas = [
@@ -74,16 +77,18 @@ export default function InvestmentPropertiesPage() {
     <>
       <FAQSchema faqs={investmentFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
+      <PageHero
+          imageKey="hero-investment"
+          title="Las Vegas Investment Properties"
+        />
+
+      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
             <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
               Berkshire Hathaway HomeServices Nevada Properties
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Las Vegas Investment Properties
-            </h1>
             <p className="text-xl text-slate-600">
               No state income tax, strong appreciation, and excellent rental yields. Discover why
               investors choose Las Vegas—with guidance from{" "}

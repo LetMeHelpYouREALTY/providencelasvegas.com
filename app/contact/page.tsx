@@ -12,6 +12,8 @@ import { getRelatedPages } from "@/lib/related-pages";
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
+import PageHero from "@/components/media/PageHero";
+import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
   title: "Contact | Providence Real Estate | Providence Las Vegas",
@@ -25,6 +27,7 @@ export const metadata: Metadata = {
     "Providence Las Vegas realtor contact",
     "schedule Providence Las Vegas real estate appointment",
   ],
+  ...pageImageMetadata("hero-contact"),
 };
 
 const contactSchema = {
@@ -33,7 +36,7 @@ const contactSchema = {
   mainEntity: {
     "@type": "RealEstateAgent",
     name: "Providence Real Estate",
-    telephone: "+1-702-744-2993",
+    telephone: "+17027442993",
     email: "DrDuffy@ProvidenceLasVegas.com",
     address: {
       "@type": "PostalAddress",
@@ -57,33 +60,28 @@ export default function ContactPage() {
       />
       <FAQSchema faqs={contactFAQs} />
       <Navbar />
-      <main className="pt-24 pb-16">
-        <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="text-center mb-12">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+      <main className="pb-16">
+        <PageHero
+          imageKey="hero-contact"
+          badge={
+            <div className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
               Providence Real Estate
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6">
-              Contact Providence Real Estate
-            </h1>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto mb-6">
-              Questions about Providence Las Vegas real estate? Your{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> Providence Las Vegas expert is
-              here to help. Schedule an appointment or reach out directly.
-            </p>
-            <a
-              href={realscoutUrls.searchContact}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors"
-            >
-              <Search className="h-5 w-5" />
-              Search Providence Homes
-            </a>
-          </div>
-
-          <RealScoutListings />
+          }
+          title="Contact Providence Real Estate"
+          subtitle="Questions about Providence Las Vegas real estate? Call, get directions, or schedule a visit. Office at 7181 N Hualapai Way #135, Las Vegas, NV 89166."
+        >
+          <a
+            href={realscoutUrls.searchContact}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 bg-white text-blue-700 no-underline hover:bg-blue-50 px-6 py-3 rounded-lg font-semibold"
+          >
+            <Search className="h-5 w-5" />
+            Search Providence Homes
+          </a>
+        </PageHero>
+        <div className="container mx-auto px-4 pt-12">
 
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info & Map */}
