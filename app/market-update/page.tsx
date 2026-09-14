@@ -71,12 +71,12 @@ export default function MarketUpdatePage() {
       />
       <FAQSchema faqs={marketUpdateFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-market"
           title="Berkshire Hathaway HomeServices Las Vegas Market Update"
+          subtitle="Weekly Providence and valley context. September 2026 figures below; call for a neighborhood CMA."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-4xl mx-auto mb-6">

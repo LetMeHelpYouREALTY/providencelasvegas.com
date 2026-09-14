@@ -22,6 +22,7 @@ import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "First-Time Home Buyers Las Vegas | Berkshire Hathaway HomeServices",
@@ -45,12 +46,12 @@ export default function FirstTimeBuyersPage() {
     <>
       <FAQSchema faqs={firstTimeBuyersFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-first-time"
           title="Your First Home in Las Vegas Starts Here"
+          subtitle="Down payment assistance, builder incentives, and step-by-step guidance for first-time Providence buyers."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -85,9 +86,10 @@ export default function FirstTimeBuyersPage() {
 
           {/* Financing Options */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              First-Time Buyer Financing Options
-            </h2>
+            <SectionMedia
+              imageKey="section-financing"
+              heading="First-Time Buyer Financing Options"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 text-center">
                 <div className="bg-blue-100 w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -199,7 +201,7 @@ export default function FirstTimeBuyersPage() {
                   </li>
                   <li className="flex items-center">
                     <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                    Family-friendly
+                    Parks and recreation nearby
                   </li>
                 </ul>
                 <Link
@@ -213,7 +215,7 @@ export default function FirstTimeBuyersPage() {
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-bold text-lg text-slate-900">Centennial Hills</h3>
-                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Top Schools</span>
+                  <span className="bg-purple-100 text-purple-700 px-2 py-1 rounded text-xs font-semibold">Northwest Las Vegas</span>
                 </div>
                 <div className="text-2xl font-bold text-blue-600 mb-2">$398K Median</div>
                 <p className="text-slate-600 text-sm mb-4">
@@ -445,7 +447,7 @@ export default function FirstTimeBuyersPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

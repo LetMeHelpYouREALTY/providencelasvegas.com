@@ -10,6 +10,7 @@ import { getRelatedPages } from "@/lib/related-pages";
 import { officeInfo, gbpUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 const DirectionsMap = dynamic(
   () =>
@@ -63,9 +64,10 @@ export default function DirectionsPage() {
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-              Office Location & Hours
-            </h2>
+            <SectionMedia
+              imageKey="section-office"
+              heading="Office Location & Hours"
+            />
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
               <div className="bg-slate-50 rounded-xl p-6">
                 <h3 className="font-bold text-slate-900 mb-3 flex items-center gap-2">

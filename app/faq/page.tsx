@@ -187,21 +187,17 @@ export default function FAQPage() {
       {/* Combined JSON-LD Schema: Breadcrumb + WebPage + FAQPage (all categories) */}
       <SchemaScript schema={pageSchemas} id="faq-page-schema" />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-faq"
           title="Frequently Asked Questions"
+          subtitle="Answers about buying, selling, and working with Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties in Providence Las Vegas."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
-          {/* Hero */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Nevada Properties
-            </div>
+          {/* FAQ intro */}
+          <div className="max-w-4xl mx-auto text-center mb-12 pt-8">
             <p className="text-xl text-slate-600">
-              Everything you need to know about working with{" "}
-              <strong>Berkshire Hathaway HomeServices</strong> in Las Vegas
+              Typical questions from Providence homebuyers and sellers. Call (702) 744-2993 if you need a specific answer.
             </p>
           </div>
 
@@ -247,7 +243,7 @@ export default function FAQPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

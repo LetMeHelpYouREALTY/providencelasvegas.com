@@ -17,9 +17,9 @@ import { pageImageMetadata } from "@/lib/images";
 export const revalidate = 86400;
 
 export const metadata: Metadata = {
-  title: "Las Vegas Real Estate Market Report January 2026 | Berkshire Hathaway HomeServices",
+  title: "Las Vegas Real Estate Market Report September 2026 | Berkshire Hathaway HomeServices",
   description:
-    "Get the latest Las Vegas real estate market statistics for January 2026. Median prices, days on market, inventory levels, and expert analysis from Berkshire Hathaway HomeServices Nevada Properties.",
+    "September 2026 Las Vegas real estate snapshot: Southern Nevada sold median $475,000 and ZIP 89166 list prices. Analysis from Providence Real Estate, Berkshire Hathaway HomeServices Nevada Properties.",
   keywords: [
     "Las Vegas real estate market",
     "Las Vegas home prices 2026",
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 const reportSchema = {
   "@context": "https://schema.org",
   "@type": "Report",
-  name: "Las Vegas Real Estate Market Report - January 2026",
+  name: "Las Vegas Real Estate Market Report - September 2026",
   author: {
     "@type": "RealEstateAgent",
     name: "Providence Real Estate",
@@ -64,21 +64,16 @@ export default function MarketReportPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(reportSchema) }}
       />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-market"
           title="Las Vegas Real Estate Market Report"
+          subtitle="September 2026 snapshot: Southern Nevada sold median and ZIP 89166 list prices, with a CMA available for any Providence neighborhood."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
-          {/* Hero Section */}
-          <div className="max-w-4xl mx-auto text-center mb-16">
-            <div className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-              Berkshire Hathaway HomeServices Market Intelligence
-            </div>
+          <div className="max-w-4xl mx-auto text-center mb-10 pt-8">
             <p className="text-xl text-slate-600">
-              January 2026 | Expert analysis from{" "}
-              <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>
+              {marketStats.lastUpdated} | {marketStats.sourceLabel}
             </p>
           </div>
 
@@ -87,38 +82,31 @@ export default function MarketReportPage() {
           {/* Key Stats Overview - from site-config marketStats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
             <h2 className="text-2xl font-bold mb-8 text-center">
-              Las Vegas Market Snapshot | {marketStats.lastUpdated}
+              Market Snapshot | {marketStats.lastUpdated}
             </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.lasVegas.medianPriceFormatted}</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingUp className="h-4 w-4 mr-1" />
+                <div className="text-slate-300 text-sm">Southern Nevada median sold</div>
+                <div className="flex items-center justify-center mt-1 text-amber-300 text-sm">
+                  <TrendingDown className="h-4 w-4 mr-1" />
                   {marketStats.lasVegas.yearOverYearChange} YoY
                 </div>
               </div>
               <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.lasVegas.daysOnMarket}</div>
-                <div className="text-slate-300 text-sm">Days on Market</div>
-                <div className="flex items-center justify-center mt-1 text-green-400 text-sm">
-                  <TrendingDown className="h-4 w-4 mr-1" />
-                  -3 days
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.lasVegas.activeListings.toLocaleString()}</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
-                <div className="flex items-center justify-center mt-1 text-yellow-400 text-sm">
-                  +12% YoY
-                </div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.lasVegas.inventoryMonths}</div>
-                <div className="text-slate-300 text-sm">Months Inventory</div>
+                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.zip89166.medianListPriceFormatted}</div>
+                <div className="text-slate-300 text-sm">89166 median list</div>
                 <div className="flex items-center justify-center mt-1 text-slate-400 text-sm">
-                  Seller's Market
+                  Asking price
                 </div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.zip89166.daysOnMarket}</div>
+                <div className="text-slate-300 text-sm">89166 median list DOM</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.zip89166.activeListings.toLocaleString()}</div>
+                <div className="text-slate-300 text-sm">89166 active listings</div>
               </div>
             </div>
           </section>
@@ -131,45 +119,24 @@ export default function MarketReportPage() {
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
-                  area: "Las Vegas (Overall)",
+                  area: "Southern Nevada (sold)",
                   median: marketStats.lasVegas.medianPriceFormatted,
                   change: marketStats.lasVegas.yearOverYearChange,
-                  dom: marketStats.lasVegas.daysOnMarket,
-                  trend: "up",
+                  dom: "GLVAR Aug 2026",
+                  trend: "down",
                 },
                 {
-                  area: "Henderson",
-                  median: marketStats.henderson.medianPriceFormatted,
-                  change: marketStats.henderson.yearOverYearChange,
-                  dom: marketStats.henderson.daysOnMarket,
-                  trend: "up",
+                  area: "ZIP 89166 (list)",
+                  median: marketStats.zip89166.medianListPriceFormatted,
+                  change: "Asking",
+                  dom: `${marketStats.zip89166.daysOnMarket} list DOM`,
+                  trend: "down",
                 },
                 {
-                  area: "Summerlin",
-                  median: marketStats.summerlin.medianPriceFormatted,
-                  change: marketStats.summerlin.yearOverYearChange,
-                  dom: marketStats.summerlin.daysOnMarket,
-                  trend: "up",
-                },
-                {
-                  area: "North Las Vegas",
-                  median: "$385,000",
-                  change: "+3.2%",
-                  dom: 32,
-                  trend: "up",
-                },
-                {
-                  area: "Southern Highlands",
-                  median: "$750,000",
-                  change: "+7.2%",
-                  dom: 35,
-                  trend: "up",
-                },
-                {
-                  area: "Luxury ($1M+)",
-                  median: marketStats.luxury.medianPriceFormatted,
-                  change: "+8.5%",
-                  dom: marketStats.luxury.daysOnMarket,
+                  area: "Providence neighborhoods",
+                  median: "CMA on request",
+                  change: "Call (702) 744-2993",
+                  dom: "27 HOA villages",
                   trend: "up",
                 },
               ].map((item) => (
@@ -192,8 +159,8 @@ export default function MarketReportPage() {
                       </span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-slate-600">Days on Market</span>
-                      <span className="font-semibold text-slate-900">{item.dom} days</span>
+                      <span className="text-slate-600">Context</span>
+                      <span className="font-semibold text-slate-900">{item.dom}</span>
                     </div>
                   </div>
                 </div>
@@ -208,11 +175,7 @@ export default function MarketReportPage() {
             </h2>
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-6">
-                "The Las Vegas market remains strong heading into 2026. We're seeing continued
-                demand from California relocators and remote workers, but the days of 20 offers on
-                every listing are behind us. Buyers finally have some negotiating power, while
-                sellers are still achieving solid appreciation. It's a balanced market that rewards
-                proper pricing and preparation."
+                "Southern Nevada's August 2026 sold median is $475,000, down 1% from a year earlier. ZIP 89166 list prices sit higher than the valley sold median, so Providence pricing needs a neighborhood CMA—not a valley average."
               </blockquote>
               <cite className="text-slate-900 font-semibold">
                 — Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties
@@ -238,10 +201,10 @@ export default function MarketReportPage() {
                   For Sellers
                 </h3>
                 <ul className="space-y-2 text-slate-600">
-                  <li>• Still a seller's market ({marketStats.lasVegas.inventoryMonths} months inventory)</li>
-                  <li>• Proper pricing is crucial</li>
-                  <li>• {marketStats.lasVegas.yearOverYearChange} appreciation in past year</li>
-                  <li>• Well-priced homes sell in under {marketStats.lasVegas.daysOnMarket} days</li>
+                  <li>• 89166 has {marketStats.zip89166.activeListings} active listings</li>
+                  <li>• Accurate pricing matters more when list prices sit above sold medians</li>
+                  <li>• Valley sold median is {marketStats.lasVegas.yearOverYearChange} year over year</li>
+                  <li>• 89166 median list time is {marketStats.zip89166.daysOnMarket} days</li>
                 </ul>
               </div>
             </div>
@@ -323,7 +286,7 @@ export default function MarketReportPage() {
         {/* Data sources and last updated */}
         <section className="mt-12 max-w-4xl mx-auto px-4" aria-label="Data sources">
           <p className="text-sm text-slate-600 mb-2">
-            <strong>Data sources:</strong> Data from Las Vegas REALTORS® (LVR) MLS, {marketStats.lastUpdated}; neighborhood figures from local housing authority and broker analysis. Statistics are subject to change.
+            <strong>Data sources:</strong> {marketStats.sourceLabel} Neighborhood sold prices require a CMA from MLS. Figures change; call (702) 744-2993 for a current neighborhood read.
           </p>
           <p className="text-center text-sm text-slate-500 mt-6">Last Updated: {marketStats.lastUpdated}</p>
         </section>

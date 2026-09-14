@@ -63,12 +63,12 @@ export default function FiftyFiveCommunitiesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-55-plus"
           title="Age-Restricted Options Near Providence"
+          subtitle="Nearby Sun City Aliante and Del Webb options, plus single-story low-maintenance Providence homes."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto mb-6">
             <nav className="text-sm text-slate-500">
@@ -231,7 +231,7 @@ export default function FiftyFiveCommunitiesPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

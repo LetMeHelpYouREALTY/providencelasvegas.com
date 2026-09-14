@@ -63,12 +63,12 @@ export default function MarketInsightsPage() {
       />
       <FAQSchema faqs={marketInsightsFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-market-insights"
           title="Las Vegas Market Insights"
+          subtitle="Economic drivers and 89166 list-versus-sold context for Providence buyers and sellers."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -340,7 +340,7 @@ export default function MarketInsightsPage() {
                   </span>
                 </div>
                 <p className="text-slate-600 text-sm mb-3">
-                  Family-friendly community with the valley's largest park. New construction
+                  Master-planned community with the valley's largest park. New construction
                   competing with resales. Solid appreciation.
                 </p>
                 <div className="text-sm text-slate-500">
@@ -467,7 +467,7 @@ export default function MarketInsightsPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

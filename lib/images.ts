@@ -42,6 +42,8 @@ export type SiteImageKey =
   | "neighborhood-standard"
   | "neighborhood-single-story"
   | "neighborhood-parkside"
+  | "neighborhood-desert"
+  | "neighborhood-culdesac"
   | "og-providence-default"
   | "section-parks"
   | "section-neighborhoods"
@@ -50,7 +52,10 @@ export type SiteImageKey =
   | "section-why-choose"
   | "section-reviews"
   | "section-faq"
-  | "section-cta";
+  | "section-cta"
+  | "section-office"
+  | "section-financing"
+  | "section-core-services";
 
 export type SiteImage = {
   key: SiteImageKey;
@@ -313,6 +318,22 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
     width: 1920,
     height: 1080,
   },
+  "neighborhood-desert": {
+    key: "neighborhood-desert",
+    heading: "Desert-View Providence Neighborhoods",
+    alt: "Two-story stucco homes with desert landscaping and mountain views in Providence Las Vegas",
+    file: "neighborhood-desert.png",
+    width: 1920,
+    height: 1080,
+  },
+  "neighborhood-culdesac": {
+    key: "neighborhood-culdesac",
+    heading: "Cul-de-Sac Providence Neighborhoods",
+    alt: "Cul-de-sac of tile-roof homes in the Providence Las Vegas master-planned community",
+    file: "neighborhood-culdesac.png",
+    width: 1920,
+    height: 1080,
+  },
   "og-providence-default": {
     key: "og-providence-default",
     heading: "Providence Real Estate | Homes for Sale in Providence Las Vegas",
@@ -385,6 +406,30 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
     width: 1600,
     height: 1200,
   },
+  "section-office": {
+    key: "section-office",
+    heading: "Office Location & Hours",
+    alt: "Northwest Las Vegas commercial plaza near Providence Real Estate on N Hualapai Way",
+    file: "section-office.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-financing": {
+    key: "section-financing",
+    heading: "First-Time Buyer Financing Options",
+    alt: "Kitchen island with house keys and a calculator for Providence home financing",
+    file: "section-financing.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-core-services": {
+    key: "section-core-services",
+    heading: "Core Real Estate Services",
+    alt: "Floor plans, house keys, and a neighborhood map on a consultation table in Las Vegas",
+    file: "section-core-services.png",
+    width: 1600,
+    height: 1200,
+  },
 };
 
 const PREMIUM_NEIGHBORHOODS = new Set([
@@ -408,11 +453,21 @@ const PARKSIDE_NEIGHBORHOODS = new Set([
   "hearthstone-brookstone",
 ]);
 
+const DESERT_VIEW_NEIGHBORHOODS = new Set([
+  "verada-view",
+  "northern-terrace",
+  "west-end",
+  "windimere",
+  "somerset",
+  "emerson",
+]);
+
 export function neighborhoodImageKey(slug: string): SiteImageKey {
   if (PREMIUM_NEIGHBORHOODS.has(slug)) return "neighborhood-premium";
   if (SINGLE_STORY_NEIGHBORHOODS.has(slug)) return "neighborhood-single-story";
   if (PARKSIDE_NEIGHBORHOODS.has(slug)) return "neighborhood-parkside";
-  return "neighborhood-standard";
+  if (DESERT_VIEW_NEIGHBORHOODS.has(slug)) return "neighborhood-desert";
+  return "neighborhood-culdesac";
 }
 
 function gitSrc(file: string): string {

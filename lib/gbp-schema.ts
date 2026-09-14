@@ -234,7 +234,7 @@ export const gbpFAQs = [
 export function generateLocalBusinessSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
+    "@type": ["RealEstateAgent", "LocalBusiness"],
     "@id": "https://www.providencelasvegas.com/#organization",
     name: businessInfo.name,
     image: [
@@ -255,6 +255,7 @@ export function generateLocalBusinessSchema() {
       latitude: businessInfo.geo.latitude,
       longitude: businessInfo.geo.longitude,
     },
+    hasMap: "https://maps.app.goo.gl/mDMRBtoF7WSJSdkZ7",
     openingHoursSpecification: gbpOpeningHoursSpecification,
     areaServed: businessInfo.serviceAreas.map((area) => ({
       "@type": "City",

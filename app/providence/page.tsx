@@ -16,6 +16,8 @@ import { getRelatedPages } from "@/lib/related-pages";
 import { getExternalResources } from "@/lib/external-resources";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import NeighborhoodCard from "@/components/neighborhoods/NeighborhoodCard";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Providence Las Vegas Community | Dr. Jan Duffy, REALTOR®",
@@ -65,7 +67,7 @@ export default function ProvidencePage() {
             <section className="mt-8 max-w-3xl" aria-label="Providence at a glance">
               <h2 className="text-xl font-bold text-slate-900 mb-4">Providence at a Glance</h2>
               <p className="text-slate-700 mb-3 text-sm">
-                Quick facts about Providence Las Vegas. Las Vegas Valley median home price ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted}; {marketStats.lasVegas.daysOnMarket} days on market.
+                Quick facts about Providence Las Vegas. Southern Nevada median sold ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted} ({marketStats.lasVegas.yearOverYearChange} YoY). ZIP 89166 median list: {marketStats.zip89166.medianListPriceFormatted}; {marketStats.zip89166.daysOnMarket} days on market (list).
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-slate-200 rounded-lg">
@@ -130,25 +132,15 @@ export default function ProvidencePage() {
 
         <section className="py-12 md:py-16 bg-slate-50">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-              The 27 Neighborhoods of Providence Las Vegas
-            </h2>
-            <p className="text-slate-700 mb-4 max-w-2xl">
-              Providence Las Vegas is comprised of 27 unique neighborhoods, each with its own
-              character and amenities. All Providence neighborhoods have access to Knickerbocker
-              Park, Huckleberry Park, and The Promenade. Some neighborhoods have private entry
-              gates, community pools, and other amenities.
-            </p>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="The 27 Neighborhoods of Providence Las Vegas"
+              subtitle="Each neighborhood has its own streetscape. All share Knickerbocker Park, Huckleberry Park, and The Promenade."
+            />
             <h3 className="text-xl font-semibold text-slate-900 mb-4">Explore Each Providence Las Vegas Neighborhood</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {providenceNeighborhoods.map((n) => (
-                <Link
-                  key={n.slug}
-                  href={`/providence/neighborhoods/${n.slug}`}
-                  className="bg-white hover:bg-blue-50 rounded-lg p-4 text-slate-800 hover:text-blue-600 font-medium transition-colors border border-slate-200"
-                >
-                  {n.name}
-                </Link>
+                <NeighborhoodCard key={n.slug} slug={n.slug} name={n.name} />
               ))}
             </div>
           </div>

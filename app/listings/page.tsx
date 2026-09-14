@@ -82,8 +82,8 @@ const neighborhoods = providenceNeighborhoods.slice(0, 6).map((n) => ({
   name: n.name,
   slug: n.slug,
   description: "Providence Las Vegas neighborhood with access to three community parks",
-  medianPrice: marketStats.lasVegas.medianPriceFormatted,
-  daysOnMarket: marketStats.lasVegas.daysOnMarket,
+  medianPrice: marketStats.zip89166.medianListPriceFormatted,
+  daysOnMarket: marketStats.zip89166.daysOnMarket,
 }));
 
 export default function ListingsPage() {
@@ -435,7 +435,7 @@ export default function ListingsPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

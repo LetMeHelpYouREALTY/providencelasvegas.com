@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import Image from "next/image";
 import { Bed, Bath, Square, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import GbpActionBar from "@/components/gbp/GbpActionBar";
 import type { Metadata } from "next";
 import { siteConfig, realscoutUrls } from "@/lib/site-config";
 import { generateBreadcrumbSchema, generateRealEstateListingSchema } from "@/lib/schema";
@@ -105,7 +106,11 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               <MapPin className="h-5 w-5 mr-2" />
               {property.location}
             </div>
-            <div className="text-3xl font-bold text-blue-600">{property.price}</div>
+            <div className="text-3xl font-bold text-blue-600 mb-4">{property.price}</div>
+            <GbpActionBar variant="onLight" />
+            <p className="mt-3 text-sm text-slate-500">
+              Providence Real Estate | 7181 N Hualapai Way #135, Las Vegas, NV 89166 | (702) 744-2993
+            </p>
           </div>
 
           {/* Main Image */}

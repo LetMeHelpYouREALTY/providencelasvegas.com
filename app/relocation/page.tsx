@@ -120,12 +120,12 @@ export default function RelocationPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(relocationSchema) }}
       />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-relocation"
           title="Relocating to Las Vegas?"
+          subtitle="Virtual tours, HOA guidance, and a nationwide BHHS referral network for a Providence landing."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -423,7 +423,7 @@ export default function RelocationPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

@@ -194,7 +194,7 @@ export const relatedPagesMap = {
     },
     {
       title: "Auburn & Bradford Providence",
-      description: "Family-friendly Providence neighborhood with great schools",
+      description: "Providence neighborhood with HOA streets and park access",
       href: "/providence/neighborhoods/auburn-bradford",
     },
   ],
@@ -259,7 +259,7 @@ export const relatedPagesMap = {
     },
     {
       title: "Auburn & Bradford Providence",
-      description: "Family-friendly Providence neighborhood",
+      description: "Providence neighborhood with park access and mixed floor plans",
       href: "/providence/neighborhoods/auburn-bradford",
     },
     {

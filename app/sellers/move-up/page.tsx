@@ -41,12 +41,12 @@ export default function MoveUpSellerPage() {
     <>
       <FAQSchema faqs={moveUpFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-move-up"
           title="Ready for Your Next Chapter?"
+          subtitle="Use Providence equity to buy the next home without a gap in representation."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -387,7 +387,7 @@ export default function MoveUpSellerPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

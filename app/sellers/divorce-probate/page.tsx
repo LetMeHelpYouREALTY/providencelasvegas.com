@@ -41,12 +41,12 @@ export default function DivorceProbatePage() {
     <>
       <FAQSchema faqs={divorceProbateFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-divorce-probate"
           title="Difficult Situations, Expert Guidance"
+          subtitle="Divorce, probate, and estate sales handled with discretion in Providence Las Vegas."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -506,7 +506,7 @@ export default function DivorceProbatePage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

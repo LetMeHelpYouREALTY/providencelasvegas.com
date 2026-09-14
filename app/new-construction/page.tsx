@@ -113,12 +113,12 @@ export default function NewConstructionPage() {
     <>
       <FAQSchema faqs={newConstructionFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-new-construction"
           title="Providence New Construction Homes"
+          subtitle="Free buyer representation, contract review, and builder incentive help across Providence neighborhoods."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -502,7 +502,7 @@ export default function NewConstructionPage() {
           </section>
         </div>
         <div className="text-center text-sm text-slate-500 mt-8">
-          Last Updated: January 2026 | Incentives subject to change
+          Last Updated: September 2026 | Incentives subject to change
         </div>
       </main>
       <Footer />

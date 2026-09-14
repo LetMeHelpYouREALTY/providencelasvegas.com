@@ -43,12 +43,12 @@ export default function RelocationPage() {
     <>
       <FAQSchema faqs={relocationFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-relocation"
           title="New Opportunity? We Handle Your Sale."
+          subtitle="Sell your Providence Las Vegas home while you focus on the next city. We coordinate both ends of the move."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -512,7 +512,7 @@ export default function RelocationPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

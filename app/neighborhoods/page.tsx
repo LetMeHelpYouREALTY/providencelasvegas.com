@@ -10,6 +10,8 @@ import { providenceNeighborhoods, providenceCommunity } from "@/lib/site-config"
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import NeighborhoodCard from "@/components/neighborhoods/NeighborhoodCard";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "All 27 Providence Neighborhoods | Providence Las Vegas Real Estate",
@@ -48,9 +50,10 @@ export default function NeighborhoodsPage() {
 
           {/* Community Parks */}
           <section className="mb-12 max-w-4xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
-              Community Parks in Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-parks"
+              heading="Community Parks in Providence Las Vegas"
+            />
             <p className="text-slate-600 text-center mb-4">
               All Providence Las Vegas residents have access to three community parks:
             </p>
@@ -94,16 +97,7 @@ export default function NeighborhoodsPage() {
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {providenceNeighborhoods.map((n) => (
-                <Link
-                  key={n.slug}
-                  href={`/providence/neighborhoods/${n.slug}`}
-                  className="bg-white border border-slate-200 rounded-lg p-4 hover:shadow-md hover:border-blue-300 transition-all group text-center"
-                >
-                  <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    {n.name}
-                  </h3>
-                  <p className="text-sm text-slate-500 mt-1">Providence</p>
-                </Link>
+                <NeighborhoodCard key={n.slug} slug={n.slug} name={n.name} />
               ))}
             </div>
             <div className="text-center mt-8 flex flex-wrap justify-center gap-4">
@@ -171,7 +165,7 @@ export default function NeighborhoodsPage() {
 
         {/* Last Updated */}
         <div className="text-center text-sm text-slate-500 mt-8 pb-8">
-          Last Updated: January 2026 | Providence Las Vegas
+          Last Updated: September 2026 | Providence Las Vegas
         </div>
       </main>
       <Footer />

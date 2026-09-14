@@ -137,7 +137,7 @@ Get a free home valuation from Dr. Jan Duffy: (702) 744-2993`,
 
 🏔️ Oxford Commons - Premier Providence neighborhood, custom upgrades
 ⛰️ Saratoga Highlands - Upscale floor plans, desirable lots
-🌳 Auburn & Bradford - Family-friendly, great schools
+🌳 Auburn & Bradford - Mature landscaping, mixed floor plans
 
 Why buyers choose premium Providence:
 ✅ No state income tax

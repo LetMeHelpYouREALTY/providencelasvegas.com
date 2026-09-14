@@ -146,15 +146,25 @@ export const providenceNeighborhoods = [
 
 // Market Statistics (Updated January 2026)
 export const marketStats = {
-  lastUpdated: "January 2026",
+  lastUpdated: "September 2026",
+  sourceLabel:
+    "Southern Nevada sold median: Las Vegas REALTORS (GLVAR) August 2026 closings, reported Sept 9, 2026. ZIP 89166 figures are median asking prices, not sold prices.",
   lasVegas: {
-    medianPrice: 450000,
-    medianPriceFormatted: "$450,000",
-    yearOverYearChange: "+4.2%",
-    daysOnMarket: 28,
-    activeListings: 4850,
+    medianPrice: 475000,
+    medianPriceFormatted: "$475,000",
+    yearOverYearChange: "-1.0%",
+    daysOnMarket: 25,
+    activeListings: 306,
     closedSales: 2340,
     inventoryMonths: 2.1,
+    soldLabel: "Southern Nevada single-family median sold (Aug 2026)",
+  },
+  zip89166: {
+    medianListPrice: 544500,
+    medianListPriceFormatted: "$544,500",
+    activeListings: 306,
+    daysOnMarket: 25,
+    listLabel: "ZIP 89166 median list price (Sept 2026)",
   },
   henderson: {
     medianPrice: 485000,

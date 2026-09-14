@@ -113,7 +113,7 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
             <section className="mt-6 max-w-3xl" aria-label="Market snapshot">
               <h2 className="text-xl font-bold text-slate-900 mb-3">Providence & Las Vegas Market Snapshot</h2>
               <p className="text-slate-700 text-sm mb-2">
-                {neighborhood.name} is one of {providenceCommunity.neighborhoodCount} Providence neighborhoods; Providence has {providenceCommunity.homeCount} homes and {providenceCommunity.parks.length} community parks. Las Vegas Valley median home price ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted}; {marketStats.lasVegas.daysOnMarket} days on market.
+                {neighborhood.name} is one of {providenceCommunity.neighborhoodCount} Providence neighborhoods; Providence has {providenceCommunity.homeCount} homes and {providenceCommunity.parks.length} community parks. Southern Nevada median sold ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted}. ZIP 89166 median list: {marketStats.zip89166.medianListPriceFormatted}; {marketStats.zip89166.daysOnMarket} days on market (list).
               </p>
               <ul className="text-slate-700 text-sm list-disc list-inside space-y-1">
                 <li>Providence HOA due: {providenceCommunity.hoaAssessmentDueDates}</li>

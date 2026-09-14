@@ -86,7 +86,7 @@ export const socialProfiles = {
 export function generateRealEstateAgentSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
+    "@type": ["RealEstateAgent", "LocalBusiness"],
     "@id": `${BASE_URL}#organization`,
     name: "Providence Real Estate",
     alternateName: [

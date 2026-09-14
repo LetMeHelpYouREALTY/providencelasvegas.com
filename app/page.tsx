@@ -13,7 +13,8 @@ import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
 import type { Metadata } from "next";
 import { Phone } from "lucide-react";
-import { providenceNeighborhoods, providenceCommunity, realscoutUrls } from "@/lib/site-config";
+import { providenceNeighborhoods, providenceCommunity, realscoutUrls, marketStats } from "@/lib/site-config";
+import NeighborhoodCard from "@/components/neighborhoods/NeighborhoodCard";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { pageImageMetadata } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
@@ -133,27 +134,31 @@ export default function Home() {
               imageKey="section-market-stats"
               heading="Providence Real Estate Market"
               invert
-              subtitle="Current market data for Providence Las Vegas and North Las Vegas."
+              subtitle="Sourced figures for Southern Nevada sold prices and ZIP 89166 list prices. Neighborhood CMAs available on request."
             />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">$450K</div>
-                <div className="text-slate-300 text-sm">Median Home Price</div>
-                <div className="text-green-400 text-sm">+4.2% YoY</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">$475K</div>
+                <div className="text-slate-300 text-sm">Southern Nevada median sold</div>
+                <div className="text-amber-300 text-sm">-1.0% YoY (Aug 2026)</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">28</div>
-                <div className="text-slate-300 text-sm">Avg Days on Market</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">$544.5K</div>
+                <div className="text-slate-300 text-sm">89166 median list</div>
+                <div className="text-slate-400 text-sm">Asking, not sold</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">4,850</div>
-                <div className="text-slate-300 text-sm">Active Listings</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">25</div>
+                <div className="text-slate-300 text-sm">89166 median list DOM</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">2.1</div>
-                <div className="text-slate-300 text-sm">Months Inventory</div>
+                <div className="text-4xl md:text-5xl font-bold text-blue-400 mb-2">306</div>
+                <div className="text-slate-300 text-sm">89166 active listings</div>
               </div>
             </div>
+            <p className="text-center text-slate-400 text-xs mt-6 max-w-3xl mx-auto">
+              {marketStats.sourceLabel}
+            </p>
             <div className="text-center mt-8">
               <Link
                 href="/market-report"
@@ -198,16 +203,7 @@ export default function Home() {
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 max-w-6xl mx-auto">
               {providenceNeighborhoods.map((area) => (
-                <Link
-                  key={area.slug}
-                  href={`/providence/neighborhoods/${area.slug}`}
-                  className="bg-slate-50 hover:bg-blue-50 rounded-lg p-4 text-center transition-colors group"
-                >
-                  <h3 className="font-semibold text-slate-900 group-hover:text-blue-600">
-                    {area.name}
-                  </h3>
-                  <p className="text-sm text-slate-500">Providence</p>
-                </Link>
+                <NeighborhoodCard key={area.slug} slug={area.slug} name={area.name} />
               ))}
             </div>
             <div className="text-center mt-8 flex flex-wrap justify-center gap-4">
@@ -274,7 +270,7 @@ export default function Home() {
 
         {/* Last Updated */}
         <div className="bg-slate-100 py-4 text-center text-sm text-slate-500">
-          Last Updated: January 2026 | Providence Real Estate | Providence, North Las Vegas
+          Last Updated: September 2026 | Providence Real Estate | Providence, North Las Vegas
         </div>
       </main>
       <Footer />

@@ -37,12 +37,13 @@ export default function ProvidenceHOAInfoPage() {
       <FAQSchema faqs={hoaFAQs} />
       <Navbar />
       <Breadcrumbs items={[{ label: "Providence Las Vegas", href: "/providence" }, { label: "HOA Information" }]} />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-hoa"
           title="Providence HOA Information"
+          subtitle={`The Providence Master HOA oversees all ${providenceCommunity.neighborhoodCount} Providence Las Vegas neighborhoods. Resale certificates, Design Review, and assessment dates keep your transaction on track.`}
         />
-      <main className="pb-16">
-        <div className="container mx-auto px-4 max-w-4xl">
+        <div className="container mx-auto px-4 max-w-4xl pt-10">
           <p className="text-lg text-slate-700 mb-8">
             The Providence Master HOA oversees all {providenceCommunity.neighborhoodCount} Providence Las Vegas
             neighborhoods. Whether you&apos;re buying or selling, understanding HOA requirements, resale

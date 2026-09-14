@@ -25,6 +25,7 @@ import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Services | Providence Real Estate | Providence Las Vegas",
@@ -179,12 +180,12 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-services"
           title="Providence Las Vegas Real Estate Services"
+          subtitle="Buy, sell, or relocate in Providence Las Vegas with Dr. Jan Duffy, Berkshire Hathaway HomeServices Nevada Properties."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -224,15 +225,11 @@ export default function ServicesPage() {
 
           {/* Core Services Section */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Core Real Estate Services
-            </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              These foundational services cover the majority of real estate transactions in Providence. 
-              Each service is delivered with the professionalism, resources, and ethical standards 
-              that define Berkshire Hathaway HomeServices—the only real estate brand backed by 
-              Warren Buffett's Berkshire Hathaway Inc.
-            </p>
+            <SectionMedia
+              imageKey="section-core-services"
+              heading="Core Real Estate Services"
+              subtitle="Buying, selling, premium homes, new construction, and relocation across Providence Las Vegas."
+            />
             <div className="grid md:grid-cols-2 gap-6">
               {coreServices.map((service) => {
                 const Icon = service.icon;
@@ -533,7 +530,7 @@ export default function ServicesPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

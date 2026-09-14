@@ -18,12 +18,12 @@ export default function SiteMapPage() {
   return (
     <>
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-services"
           title="Site Map"
+          subtitle="Every Providence Las Vegas page: neighborhoods, services, maps, and contact."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4 max-w-4xl">
           <p className="text-slate-600 mb-12">
             Explore all pages on Providence Las Vegas Real Estate. Dr. Jan Duffy serves all 27 Providence neighborhoods.

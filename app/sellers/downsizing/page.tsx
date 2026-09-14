@@ -43,12 +43,12 @@ export default function DownsizingPage() {
     <>
       <FAQSchema faqs={downsizingFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-downsizing"
           title="Simplify. Downsize. Enjoy."
+          subtitle="Extract equity and move into a lower-maintenance Providence or northwest Las Vegas home with Dr. Jan Duffy."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Breadcrumb */}
           <div className="max-w-6xl mx-auto mb-6">
@@ -461,7 +461,7 @@ export default function DownsizingPage() {
             </div>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

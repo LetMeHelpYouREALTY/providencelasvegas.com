@@ -77,12 +77,12 @@ export default function InvestmentPropertiesPage() {
     <>
       <FAQSchema faqs={investmentFAQs} />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-investment"
           title="Las Vegas Investment Properties"
+          subtitle="No state income tax and rental demand in northwest Las Vegas. Call (702) 744-2993 for a property-specific analysis."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           {/* Hero */}
           <div className="max-w-4xl mx-auto text-center mb-16">
@@ -437,7 +437,7 @@ export default function InvestmentPropertiesPage() {
         </div>
 
         {/* Last Updated */}
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

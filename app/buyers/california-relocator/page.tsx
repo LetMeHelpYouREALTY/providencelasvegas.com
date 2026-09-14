@@ -59,12 +59,12 @@ export default function CaliforniaRelocatorPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(realEstateAgentSchema) }}
       />
       <Navbar />
+      <main className="pb-16">
       <PageHero
           imageKey="hero-california-relocator"
           title="California to Providence, Las Vegas"
+          subtitle="Master-planned streets, 27 neighborhoods, and $300K–$700K pricing versus $1M+ in many California markets."
         />
-
-      <main className="pb-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto mb-6">
             <nav className="text-sm text-slate-500">
@@ -214,7 +214,7 @@ export default function CaliforniaRelocatorPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>

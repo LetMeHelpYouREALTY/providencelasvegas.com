@@ -67,7 +67,7 @@ const premiumNeighborhoods = [
     slug: "auburn-bradford",
     description:
       "Established Providence neighborhood with mature landscaping and a mix of floor plans. Great value for premium living.",
-    features: ["Mature landscaping", "Varied floor plans", "Established community", "Three parks access"],
+    features: ["Mature landscaping", "Varied floor plans", "HOA-maintained streets", "Three parks access"],
   },
 ];
 
@@ -222,7 +222,7 @@ export default function LuxuryHomesPage() {
             </p>
           </section>
         </div>
-        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: January 2026</div>
+        <div className="text-center text-sm text-slate-500 mt-8">Last Updated: September 2026</div>
       </main>
       <Footer />
     </>
