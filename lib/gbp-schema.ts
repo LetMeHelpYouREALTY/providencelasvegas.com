@@ -210,7 +210,7 @@ export const gbpFAQs = [
   },
   {
     question: "What is the average home price in Providence in 2026?",
-    answer: "As of January 2026, the Providence and North Las Vegas median home price is approximately $450,000, up 4.2% year-over-year. Contact Dr. Jan for current Providence market data. Call (702) 744-2993.",
+    answer: "As of September 2026, the Southern Nevada single-family sold median is $475,000 (GLVAR August closings, -1% YoY). ZIP 89166 median list price is $544,500. Call (702) 744-2993 for a Providence neighborhood CMA.",
   },
   {
     question: "Does Dr. Jan work with first-time home buyers?",

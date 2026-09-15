@@ -229,7 +229,7 @@ export default function NewConstructionPage() {
               <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center">
                   <Calendar className="h-7 w-7 text-green-600 mr-3" />
-                  January 2026 Builder Incentives
+                  Current Builder Incentives
                 </h2>
                 <span className="bg-green-600 text-white px-4 py-1 rounded-full text-sm font-semibold">
                   Limited Time Offers

@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone } from "lucide-react";
+import { Menu, X, Phone, MapPin, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { realscoutUrls } from "@/lib/site-config";
+import { realscoutUrls, gbpUrls } from "@/lib/site-config";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -76,6 +76,22 @@ export default function Navbar() {
               )
             )}
 
+            <a
+              href={gbpUrls.directions}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm hidden xl:inline"
+            >
+              Directions
+            </a>
+            <a
+              href={gbpUrls.review}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-700 hover:text-blue-600 font-medium transition-colors text-sm hidden xl:inline"
+            >
+              Reviews
+            </a>
             <Button asChild className="bg-blue-600 hover:bg-blue-700">
               <Link href="tel:+17027442993" className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
@@ -147,6 +163,24 @@ export default function Navbar() {
                 ))}
               </div>
 
+              <a
+                href={gbpUrls.directions}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2"><MapPin className="h-4 w-4" /> Directions</span>
+              </a>
+              <a
+                href={gbpUrls.review}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-700 hover:text-blue-600 hover:bg-blue-50 font-medium transition-colors py-2 px-3 rounded"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <span className="inline-flex items-center gap-2"><Star className="h-4 w-4" /> Google Reviews</span>
+              </a>
               <div className="pt-4">
                 <Button asChild className="bg-blue-600 hover:bg-blue-700 w-full">
                   <Link

@@ -27,6 +27,7 @@ import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls, providenceNeighborhoods } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Buy a Providence Home | Providence Las Vegas Real Estate",
@@ -128,9 +129,13 @@ export default function BuyersPage() {
 
           {/* Value Prop */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
+            <SectionMedia
+              imageKey="section-buyers-agent"
+              heading="Why You Need a Buyer's Agent"
+              invert
+            />
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">Why You Need a Buyer's Agent</h2>
                 <p className="text-slate-300 mb-6">
                   Here&apos;s what many buyers don&apos;t know: having your own agent costs you nothing. The
                   seller pays the commission, but the representation is yours.{" "}
@@ -368,29 +373,28 @@ export default function BuyersPage() {
           {/* Market Stats */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <h2 className="text-2xl font-bold mb-4 text-center">
-              Providence Buyer Market Statistics | January 2026
+              Providence Buyer Market Statistics | September 2026
             </h2>
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
-              Understanding the current market helps you make informed decisions about timing, 
-              pricing, and negotiation strategies. Here's a snapshot of what buyers are facing 
-              in the Providence market right now.
+              Southern Nevada sold median is $475,000 (GLVAR August 2026). ZIP 89166 list prices
+              average $544,500. Call (702) 744-2993 for a Providence neighborhood CMA before you write an offer.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">$450K</div>
-                <div className="text-blue-200 text-sm">Median Home Price</div>
+                <div className="text-3xl font-bold mb-1">$475K</div>
+                <div className="text-blue-200 text-sm">Valley median sold</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">4,850</div>
-                <div className="text-blue-200 text-sm">Active Listings</div>
+                <div className="text-3xl font-bold mb-1">$544.5K</div>
+                <div className="text-blue-200 text-sm">89166 median list</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">28 Days</div>
-                <div className="text-blue-200 text-sm">Avg. Days on Market</div>
+                <div className="text-3xl font-bold mb-1">25 Days</div>
+                <div className="text-blue-200 text-sm">89166 list DOM</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold mb-1">+4.2%</div>
-                <div className="text-blue-200 text-sm">Year-Over-Year</div>
+                <div className="text-3xl font-bold mb-1">-1.0%</div>
+                <div className="text-blue-200 text-sm">Valley sold YoY</div>
               </div>
             </div>
           </section>

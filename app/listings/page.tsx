@@ -25,6 +25,7 @@ import { realscoutUrls, providenceNeighborhoods, marketStats } from "@/lib/site-
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const revalidate = 3600;
 
@@ -141,14 +142,11 @@ export default function ListingsPage() {
 
           {/* Popular Searches Section */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Popular Property Searches in Providence
-            </h2>
-            <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              Providence offers 27 neighborhoods across a range of price points. Search premium homes,
-              new construction, or resale inventory across Oxford Commons, Saratoga Highlands, Auburn & Bradford,
-              and every Providence community. Use the tools below or call (702) 744-2993.
-            </p>
+            <SectionMedia
+              imageKey="section-listings-search"
+              heading="Popular Property Searches in Providence"
+              subtitle="Search premium homes, new construction, or resale inventory across Oxford Commons, Saratoga Highlands, Auburn & Bradford, and every Providence community. Call (702) 744-2993."
+            />
             <div className="grid md:grid-cols-3 gap-4">
               {popularSearches.map((search) => (
                 <Link
@@ -177,7 +175,7 @@ export default function ListingsPage() {
               The Providence Las Vegas real estate market offers exceptional value compared to California and 
               other western states. With no state income tax and housing prices 40-60% lower than 
               coastal cities, your dollar stretches further in Southern Nevada. Here's what you can 
-              expect at different price points in the current January 2026 market.
+              expect at different price points in the current September 2026 market.
             </p>
             <div className="space-y-4">
               {priceRanges.map((price, index) => (
@@ -292,27 +290,25 @@ export default function ListingsPage() {
               Providence Real Estate Market Statistics
             </h2>
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              The Providence housing market remains strong heading into 2026, with steady appreciation 
-              and healthy inventory levels. Understanding current market conditions helps buyers 
-              make informed decisions about timing, pricing, and negotiation strategies. Here's a 
-              snapshot of the current Providence market as of January 2026.
+              Southern Nevada sold median is $475,000 (GLVAR August 2026, -1% YoY). ZIP 89166 median
+              list is $544,500 with 25 days on market. Call (702) 744-2993 for a street-level CMA.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">$450K</div>
-                <div className="text-sm text-slate-600">Median Home Price</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">$475K</div>
+                <div className="text-sm text-slate-600">Valley median sold</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">28</div>
-                <div className="text-sm text-slate-600">Avg Days on Market</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">25</div>
+                <div className="text-sm text-slate-600">89166 list DOM</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">4,850</div>
-                <div className="text-sm text-slate-600">Active Listings</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">306</div>
+                <div className="text-sm text-slate-600">89166 active listings</div>
               </div>
               <div className="bg-blue-50 rounded-lg p-6 text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-1">+4.2%</div>
-                <div className="text-sm text-slate-600">Year-Over-Year</div>
+                <div className="text-3xl font-bold text-blue-600 mb-1">-1.0%</div>
+                <div className="text-sm text-slate-600">Valley sold YoY</div>
               </div>
             </div>
           </section>

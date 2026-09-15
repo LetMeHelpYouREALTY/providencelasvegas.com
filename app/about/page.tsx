@@ -11,6 +11,7 @@ import { getFAQsForPage } from "@/lib/faq-library";
 import Image from "next/image";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata, getSiteImage } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 import { 
   Phone, 
   Mail, 
@@ -145,7 +146,10 @@ export default function AboutPage() {
           <section className="mb-16">
             <div className="grid md:grid-cols-2 gap-12 items-start max-w-6xl mx-auto">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Dr. Jan Duffy</h2>
+                <SectionMedia
+                  imageKey="section-why-choose"
+                  heading="Dr. Jan Duffy"
+                />
                 <p className="text-lg text-blue-600 mb-6">
                   REALTOR® | License S.0197614.LLC
                 </p>

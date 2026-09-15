@@ -124,7 +124,7 @@ export default function MoveUpSellerPage() {
                 <div className="flex-grow">
                   <h3 className="font-bold text-slate-900 mb-1">Centennial Hills → Summerlin</h3>
                   <p className="text-slate-600 text-sm">
-                    Upgrade from $450K starter to $650K+ in Downtown Summerlin area. Better schools,
+                    Upgrade from $450K starter to $650K+ in Downtown Summerlin area. Shorter commute,
                     walkable amenities, Red Rock views.
                   </p>
                 </div>

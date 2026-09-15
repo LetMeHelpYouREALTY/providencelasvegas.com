@@ -30,6 +30,7 @@ import {
 import { gbpUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
 import { getSiteImage, ogImageFor } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Dr. Jan Duffy, Providence Las Vegas REALTOR® | Berkshire Hathaway HomeServices",
@@ -148,11 +149,8 @@ export default function GoogleBusinessPage() {
 
           {/* Business Hours */}
           <section className="max-w-5xl mx-auto mb-16">
+            <SectionMedia imageKey="section-hours" heading="Business Hours" />
             <div className="bg-slate-50 rounded-xl p-6">
-              <div className="flex items-center gap-2 mb-4">
-                <Clock className="h-5 w-5 text-blue-600" />
-                <h2 className="text-xl font-bold text-slate-900">Business Hours</h2>
-              </div>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
                 <div><span className="font-medium">Monday:</span> 9am - 6pm</div>
                 <div><span className="font-medium">Tuesday:</span> 9am - 6pm</div>

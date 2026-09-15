@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { siteConfig, providenceNeighborhoods } from "@/lib/site-config";
 
 // Stable lastmod date for crawl efficiency; update when content is meaningfully changed
-const SITEMAP_LAST_MODIFIED = new Date("2026-09-14");
+const SITEMAP_LAST_MODIFIED = new Date("2026-09-15");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.url;

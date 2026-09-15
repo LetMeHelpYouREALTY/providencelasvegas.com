@@ -144,7 +144,7 @@ export const providenceNeighborhoods = [
   { name: "Windimere", slug: "windimere" },
 ];
 
-// Market Statistics (Updated January 2026)
+// Market Statistics (Updated September 2026 from GLVAR / 89166 list data)
 export const marketStats = {
   lastUpdated: "September 2026",
   sourceLabel:

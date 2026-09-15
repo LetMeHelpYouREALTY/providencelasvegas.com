@@ -55,7 +55,12 @@ export type SiteImageKey =
   | "section-cta"
   | "section-office"
   | "section-financing"
-  | "section-core-services";
+  | "section-core-services"
+  | "section-buyers-agent"
+  | "section-selling"
+  | "section-hours"
+  | "section-listings-search"
+  | "section-contact";
 
 export type SiteImage = {
   key: SiteImageKey;
@@ -427,6 +432,46 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
     heading: "Core Real Estate Services",
     alt: "Floor plans, house keys, and a neighborhood map on a consultation table in Las Vegas",
     file: "section-core-services.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-buyers-agent": {
+    key: "section-buyers-agent",
+    heading: "Why You Need a Buyer's Agent",
+    alt: "House keys in the front door of a Providence Las Vegas home",
+    file: "section-buyers-agent.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-selling": {
+    key: "section-selling",
+    heading: "Sell Your Providence Home",
+    alt: "Listing-ready Providence Las Vegas home exterior at dusk",
+    file: "section-selling.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-hours": {
+    key: "section-hours",
+    heading: "Business Hours",
+    alt: "Providence Real Estate office waiting area in Las Vegas, NV 89166",
+    file: "section-hours.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-listings-search": {
+    key: "section-listings-search",
+    heading: "Popular Property Searches in Providence",
+    alt: "Street of homes for sale in Providence Las Vegas, NV 89166",
+    file: "section-listings-search.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-contact": {
+    key: "section-contact",
+    heading: "Get In Touch",
+    alt: "Phone, house keys, and a neighborhood map on a Providence Real Estate desk",
+    file: "section-contact.png",
     width: 1600,
     height: 1200,
   },

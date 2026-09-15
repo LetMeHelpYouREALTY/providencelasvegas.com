@@ -36,7 +36,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "What is the current Providence Las Vegas real estate market like in 2026?",
       answer:
-        "As of January 2026, the Providence and North Las Vegas median home price is approximately $450,000 (+4.2% YoY), with homes selling in an average of 28 days. The Providence market remains competitive but balanced.",
+        "As of September 2026, the Southern Nevada single-family sold median is $475,000 (-1% YoY, GLVAR August closings). ZIP 89166 median list price is $544,500 with 25 days on market (asking, not sold). Call (702) 744-2993 for a Providence neighborhood CMA.",
     },
     {
       question: "What is Providence, Las Vegas?",
@@ -645,7 +645,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "What is the Providence median home price in 2026?",
       answer:
-        "As of January 2026, the Providence and North Las Vegas median home price is approximately $450,000, up 4.2% year-over-year. Dr. Jan provides current Providence market data. Call (702) 744-2993.",
+        "As of September 2026, Southern Nevada's sold median is $475,000. ZIP 89166 list prices average $544,500. Dr. Jan Duffy provides a current Providence neighborhood CMA. Call (702) 744-2993.",
     },
     {
       question: "How long do Providence homes sit on the market?",
@@ -676,7 +676,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "What's the latest Providence real estate market update?",
       answer:
-        "As of January 2026, the Providence and North Las Vegas market shows a median of approximately $450K, 28 days on market. Dr. Jan provides ongoing Providence market updates—call (702) 744-2993.",
+        "As of September 2026, Southern Nevada sold median is $475,000; ZIP 89166 median list DOM is 25 days. Dr. Jan Duffy provides Providence market updates—call (702) 744-2993.",
     },
     {
       question: "Where can I get current Providence market statistics?",

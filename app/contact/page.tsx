@@ -14,6 +14,7 @@ import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Contact | Providence Real Estate | Providence Las Vegas",
@@ -86,7 +87,10 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Info & Map */}
             <div>
-              <h2 className="text-2xl font-bold text-slate-900 mb-6">Get In Touch for Providence Las Vegas Real Estate</h2>
+              <SectionMedia
+                imageKey="section-contact"
+                heading="Get In Touch for Providence Las Vegas Real Estate"
+              />
               <p className="text-slate-700 mb-8">
                 Whether you're buying your first home in Providence Las Vegas, selling a
                 property in any of the 27 Providence neighborhoods, or exploring investment

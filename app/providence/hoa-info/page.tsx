@@ -13,6 +13,7 @@ import { getRelatedPages } from "@/lib/related-pages";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export const metadata: Metadata = {
   title: "Providence HOA Information | Providence Las Vegas Real Estate",
@@ -51,7 +52,10 @@ export default function ProvidenceHOAInfoPage() {
           </p>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">HOA Resale Certificate Process</h2>
+            <SectionMedia
+              imageKey="hero-hoa"
+              heading="HOA Resale Certificate Process"
+            />
             <p className="text-slate-700 mb-4">
               When selling a home in Providence Las Vegas, the seller must obtain a resale certificate
               from the Providence Master HOA. This document provides buyers with essential HOA

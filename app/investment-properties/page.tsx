@@ -110,7 +110,7 @@ export default function InvestmentPropertiesPage() {
               <div className="text-center">
                 <TrendingUp className="h-12 w-12 text-blue-400 mx-auto mb-3" />
                 <h3 className="font-bold mb-1">Strong Appreciation</h3>
-                <p className="text-slate-400 text-sm">+4.2% YoY in 2025</p>
+                <p className="text-slate-400 text-sm">Call for a current rent/CMA analysis</p>
               </div>
               <div className="text-center">
                 <Building className="h-12 w-12 text-purple-400 mx-auto mb-3" />
@@ -128,7 +128,7 @@ export default function InvestmentPropertiesPage() {
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Investment Property Markets | January 2026
+              Investment Property Markets | September 2026
             </h2>
             <div className="overflow-x-auto">
               <table className="w-full bg-white border border-slate-200 rounded-lg">

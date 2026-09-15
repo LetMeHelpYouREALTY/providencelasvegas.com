@@ -18,7 +18,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
           {/* Footer Brand */}
           <div>
-            <h3 className="font-bold text-xl mb-4">Providence Las Vegas Real Estate</h3>
+            <h3 className="font-bold text-xl mb-4">Providence Real Estate</h3>
             <p className="text-slate-300 mb-4 text-sm">
               Your trusted expert for all 27 Providence neighborhoods. Master-planned community specialist since 2008.
             </p>

@@ -20,17 +20,15 @@ export const gbpPostTemplates: GBPPost[] = [
   {
     id: "market-update-jan-2026",
     type: "update",
-    title: "Providence Las Vegas Real Estate Market Update - January 2026",
-    content: `The Providence housing market remains strong heading into 2026! Here's what buyers and sellers need to know:
+    title: "Providence Las Vegas Real Estate Market Update - September 2026",
+    content: `The Providence housing market in September 2026:
 
-📊 Median home price: ~$450,000 (+4.2% YoY)
-🏠 27 Providence neighborhoods
-⏱️ Average days on market: 28 days
-📈 Well-priced homes sell quickly
+📊 Southern Nevada sold median: $475,000 (-1% YoY, GLVAR August closings)
+🏠 ZIP 89166 median list: $544,500
+⏱️ 89166 median list DOM: 25 days
+🏘️ 27 Providence neighborhoods
 
-Whether you're buying your first Providence home, selling in Oxford Commons or Saratoga Highlands, or exploring single-story options, now is a great time to make your move.
-
-Call Dr. Jan Duffy at (702) 744-2993 for a free Providence market analysis.`,
+Call Dr. Jan Duffy at (702) 744-2993 for a free Providence neighborhood CMA.`,
     cta: {
       text: "Get Free Market Analysis",
       url: "https://www.providencelasvegas.com/home-valuation",
