@@ -43,6 +43,7 @@ export default function PageHero({
         sizes="100vw"
         className="object-cover"
         quality={78}
+        unoptimized={image.unoptimized}
       />
       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/50 to-black/25" />
       <div className="relative z-10 container mx-auto px-4 pt-28 pb-10 md:pb-14">

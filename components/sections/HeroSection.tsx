@@ -43,6 +43,7 @@ export default function HeroSection() {
               priority={index === 0}
               fetchPriority={index === 0 ? "high" : "low"}
               quality={75}
+              unoptimized={image.unoptimized}
             />
             <div className="absolute inset-0 bg-black/40" />
           </div>
