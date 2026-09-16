@@ -2,19 +2,17 @@
 
 Custom photographs created to match page H1 / H2 / H3 copy for Providence Las Vegas real estate.
 
-**Primary delivery:** Cloudflare Images (`imagedelivery.net` or `NEXT_PUBLIC_CLOUDFLARE_IMAGES_BASE_URL`).
-**Backup:** these files, served from this folder when Cloudflare env vars are unset.
+**Primary delivery:** Cloudflare Images hosted assets
+`https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<image_id>/public`
+
+**Backup:** these files, served from this folder until `lib/cloudflare-image-ids.json` contains confirmed Image IDs.
 
 Do not orange-cloud `www.providencelasvegas.com` (Vercel origin). A dedicated images hostname on Cloudflare is OK.
 
-Upload:
+Upload (requires `CLOUDFLARE_API_TOKEN` with Images:Edit — never commit the token):
 
 ```bash
-CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... node scripts/upload-cloudflare-images.mjs
+CLOUDFLARE_API_TOKEN=... npm run images:cloudflare
 ```
 
-Then set on Vercel:
-
-- `NEXT_PUBLIC_CLOUDFLARE_IMAGES_ACCOUNT_HASH`
-- optional `NEXT_PUBLIC_CLOUDFLARE_IMAGES_BASE_URL` (custom domain)
-- optional `NEXT_PUBLIC_CLOUDFLARE_IMAGES_VARIANT` (default `public`)
+Docs: [Hosted images](https://developers.cloudflare.com/images/optimization/hosted-images/), [Upload methods](https://developers.cloudflare.com/images/storage/upload-images/methods/), [Serve uploaded images](https://developers.cloudflare.com/images/optimization/hosted-images/serve-uploaded-images/).

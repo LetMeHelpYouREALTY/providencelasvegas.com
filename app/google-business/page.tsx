@@ -90,6 +90,7 @@ export default function GoogleBusinessPage() {
                       sizes="96px"
                       className="object-cover"
                       priority
+                      unoptimized={getSiteImage("hero-about").unoptimized}
                     />
                   </div>
                   <div className="flex items-center gap-2 mb-4">

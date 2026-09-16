@@ -240,6 +240,7 @@ export default function AboutPage() {
                     sizes="(max-width: 768px) 100vw, 400px"
                     className="object-cover"
                     priority
+                    unoptimized={getSiteImage("hero-about").unoptimized}
                   />
                 </div>
                 <div className="text-center mt-4">

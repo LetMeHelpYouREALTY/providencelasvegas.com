@@ -1,11 +1,16 @@
 /**
- * Site images: Cloudflare Images is primary CDN, git (`public/images/generated`) is backup.
+ * Site images: Cloudflare Images is the primary hosted CDN; git
+ * (`public/images/generated`) is the backup origin.
  *
- * Set NEXT_PUBLIC_CLOUDFLARE_IMAGES_ACCOUNT_HASH (and optional custom domain) after
- * running `node scripts/upload-cloudflare-images.mjs`. Until then, git-hosted files are used.
+ * Hosted Images delivery (2026 docs):
+ *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
  *
- * Do not orange-cloud www.providencelasvegas.com (Vercel origin). Images may use a
- * separate Cloudflare Images hostname.
+ * Account hash is public. Image IDs are written to cloudflare-image-ids.json only
+ * after a successful upload (`npm run images:cloudflare`). Predicted IDs are never
+ * used — that would 404 until the file exists in Images storage.
+ *
+ * Do not orange-cloud www.providencelasvegas.com (Vercel origin). A dedicated
+ * images hostname on Cloudflare is OK.
  */
 
 import cloudflareImageIds from "./cloudflare-image-ids.json";
@@ -73,6 +78,14 @@ export type SiteImage = {
 };
 
 const GIT_IMAGE_PREFIX = "/images/generated";
+
+/** Public Images account hash from the Cloudflare dashboard (not a secret). */
+export const DEFAULT_CLOUDFLARE_IMAGES_ACCOUNT_HASH = "byE6BTe9lNqo21V57n4aPQ";
+
+/** Public Cloudflare account id (API uploads only; not used in the browser). */
+export const DEFAULT_CLOUDFLARE_ACCOUNT_ID = "2cc579c1ec9e426ed585e933ebf4753b";
+
+export const DEFAULT_CLOUDFLARE_IMAGES_VARIANT = "public";
 
 export const siteImages: Record<SiteImageKey, SiteImage> = {
   "hero-homes-for-sale": {
@@ -519,35 +532,45 @@ function gitSrc(file: string): string {
   return `${GIT_IMAGE_PREFIX}/${file}`;
 }
 
-function cloudflareSrc(imageId: string): string | null {
+function cloudflareSrc(imageId: string): string {
   const customBase = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_BASE_URL?.replace(/\/$/, "");
-  const variant = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_VARIANT || "public";
-  const accountHash = process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ACCOUNT_HASH;
+  const variant =
+    process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_VARIANT || DEFAULT_CLOUDFLARE_IMAGES_VARIANT;
+  const accountHash =
+    process.env.NEXT_PUBLIC_CLOUDFLARE_IMAGES_ACCOUNT_HASH ||
+    DEFAULT_CLOUDFLARE_IMAGES_ACCOUNT_HASH;
 
   if (customBase) {
     return `${customBase}/${imageId}/${variant}`;
   }
-  if (accountHash) {
-    return `https://imagedelivery.net/${accountHash}/${imageId}/${variant}`;
-  }
-  return null;
+
+  return `https://imagedelivery.net/${accountHash}/${imageId}/${variant}`;
 }
 
 export type ResolvedSiteImage = SiteImage & {
   src: string;
   source: "cloudflare" | "git";
+  /**
+   * Cloudflare Images transcodes AVIF/WebP at the edge. Skip Vercel’s optimizer
+   * so the browser hits imagedelivery.net directly.
+   */
+  unoptimized: boolean;
 };
 
 export function getSiteImage(key: SiteImageKey): ResolvedSiteImage {
   const image = siteImages[key];
-  const cfId = (cloudflareImageIds as Record<string, string>)[key];
-  const remote = cfId ? cloudflareSrc(cfId) : null;
+  const cfId = (cloudflareImageIds as Record<string, string>)[key]?.trim();
 
-  if (remote) {
-    return { ...image, src: remote, source: "cloudflare" };
+  if (cfId) {
+    return {
+      ...image,
+      src: cloudflareSrc(cfId),
+      source: "cloudflare",
+      unoptimized: true,
+    };
   }
 
-  return { ...image, src: gitSrc(image.file), source: "git" };
+  return { ...image, src: gitSrc(image.file), source: "git", unoptimized: false };
 }
 
 export function ogImageFor(key: SiteImageKey = "og-providence-default") {
