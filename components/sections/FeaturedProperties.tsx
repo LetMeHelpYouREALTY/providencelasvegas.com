@@ -5,26 +5,31 @@ import Image from "next/image";
 import { Bed, Bath, Square, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { realscoutUrls } from "@/lib/site-config";
+import { getSiteImage, type SiteImageKey } from "@/lib/images";
 
 interface Property {
   id: number;
   name: string;
   location: string;
   price: string;
-  image: string;
+  imageKey: SiteImageKey;
   bedrooms: number;
   bathrooms: number;
   squareFeet: number;
 }
 
-const PropertyCard = ({ property }: { property: Property }) => (
+const PropertyCard = ({ property }: { property: Property }) => {
+  const image = getSiteImage(property.imageKey);
+
+  return (
   <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
     <div className="relative h-48 md:h-64">
       <Image
-        src={property.image}
+        src={image.src}
         alt={`${property.name} - Providence Las Vegas home in ${property.location}`}
         fill
         className="object-cover"
+        unoptimized={image.unoptimized}
       />
       <div className="absolute top-4 right-4 bg-blue-600 text-white px-3 py-1 rounded-md text-sm font-semibold">
         {property.price}
@@ -54,7 +59,8 @@ const PropertyCard = ({ property }: { property: Property }) => (
       </Button>
     </div>
   </div>
-);
+  );
+};
 
 const properties: Property[] = [
   {
@@ -62,7 +68,7 @@ const properties: Property[] = [
     name: "Modern 4-Bedroom Home",
     location: "Oxford Commons, Providence, NV",
     price: "$850,000",
-    image: "/images/generated/hero-luxury.png",
+    imageKey: "hero-luxury",
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
@@ -72,7 +78,7 @@ const properties: Property[] = [
     name: "3-Bedroom Single-Family Home",
     location: "Saratoga Highlands, Providence, NV",
     price: "$625,000",
-    image: "/images/generated/neighborhood-standard.png",
+    imageKey: "neighborhood-standard",
     bedrooms: 3,
     bathrooms: 2,
     squareFeet: 2400,
@@ -82,7 +88,7 @@ const properties: Property[] = [
     name: "Elegant Estate",
     location: "Auburn & Bradford, Providence, NV",
     price: "$1,200,000",
-    image: "/images/generated/neighborhood-premium.png",
+    imageKey: "neighborhood-premium",
     bedrooms: 5,
     bathrooms: 4,
     squareFeet: 4500,

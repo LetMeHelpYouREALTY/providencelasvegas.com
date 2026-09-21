@@ -7,6 +7,7 @@ import GbpActionBar from "@/components/gbp/GbpActionBar";
 import type { Metadata } from "next";
 import { siteConfig, realscoutUrls } from "@/lib/site-config";
 import { generateBreadcrumbSchema, generateRealEstateListingSchema } from "@/lib/schema";
+import { getSiteImage } from "@/lib/images";
 
 type PropertyPageProps = {
   params: Promise<{ id: string }>;
@@ -34,19 +35,21 @@ export async function generateMetadata({ params }: PropertyPageProps): Promise<M
 
 // Placeholder: replace with RealScout API when wired. When real data exists, add evidence-dense blocks: key specs, price history, neighborhood link, school ratings (see plan Phase 1.6).
 async function getProperty(_id: string) {
+  const photo = getSiteImage("hero-listings");
   return {
     id: _id,
     name: "Providence Las Vegas Home",
     location: "Providence, North Las Vegas, NV 89166",
     price: "$850,000",
     priceNumber: 850000,
-    image: "/images/generated/hero-listings.png",
+    image: photo.src,
+    imageUnoptimized: photo.unoptimized,
     bedrooms: 4,
     bathrooms: 3,
     squareFeet: 3200,
     yearBuilt: 2018,
     description:
-      "Spacious home in Providence master-planned community. Open floor plan, updated kitchen, and backyard. Close to Providence parks, schools, and shopping. Dr. Jan Duffy, Providence Las Vegas real estate.",
+      "Spacious home in the Providence master-planned community. Open floor plan, updated kitchen, and backyard. Close to Providence parks and shopping. Dr. Jan Duffy, Providence Las Vegas real estate.",
   };
 }
 
@@ -121,6 +124,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
               fill
               className="object-cover"
               priority
+              unoptimized={property.imageUnoptimized}
             />
           </div>
 

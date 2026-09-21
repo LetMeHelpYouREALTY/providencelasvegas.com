@@ -1,3 +1,5 @@
+import { absoluteSiteImageSrc } from "./images";
+
 // Google Business Profile Schema Data
 // Supports GBP ranking factors: Relevance, Distance, Prominence
 
@@ -238,9 +240,9 @@ export function generateLocalBusinessSchema() {
     "@id": "https://www.providencelasvegas.com/#organization",
     name: businessInfo.name,
     image: [
-      "https://www.providencelasvegas.com/images/generated/og-providence-default.png",
-      "https://www.providencelasvegas.com/images/generated/hero-about.png",
-      "https://www.providencelasvegas.com/images/generated/hero-contact.png",
+      absoluteSiteImageSrc("og-providence-default"),
+      absoluteSiteImageSrc("hero-about"),
+      absoluteSiteImageSrc("hero-contact"),
     ],
     url: businessInfo.url,
     telephone: businessInfo.phone.tel,

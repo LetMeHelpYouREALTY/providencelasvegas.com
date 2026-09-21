@@ -8,6 +8,7 @@
 
 import { siteConfig, agentInfo, officeInfo, agentStats, gbpUrls } from "./site-config";
 import { gbpOpeningHoursSpecification } from "./gbp-schema";
+import { absoluteSiteImageSrc } from "./images";
 
 // ============================================================================
 // Types
@@ -94,11 +95,11 @@ export function generateRealEstateAgentSchema() {
       "Providence Real Estate",
     ],
     url: BASE_URL,
-    logo: `${BASE_URL}/images/generated/og-providence-default.png`,
+    logo: absoluteSiteImageSrc("og-providence-default"),
     image: [
-      `${BASE_URL}/images/generated/og-providence-default.png`,
-      `${BASE_URL}/images/generated/hero-homes-for-sale.png`,
-      `${BASE_URL}/images/generated/hero-providence-community.png`,
+      absoluteSiteImageSrc("og-providence-default"),
+      absoluteSiteImageSrc("hero-homes-for-sale"),
+      absoluteSiteImageSrc("hero-providence-community"),
     ],
     description: "Providence Las Vegas real estate specialist serving all 27 Providence neighborhoods",
     telephone: officeInfo.phoneTel.replace(/^tel:/, ""),

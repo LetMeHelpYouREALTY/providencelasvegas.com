@@ -583,6 +583,18 @@ export function ogImageFor(key: SiteImageKey = "og-providence-default") {
   };
 }
 
+const SITE_ORIGIN = "https://www.providencelasvegas.com";
+
+/** Absolute URL for JSON-LD / sitemap. Git paths are origin-prefixed; Cloudflare URLs stay as-is. */
+export function absoluteSiteImageSrc(
+  key: SiteImageKey,
+  origin = SITE_ORIGIN
+): string {
+  const { src } = getSiteImage(key);
+  if (/^https?:\/\//i.test(src)) return src;
+  return `${origin.replace(/\/$/, "")}${src}`;
+}
+
 export function pageImageMetadata(key: SiteImageKey) {
   const og = ogImageFor(key);
   return {
