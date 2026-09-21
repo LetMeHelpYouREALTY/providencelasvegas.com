@@ -65,7 +65,10 @@ export default function ProvidencePage() {
 
             {/* Providence at a glance - data-rich block for AI parsing */}
             <section className="mt-8 max-w-3xl" aria-label="Providence at a glance">
-              <h2 className="text-xl font-bold text-slate-900 mb-4">Providence at a Glance</h2>
+              <SectionMedia
+                imageKey="section-glance"
+                heading="Providence at a Glance"
+              />
               <p className="text-slate-700 mb-3 text-sm">
                 Quick facts about Providence Las Vegas. Southern Nevada median sold ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted} ({marketStats.lasVegas.yearOverYearChange} YoY). ZIP 89166 median list: {marketStats.zip89166.medianListPriceFormatted}; {marketStats.zip89166.daysOnMarket} days on market (list).
               </p>
@@ -87,9 +90,10 @@ export default function ProvidencePage() {
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-              Community Parks in Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-parks"
+              heading="Community Parks in Providence Las Vegas"
+            />
             <p className="text-slate-700 mb-6 max-w-2xl">
               All Providence Las Vegas residents have access to three community parks. Each park
               offers amenities for families, fitness, and outdoor recreation in Providence.
@@ -148,9 +152,10 @@ export default function ProvidencePage() {
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-6">
-              For Buyers & Sellers in Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-services"
+              heading="For Buyers & Sellers in Providence Las Vegas"
+            />
             <p className="text-slate-700 mb-8 max-w-2xl">
               Whether you are{" "}
               <InlineLink href="/buyers">buying</InlineLink> or{" "}
@@ -224,9 +229,11 @@ export default function ProvidencePage() {
 
         <section className="py-12 md:py-16 bg-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Buy or Sell in Providence?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Buy or Sell in Providence?"
+              invert
+            />
             <p className="text-blue-100 mb-6 max-w-xl mx-auto">
               Dr. Jan Duffy knows Providence and can guide you through buying or selling in any of
               the 27 neighborhoods.

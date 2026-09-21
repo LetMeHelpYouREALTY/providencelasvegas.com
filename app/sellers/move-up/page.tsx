@@ -17,6 +17,7 @@ import {
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -83,9 +84,11 @@ export default function MoveUpSellerPage() {
 
           {/* Equity Section */}
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Your Equity Position is Stronger Than You Think
-            </h2>
+            <SectionMedia
+              imageKey="section-equity-move-up"
+              heading="Your Equity Position is Stronger Than You Think"
+              invert
+            />
             <div className="grid md:grid-cols-3 gap-6 mb-8">
               <div className="text-center bg-white/10 rounded-xl p-6">
                 <div className="text-4xl font-bold mb-2">$100K-$250K+</div>
@@ -111,9 +114,10 @@ export default function MoveUpSellerPage() {
 
           {/* Upgrade Path */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Common Upgrade Paths We Help With
-            </h2>
+            <SectionMedia
+              imageKey="hero-move-up"
+              heading="Common Upgrade Paths We Help With"
+            />
             <div className="space-y-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6 flex items-center">
                 <div className="flex-shrink-0 mr-6">
@@ -167,9 +171,10 @@ export default function MoveUpSellerPage() {
 
           {/* How We Handle Both */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              We Handle Both Transactions Seamlessly
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="We Handle Both Transactions Seamlessly"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
@@ -224,9 +229,10 @@ export default function MoveUpSellerPage() {
 
           {/* Timing Strategies */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Timing Your Move-Up: Three Proven Strategies
-            </h2>
+            <SectionMedia
+              imageKey="section-equity-move-up"
+              heading="Timing Your Move-Up: Three Proven Strategies"
+            />
             <div className="prose prose-lg max-w-none text-slate-700 mb-8">
               <p>
                 The biggest concern Providence Las Vegas move-up sellers and buyers have is timing. What
@@ -290,9 +296,11 @@ export default function MoveUpSellerPage() {
 
           {/* Financing Options */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Financing Your Move-Up Purchase
-            </h2>
+            <SectionMedia
+              imageKey="section-financing"
+              heading="Financing Your Move-Up Purchase"
+              invert
+            />
             <p className="text-slate-300 text-center mb-8 max-w-3xl mx-auto">
               Understanding your financing options is crucial for a successful move-up transaction.
               Dr. Jan works with trusted local lenders who specialize in helping Las Vegas homeowners
@@ -363,9 +371,11 @@ export default function MoveUpSellerPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              What's Your Home Worth Today?
-            </h2>
+            <SectionMedia
+              imageKey="hero-valuation"
+              heading="What's Your Home Worth Today?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Get a free equity analysis and see what your next home could look like.
               Dr. Jan will show you the numbers and create a strategic plan.

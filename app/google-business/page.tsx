@@ -171,7 +171,7 @@ export default function GoogleBusinessPage() {
 
           {/* About - 750 Word Description Structure */}
           <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">About Dr. Jan Duffy</h2>
+            <SectionMedia imageKey="hero-about" heading="About Dr. Jan Duffy" />
             
             {/* Section 1: Who We Are */}
             <div className="mb-8">
@@ -203,7 +203,7 @@ export default function GoogleBusinessPage() {
 
           {/* Services - Each creates searchable GBP field */}
           <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Real Estate Services</h2>
+            <SectionMedia imageKey="section-core-services" heading="Real Estate Services" />
             <div className="grid md:grid-cols-3 gap-4">
               {businessInfo.services.map((service) => (
                 <div key={service.name} className="bg-white border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow">
@@ -221,7 +221,7 @@ export default function GoogleBusinessPage() {
 
           {/* Service Areas - Providence focus */}
           <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">Service Areas</h2>
+            <SectionMedia imageKey="section-services" heading="Service Areas" />
             <div className="bg-blue-50 rounded-xl p-8">
               <div className="grid md:grid-cols-3 gap-8">
                 <div>
@@ -262,9 +262,10 @@ export default function GoogleBusinessPage() {
 
           {/* FAQ Section - Extra ranking boost */}
           <section className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Frequently Asked Questions
-            </h2>
+            <SectionMedia
+              imageKey="section-faq"
+              heading="Frequently Asked Questions"
+            />
             <div className="space-y-4">
               {gbpFAQs.map((faq, index) => (
                 <div key={index} className="bg-white border border-slate-200 rounded-lg p-6">
@@ -282,9 +283,10 @@ export default function GoogleBusinessPage() {
           <section className="max-w-4xl mx-auto mb-16">
             <div className="bg-gradient-to-r from-yellow-50 to-amber-50 border border-yellow-200 rounded-xl p-8 text-center">
               <Star className="h-12 w-12 text-yellow-500 mx-auto mb-4" />
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">
-                Your Review Helps Others Find Quality Service
-              </h2>
+              <SectionMedia
+                imageKey="section-reviews"
+                heading="Your Review Helps Others Find Quality Service"
+              />
               <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
                 If Dr. Jan helped you buy or sell a home, please consider sharing your experience.
                 Mention your neighborhood, type of transaction, and what made the experience valuable.
@@ -303,7 +305,7 @@ export default function GoogleBusinessPage() {
           {/* Contact CTA */}
           <section className="max-w-4xl mx-auto">
             <div className="bg-slate-900 text-white rounded-2xl p-8 md:p-12 text-center">
-              <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+              <SectionMedia imageKey="section-cta" heading="Ready to Get Started?" invert />
               <p className="text-xl text-slate-300 mb-8">
                 Contact Dr. Jan Duffy for a free consultation about buying or selling in Las Vegas.
               </p>

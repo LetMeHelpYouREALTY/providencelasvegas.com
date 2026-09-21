@@ -273,9 +273,10 @@ export default function ServicesPage() {
 
           {/* Specialized Services Section */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Specialized Real Estate Services
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="Specialized Real Estate Services"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Beyond traditional buying and selling, Dr. Jan Duffy offers specialized services 
               for unique situations. Whether you're an investor building a rental portfolio, 
@@ -321,9 +322,10 @@ export default function ServicesPage() {
 
           {/* Buyer Types */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Services for Every Type of Buyer
-            </h2>
+            <SectionMedia
+              imageKey="section-buyers-agent"
+              heading="Services for Every Type of Buyer"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Different buyers have different needs. A first-time buyer needs education and 
               hand-holding through the process. A California relocator needs tax guidance and 
@@ -351,9 +353,10 @@ export default function ServicesPage() {
 
           {/* Seller Types */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Services for Every Type of Seller
-            </h2>
+            <SectionMedia
+              imageKey="section-selling"
+              heading="Services for Every Type of Seller"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Selling a home involves more than just listing it on the MLS. Your situation—whether 
               you're upgrading, downsizing, dealing with a life change, or relocating—determines 
@@ -379,9 +382,11 @@ export default function ServicesPage() {
 
           {/* Value Proposition */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">
-              The Berkshire Hathaway HomeServices Difference
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="The Berkshire Hathaway HomeServices Difference"
+              invert
+            />
             <p className="text-lg text-slate-300 text-center max-w-3xl mx-auto mb-8">
               When you work with a Berkshire Hathaway HomeServices agent, you're backed by a name
               synonymous with trust, ethical standards, and financial strength—the same principles
@@ -433,9 +438,10 @@ export default function ServicesPage() {
 
           {/* Service Process */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              How Our Real Estate Services Work
-            </h2>
+            <SectionMedia
+              imageKey="section-core-services"
+              heading="How Our Real Estate Services Work"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Whether you're buying or selling, the process begins with a free consultation 
               to understand your goals, timeline, and unique circumstances. From there, 
@@ -502,7 +508,11 @@ export default function ServicesPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Get Started?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for a free consultation about any of our real estate services. 
               Whether you're buying, selling, investing, or relocating, you'll receive expert 

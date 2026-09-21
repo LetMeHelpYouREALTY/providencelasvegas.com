@@ -24,6 +24,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -162,9 +163,11 @@ export default function NewConstructionPage() {
 
           {/* Why Free Representation */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Why Use a BHHS Agent for New Construction?
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Why Use a BHHS Agent for New Construction?"
+              invert
+            />
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="flex items-start">
                 <div className="bg-blue-500 p-2 rounded-full mr-4 flex-shrink-0">
@@ -225,6 +228,10 @@ export default function NewConstructionPage() {
 
           {/* Current Incentives Alert */}
           <section className="mb-16 max-w-5xl mx-auto">
+            <SectionMedia
+              imageKey="section-builder-incentives"
+              heading="Current Builder Incentives"
+            />
             <div className="bg-green-50 border-2 border-green-200 rounded-2xl p-8">
               <div className="flex items-center justify-between flex-wrap gap-4 mb-6">
                 <h2 className="text-2xl font-bold text-slate-900 flex items-center">
@@ -267,9 +274,10 @@ export default function NewConstructionPage() {
 
           {/* Builders Grid */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Providence New Home Builders
-            </h2>
+            <SectionMedia
+              imageKey="hero-new-construction"
+              heading="Providence New Home Builders"
+            />
             <div className="grid lg:grid-cols-2 gap-6">
               {builders.map((builder) => (
                 <div
@@ -331,9 +339,10 @@ export default function NewConstructionPage() {
 
           {/* The Process */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              New Construction Buying Process with BHHS
-            </h2>
+            <SectionMedia
+              imageKey="section-buying-process"
+              heading="New Construction Buying Process with BHHS"
+            />
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
@@ -445,9 +454,10 @@ export default function NewConstructionPage() {
 
           {/* What We Negotiate */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              What Dr. Jan Negotiates for New Construction Buyers
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="What Dr. Jan Negotiates for New Construction Buyers"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
                 "Closing cost credits",
@@ -473,9 +483,11 @@ export default function NewConstructionPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Tour New Construction?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Tour New Construction?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Call <strong>(702) 744-2993</strong> to register Dr. Jan Duffy as your buyer's agent 
               <strong> before</strong> visiting any model home—or you may lose your right to free 

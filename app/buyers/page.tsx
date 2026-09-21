@@ -175,9 +175,10 @@ export default function BuyersPage() {
 
           {/* Buying Process */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              The Home Buying Process in Providence
-            </h2>
+            <SectionMedia
+              imageKey="section-buying-process"
+              heading="The Home Buying Process in Providence"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-4">
               Buying a home is one of the most significant financial decisions you'll make. 
               Understanding the process helps reduce stress and ensures you're prepared at each 
@@ -217,9 +218,10 @@ export default function BuyersPage() {
 
           {/* Neighborhood Guide */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Providence Neighborhoods for Home Buyers
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="Providence Neighborhoods for Home Buyers"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Providence offers 27 diverse neighborhoods for every lifestyle and budget. Each 
               Providence neighborhood has access to three community parks. Dr. Jan helps you compare 
@@ -249,9 +251,10 @@ export default function BuyersPage() {
 
           {/* Buyer Types */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Specialized Guidance for Every Buyer
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="Specialized Guidance for Every Buyer"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Different buyers have different needs. A first-time buyer needs education and 
               hand-holding through the process. A California relocator needs tax guidance and 
@@ -306,9 +309,10 @@ export default function BuyersPage() {
 
           {/* Why BHHS */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Why Buy with Berkshire Hathaway HomeServices
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Why Buy with Berkshire Hathaway HomeServices"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Not all real estate agents are created equal. When you choose a Berkshire Hathaway 
               HomeServices agent, you're choosing the only real estate brand backed by Warren 
@@ -372,9 +376,11 @@ export default function BuyersPage() {
 
           {/* Market Stats */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">
-              Providence Buyer Market Statistics | September 2026
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Providence Buyer Market Statistics | September 2026"
+              invert
+            />
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               Southern Nevada sold median is $475,000 (GLVAR August 2026). ZIP 89166 list prices
               average $544,500. Call (702) 744-2993 for a Providence neighborhood CMA before you write an offer.
@@ -413,7 +419,11 @@ export default function BuyersPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Find Your Providence Home?</h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Find Your Providence Home?"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Questions about buying in Providence? Call or text Dr. Jan Duffy for a free buyer
               consultation. Get expert guidance backed by Berkshire Hathaway HomeServices—the 

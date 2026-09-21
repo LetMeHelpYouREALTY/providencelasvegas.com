@@ -89,9 +89,10 @@ export default function NeighborhoodsPage() {
 
           {/* 27 Neighborhoods Grid */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
-              All {providenceCommunity.neighborhoodCount} Providence Las Vegas Neighborhoods
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading={`All ${providenceCommunity.neighborhoodCount} Providence Las Vegas Neighborhoods`}
+            />
             <h3 className="text-lg font-semibold text-slate-800 mb-6 text-center">
               Explore Each Providence Neighborhood
             </h3>
@@ -143,9 +144,11 @@ export default function NeighborhoodsPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Buy or Sell in a Providence Neighborhood?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Buy or Sell in a Providence Neighborhood?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Dr. Jan Duffy knows every Providence neighborhood. Call for personalized guidance.
             </p>

@@ -17,6 +17,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -102,9 +103,10 @@ export default function LuxuryHomesPage() {
         <div className="container mx-auto px-4 pt-12">
 
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Premier Providence Neighborhoods
-            </h2>
+            <SectionMedia
+              imageKey="neighborhood-premium"
+              heading="Premier Providence Neighborhoods"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Providence Las Vegas offers premium homes across its 27 neighborhoods. Oxford Commons, 
               Saratoga Highlands, and Auburn & Bradford are among the most sought-after for 
@@ -145,9 +147,10 @@ export default function LuxuryHomesPage() {
           </section>
 
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Why Choose Berkshire Hathaway for Providence
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Why Choose Berkshire Hathaway for Providence"
+            />
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { icon: Shield, title: "Trusted Brand", desc: "Berkshire Hathaway HomeServices brings reputation and resources to your Providence transaction." },
@@ -195,9 +198,11 @@ export default function LuxuryHomesPage() {
           />
 
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Discover Premium Providence Living
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Discover Premium Providence Living"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Whether buying or selling a premium Providence home, Dr. Jan Duffy provides 
               the expertise and Berkshire Hathaway prestige your transaction deserves.

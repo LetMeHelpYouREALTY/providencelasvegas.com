@@ -296,9 +296,10 @@ export default function AboutPage() {
 
           {/* Specializations Section */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Areas of Specialization
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="Areas of Specialization"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy brings specialized expertise across multiple real estate categories. 
               Whether you're a first-time buyer, luxury home seeker, investor, or retiree looking 
@@ -319,9 +320,11 @@ export default function AboutPage() {
 
           {/* Why BHHS Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-              Why Berkshire Hathaway HomeServices?
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Why Berkshire Hathaway HomeServices?"
+              invert
+            />
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               Berkshire Hathaway HomeServices is the only real estate brand backed by Warren 
               Buffett's Berkshire Hathaway Inc. This means unmatched financial stability, 
@@ -371,9 +374,10 @@ export default function AboutPage() {
 
           {/* Areas Served */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              Areas Served by BHHS Nevada Properties
-            </h2>
+            <SectionMedia
+              imageKey="section-services"
+              heading="Areas Served by BHHS Nevada Properties"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy serves all 27 Providence neighborhoods with specialized knowledge of each 
               community&apos;s unique characteristics, price points, and lifestyle offerings. From 
@@ -400,9 +404,10 @@ export default function AboutPage() {
 
           {/* Client Testimonials */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 text-center">
-              What Clients Say About Dr. Jan Duffy
-            </h2>
+            <SectionMedia
+              imageKey="section-reviews"
+              heading="What Clients Say About Dr. Jan Duffy"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               With a 4.9-star rating and hundreds of satisfied clients, Dr. Jan has built a 
               reputation for excellence, integrity, and personalized service.
@@ -455,7 +460,11 @@ export default function AboutPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Get Started?</h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Get Started?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Questions about buying or selling in Providence Las Vegas? Call or text Dr. Jan Duffy today 
               for a free consultation. Whether you&apos;re ready to start your search or just exploring 

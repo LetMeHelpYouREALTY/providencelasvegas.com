@@ -17,6 +17,7 @@ import type { Metadata } from "next";
 import { realscoutUrls } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -112,9 +113,10 @@ export default function FiftyFiveCommunitiesPage() {
           <RealScoutListings />
 
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Nearby 55+ Communities
-            </h2>
+            <SectionMedia
+              imageKey="hero-55-plus"
+              heading="Nearby 55+ Communities"
+            />
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">Sun City Aliante</h3>
@@ -148,9 +150,10 @@ export default function FiftyFiveCommunitiesPage() {
           </section>
 
           <section className="mb-16 bg-blue-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
-              Providence Single-Story & Low-Maintenance Homes
-            </h2>
+            <SectionMedia
+              imageKey="neighborhood-single-story"
+              heading="Providence Single-Story & Low-Maintenance Homes"
+            />
             <p className="text-slate-700 text-center mb-6 max-w-2xl mx-auto">
               Many Providence neighborhoods offer single-story floor plans and newer construction 
               with low-maintenance living—ideal for downsizers who want to stay in Providence.
@@ -169,9 +172,10 @@ export default function FiftyFiveCommunitiesPage() {
           </section>
 
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6 text-center">
-              Why Providence Works for Downsizers
-            </h2>
+            <SectionMedia
+              imageKey="hero-downsizing"
+              heading="Why Providence Works for Downsizers"
+            />
             <ul className="grid md:grid-cols-2 gap-4">
               <li className="flex items-start">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
@@ -204,9 +208,11 @@ export default function FiftyFiveCommunitiesPage() {
           />
 
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Explore Your Options
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Explore Your Options"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for personalized guidance on Providence single-story homes 
               or nearby 55+ communities.

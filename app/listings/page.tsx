@@ -168,9 +168,10 @@ export default function ListingsPage() {
 
           {/* Price Range Guide */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Providence Home Price Guide
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Providence Home Price Guide"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               The Providence Las Vegas real estate market offers exceptional value compared to California and 
               other western states. With no state income tax and housing prices 40-60% lower than 
@@ -198,9 +199,10 @@ export default function ListingsPage() {
 
           {/* Neighborhood Overview */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Providence Neighborhoods & Communities
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="Providence Neighborhoods & Communities"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Each of the 27 Providence neighborhoods offers a unique lifestyle. From Oxford Commons 
               and Saratoga Highlands to Auburn & Bradford and beyond, all Providence neighborhoods 
@@ -235,9 +237,11 @@ export default function ListingsPage() {
 
           {/* Why Use an Agent Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6 text-center">
-              Why Work With a Berkshire Hathaway HomeServices Agent
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Why Work With a Berkshire Hathaway HomeServices Agent"
+              invert
+            />
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               In today's competitive Providence market, having expert representation can mean the 
               difference between winning your dream home and losing out. Dr. Jan Duffy brings 
@@ -286,9 +290,10 @@ export default function ListingsPage() {
 
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Providence Real Estate Market Statistics
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Providence Real Estate Market Statistics"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Southern Nevada sold median is $475,000 (GLVAR August 2026, -1% YoY). ZIP 89166 median
               list is $544,500 with 25 days on market. Call (702) 744-2993 for a street-level CMA.
@@ -315,9 +320,10 @@ export default function ListingsPage() {
 
           {/* Home Buying Process */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              The Home Buying Process in Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-buying-process"
+              heading="The Home Buying Process in Providence Las Vegas"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Buying a home is one of the most significant financial decisions you'll make. 
               Understanding the process helps reduce stress and ensures you're prepared at each 
@@ -401,9 +407,11 @@ export default function ListingsPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Find Your Providence Home?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Find Your Providence Home?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Contact Dr. Jan Duffy for personalized guidance, off-market listings, and expert 
               representation backed by Berkshire Hathaway HomeServices. Free buyer consultations 

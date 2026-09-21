@@ -8,6 +8,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -100,7 +101,7 @@ export default function InvestmentPropertiesPage() {
 
           {/* Why Las Vegas */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">Why Invest in Las Vegas?</h2>
+            <SectionMedia imageKey="hero-investment" heading="Why Invest in Las Vegas?" invert />
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <DollarSign className="h-12 w-12 text-green-400 mx-auto mb-3" />
@@ -127,9 +128,10 @@ export default function InvestmentPropertiesPage() {
 
           {/* Market Stats */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Investment Property Markets | September 2026
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Investment Property Markets | September 2026"
+            />
             <div className="overflow-x-auto">
               <table className="w-full bg-white border border-slate-200 rounded-lg">
                 <thead className="bg-slate-50">
@@ -189,9 +191,10 @@ export default function InvestmentPropertiesPage() {
 
           {/* Investment Services */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Investment Property Services
-            </h2>
+            <SectionMedia
+              imageKey="section-core-services"
+              heading="Investment Property Services"
+            />
             <div className="grid md:grid-cols-2 gap-6">
               {[
                 "Property identification based on your criteria",
@@ -215,9 +218,11 @@ export default function InvestmentPropertiesPage() {
 
           {/* Investment Types */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Investment Strategies We Support
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="Investment Strategies We Support"
+              invert
+            />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-blue-700 rounded-lg p-6">
                 <h3 className="font-bold text-lg mb-2">Buy & Hold Rentals</h3>
@@ -245,9 +250,10 @@ export default function InvestmentPropertiesPage() {
 
           {/* Detailed Investment Analysis */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Understanding Las Vegas Investment Metrics
-            </h2>
+            <SectionMedia
+              imageKey="section-valuation-process"
+              heading="Understanding Las Vegas Investment Metrics"
+            />
             <div className="prose prose-lg max-w-none text-slate-700 mb-8">
               <p>
                 Successful real estate investing requires understanding key metrics and how they apply
@@ -305,9 +311,10 @@ export default function InvestmentPropertiesPage() {
 
           {/* Neighborhood Deep Dives */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Las Vegas Investment Neighborhoods: Deep Dive
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="Las Vegas Investment Neighborhoods: Deep Dive"
+            />
             <div className="space-y-6">
               <div className="bg-white rounded-xl p-6">
                 <h3 className="font-bold text-xl text-slate-900 mb-2">North Las Vegas</h3>
@@ -353,9 +360,10 @@ export default function InvestmentPropertiesPage() {
 
           {/* 1031 Exchange Section */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              1031 Exchanges in Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="hero-investment"
+              heading="1031 Exchanges in Las Vegas"
+            />
             <div className="bg-white border border-slate-200 rounded-xl p-8">
               <p className="text-slate-700 mb-6">
                 A 1031 exchange lets you defer capital gains taxes by reinvesting proceeds from
@@ -416,9 +424,11 @@ export default function InvestmentPropertiesPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Invest in Las Vegas?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Invest in Las Vegas?"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Get expert guidance on Las Vegas investment properties from Dr. Jan Duffy and
               Berkshire Hathaway HomeServices.

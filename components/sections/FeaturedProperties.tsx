@@ -6,6 +6,7 @@ import { Bed, Bath, Square, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { realscoutUrls } from "@/lib/site-config";
 import { getSiteImage, type SiteImageKey } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 interface Property {
   id: number;
@@ -99,16 +100,13 @@ export default function FeaturedProperties() {
   return (
     <section className="py-16 md:py-24 bg-slate-50">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center mb-12">
-          <div>
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-              Featured Properties
-            </h2>
-            <p className="text-slate-600 text-lg">
-              Discover exceptional homes in Providence Las Vegas
-            </p>
-          </div>
-          <Button asChild variant="outline" className="mt-4 md:mt-0">
+        <SectionMedia
+          imageKey="hero-listings"
+          heading="Featured Properties"
+          subtitle="Discover exceptional homes in Providence Las Vegas"
+        />
+        <div className="flex justify-end mb-12">
+          <Button asChild variant="outline">
             <a href={realscoutUrls.searchFeatured} target="_blank" rel="noopener noreferrer">View All Properties</a>
           </Button>
         </div>

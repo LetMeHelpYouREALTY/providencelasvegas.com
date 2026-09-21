@@ -202,9 +202,10 @@ export default function SellersPage() {
 
           {/* Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              The Berkshire Hathaway HomeServices Selling Advantage
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="The Berkshire Hathaway HomeServices Selling Advantage"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Not all real estate agents can deliver the same results. When you choose a 
               Berkshire Hathaway HomeServices agent, you're choosing world-class marketing, 
@@ -231,9 +232,10 @@ export default function SellersPage() {
 
           {/* Selling Process */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              The Home Selling Process
-            </h2>
+            <SectionMedia
+              imageKey="section-selling-process"
+              heading="The Home Selling Process"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Selling a home involves many steps, but you don't have to navigate them alone. 
               Dr. Jan Duffy manages every detail from initial valuation to closing day, keeping 
@@ -259,9 +261,10 @@ export default function SellersPage() {
 
           {/* Seller Types */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Specialized Services for Every Seller
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="Specialized Services for Every Seller"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Every seller's situation is unique. Whether you're upgrading, downsizing, dealing 
               with a life change, or relocating for work, Dr. Jan provides customized strategies 
@@ -325,9 +328,10 @@ export default function SellersPage() {
 
           {/* Expert Quote */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Expert Selling Advice
-            </h2>
+            <SectionMedia
+              imageKey="section-selling"
+              heading="Expert Selling Advice"
+            />
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Pricing your home correctly from day one is the single most important factor in
@@ -344,9 +348,10 @@ export default function SellersPage() {
 
           {/* What's Included */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              What's Included When You List with BHHS
-            </h2>
+            <SectionMedia
+              imageKey="section-core-services"
+              heading="What's Included When You List with BHHS"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               When you list with Dr. Jan Duffy at Berkshire Hathaway HomeServices, you receive 
               comprehensive marketing and support services designed to maximize your home's 
@@ -366,7 +371,11 @@ export default function SellersPage() {
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">What's Your Home Worth?</h2>
+                <SectionMedia
+                  imageKey="hero-valuation"
+                  heading="What's Your Home Worth?"
+                  invert
+                />
                 <p className="text-blue-100 mb-6">
                   Get a free, no-obligation home valuation from Dr. Jan Duffy. Using current MLS
                   data and expertise serving Providence Las Vegas since 2008, you'll know exactly what your 
@@ -403,7 +412,11 @@ export default function SellersPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Sell Your Providence Las Vegas Home?</h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Sell Your Providence Las Vegas Home?"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Schedule a free listing consultation with Dr. Jan Duffy and discover what your home
               could sell for with Berkshire Hathaway HomeServices. No obligation, no pressure—just 

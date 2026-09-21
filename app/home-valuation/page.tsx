@@ -9,6 +9,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -69,7 +70,7 @@ export default function HomeValuationPage() {
             {/* Calendly Widget */}
             <div className="bg-white border border-slate-200 rounded-lg overflow-hidden">
               <div className="bg-blue-600 text-white p-4 text-center">
-                <h2 className="text-2xl font-bold">Schedule Your Free Valuation</h2>
+                <SectionMedia imageKey="hero-valuation" heading="Schedule Your Free Valuation" invert />
                 <p className="text-blue-100 text-sm mt-1">
                   Book a consultation with Dr. Jan Duffy
                 </p>
@@ -84,7 +85,7 @@ export default function HomeValuationPage() {
             {/* Value Prop */}
             <div className="space-y-8">
               <div className="bg-slate-900 text-white rounded-lg p-8">
-                <h2 className="text-2xl font-bold mb-4">Why Request a BHHS Valuation?</h2>
+                <SectionMedia imageKey="section-valuation-process" heading="Why Request a BHHS Valuation?" invert />
                 <p className="text-slate-300 mb-6">
                   Online estimators like Zillow's "Zestimate" can be off by 10% or more—that's
                   $45,000+ on a typical Providence home. Dr. Jan Duffy provides a comprehensive
@@ -159,9 +160,10 @@ export default function HomeValuationPage() {
 
           {/* Why Online Estimates Fall Short */}
           <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Why Online Home Value Estimates Often Miss the Mark
-            </h2>
+            <SectionMedia
+              imageKey="section-valuation-process"
+              heading="Why Online Home Value Estimates Often Miss the Mark"
+            />
             <div className="prose prose-lg max-w-none text-slate-700">
               <p>
                 If you've checked Zillow, Redfin, or other online home value tools, you've likely
@@ -241,9 +243,10 @@ export default function HomeValuationPage() {
 
           {/* Factors Affecting Value */}
           <section className="max-w-5xl mx-auto mb-16 bg-slate-50 rounded-2xl p-8 md:p-12">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Key Factors That Affect Your Providence Home's Value
-            </h2>
+            <SectionMedia
+              imageKey="section-glance"
+              heading="Key Factors That Affect Your Providence Home's Value"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               <div className="bg-white rounded-lg p-6 shadow-sm">
                 <MapPin className="h-8 w-8 text-blue-600 mb-4" />
@@ -298,9 +301,10 @@ export default function HomeValuationPage() {
 
           {/* Neighborhood Values */}
           <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Providence Neighborhood Home Values | September 2026
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading="Providence Neighborhood Home Values | September 2026"
+            />
             <div className="overflow-x-auto">
               <table className="w-full bg-white border border-slate-200 rounded-lg">
                 <thead className="bg-slate-50">
@@ -334,9 +338,10 @@ export default function HomeValuationPage() {
 
           {/* The Valuation Process */}
           <section className="max-w-5xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              The BHHS Home Valuation Process
-            </h2>
+            <SectionMedia
+              imageKey="section-valuation-process"
+              heading="The BHHS Home Valuation Process"
+            />
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
@@ -394,9 +399,11 @@ export default function HomeValuationPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Know What Your Home Is Worth?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Know What Your Home Is Worth?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Get a free, no-obligation home valuation from Dr. Jan Duffy and Berkshire Hathaway
               HomeServices Nevada Properties. Accurate pricing. Expert guidance. Zero pressure.

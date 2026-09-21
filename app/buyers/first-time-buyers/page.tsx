@@ -144,9 +144,10 @@ export default function FirstTimeBuyersPage() {
 
           {/* Top Neighborhoods */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Best Neighborhoods for First-Time Buyers
-            </h2>
+            <SectionMedia
+              imageKey="hero-first-time"
+              heading="Best Neighborhoods for First-Time Buyers"
+            />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <div className="flex items-center justify-between mb-4">
@@ -250,7 +251,11 @@ export default function FirstTimeBuyersPage() {
           <section className="mb-16 bg-green-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="flex items-center justify-center mb-6">
               <Building className="h-8 w-8 mr-3" />
-              <h2 className="text-3xl font-bold">New Construction Incentives</h2>
+              <SectionMedia
+                imageKey="section-builder-incentives"
+                heading="New Construction Incentives"
+                invert
+              />
             </div>
             <p className="text-center text-green-100 mb-8 max-w-2xl mx-auto">
               Las Vegas builders are offering incredible incentives that can make new homes more
@@ -291,9 +296,10 @@ export default function FirstTimeBuyersPage() {
 
           {/* Rent vs Buy */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Rent vs. Buy in Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-financing"
+              heading="Rent vs. Buy in Las Vegas"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-red-900 mb-4 flex items-center">
@@ -329,9 +335,10 @@ export default function FirstTimeBuyersPage() {
 
           {/* Timeline */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              First-Time Buyer Timeline
-            </h2>
+            <SectionMedia
+              imageKey="section-buying-process"
+              heading="First-Time Buyer Timeline"
+            />
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">
@@ -420,9 +427,11 @@ export default function FirstTimeBuyersPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Stop Renting?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Stop Renting?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Let's talk about your options. Dr. Jan Duffy will help you understand what you can
               afford and create a plan to make homeownership happen.

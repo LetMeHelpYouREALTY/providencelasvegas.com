@@ -187,7 +187,7 @@ export default function ContactPage() {
               <div className="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
                 <div className="bg-blue-600 text-white p-6 text-center">
                   <Calendar className="h-10 w-10 mx-auto mb-3" />
-                  <h2 className="text-2xl font-bold mb-2">Schedule an Appointment</h2>
+                  <SectionMedia imageKey="section-hours" heading="Schedule an Appointment" invert />
                   <p className="text-blue-100">
                     Book a time that works for you—phone consultation, property showing, 
                     or in-person meeting at our office.
@@ -225,9 +225,10 @@ export default function ContactPage() {
 
           {/* Service Areas Section */}
           <section className="max-w-5xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Areas We Serve
-            </h2>
+            <SectionMedia
+              imageKey="section-services"
+              heading="Areas We Serve"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Dr. Jan Duffy provides expert real estate services throughout Providence Las Vegas. 
               Whether you're buying, selling, or investing in any of these Providence neighborhoods, contact us 
@@ -257,9 +258,10 @@ export default function ContactPage() {
 
           {/* Quick Contact Options */}
           <section className="max-w-4xl mx-auto mt-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Prefer to Reach Out Directly?
-            </h2>
+            <SectionMedia
+              imageKey="section-contact"
+              heading="Prefer to Reach Out Directly?"
+            />
             <div className="grid md:grid-cols-2 gap-6">
               <a
                 href="tel:+17027442993"

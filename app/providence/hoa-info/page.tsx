@@ -81,7 +81,7 @@ export default function ProvidenceHOAInfoPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Design Review</h2>
+            <SectionMedia imageKey="section-design-review" heading="Design Review" />
             <p className="text-slate-700 mb-4">
               The Providence Master HOA oversees Design Review for exterior changes to homes in
               Providence Las Vegas. Modifications such as landscaping upgrades, paint changes,
@@ -106,7 +106,7 @@ export default function ProvidenceHOAInfoPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Assessment Due Dates</h2>
+            <SectionMedia imageKey="hero-hoa" heading="Assessment Due Dates" />
             <p className="text-slate-700 mb-4">
               Providence Master HOA assessments are due{" "}
               <strong>{providenceCommunity.hoaAssessmentDueDates}</strong> of each year. New homeowners
@@ -121,7 +121,7 @@ export default function ProvidenceHOAInfoPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Providence Neighborhood Requirements</h2>
+            <SectionMedia imageKey="neighborhood-standard" heading="Providence Neighborhood Requirements" />
             <p className="text-slate-700 mb-4">
               Each of the {providenceCommunity.neighborhoodCount} Providence neighborhoods may have sub-associations or
               additional requirements. When buying or selling in Providence Las Vegas—from Oxford
@@ -131,7 +131,7 @@ export default function ProvidenceHOAInfoPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">Official Providence HOA Resources</h2>
+            <SectionMedia imageKey="hero-hoa" heading="Official Providence HOA Resources" />
             <p className="text-slate-700 mb-4">
               For official documents, payment info, Realtor/Resale resources, and community contacts:
             </p>
@@ -158,7 +158,7 @@ export default function ProvidenceHOAInfoPage() {
           />
 
           <section className="py-12 bg-blue-600 text-white rounded-xl text-center">
-            <h2 className="text-2xl font-bold mb-4">Questions About Providence HOA?</h2>
+            <SectionMedia imageKey="section-cta" heading="Questions About Providence HOA?" invert />
             <p className="text-blue-100 mb-6">
               Dr. Jan Duffy knows Providence Las Vegas and can guide you through HOA requirements,
               resale certificates, and Design Review.

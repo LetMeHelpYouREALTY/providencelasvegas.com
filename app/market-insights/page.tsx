@@ -19,6 +19,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -95,9 +96,11 @@ export default function MarketInsightsPage() {
 
           {/* Key Drivers */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              5 Forces Driving Las Vegas Real Estate in 2026
-            </h2>
+            <SectionMedia
+              imageKey="section-market-forces"
+              heading="5 Forces Driving Las Vegas Real Estate in 2026"
+              invert
+            />
             <div className="grid md:grid-cols-5 gap-4">
               <div className="text-center">
                 <div className="text-3xl font-bold text-amber-400 mb-2">37%</div>
@@ -126,9 +129,10 @@ export default function MarketInsightsPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="flex items-center mb-6">
               <Cpu className="h-8 w-8 text-purple-600 mr-3" />
-              <h2 className="text-3xl font-bold text-slate-900">
-                Las Vegas Tech Transformation
-              </h2>
+              <SectionMedia
+                imageKey="section-market-forces"
+                heading="Las Vegas Tech Transformation"
+              />
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div className="prose prose-lg max-w-none text-slate-700">
@@ -177,7 +181,11 @@ export default function MarketInsightsPage() {
           <section className="mb-16 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="flex items-center mb-6">
               <Globe className="h-8 w-8 mr-3" />
-              <h2 className="text-3xl font-bold">California Migration Analysis</h2>
+              <SectionMedia
+                imageKey="hero-california-relocator"
+                heading="California Migration Analysis"
+                invert
+              />
             </div>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
@@ -240,9 +248,10 @@ export default function MarketInsightsPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="flex items-center mb-6">
               <Building2 className="h-8 w-8 text-green-600 mr-3" />
-              <h2 className="text-3xl font-bold text-slate-900">
-                Economic Diversification
-              </h2>
+              <SectionMedia
+                imageKey="section-market-stats"
+                heading="Economic Diversification"
+              />
             </div>
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
@@ -282,9 +291,10 @@ export default function MarketInsightsPage() {
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="flex items-center mb-6">
               <BarChart3 className="h-8 w-8 text-blue-600 mr-3" />
-              <h2 className="text-3xl font-bold text-slate-900">
-                2026 Neighborhood Outlook
-              </h2>
+              <SectionMedia
+                imageKey="section-neighborhoods"
+                heading="2026 Neighborhood Outlook"
+              />
             </div>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
@@ -352,9 +362,10 @@ export default function MarketInsightsPage() {
 
           {/* What This Means */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              What This Means for You
-            </h2>
+            <SectionMedia
+              imageKey="section-specialization"
+              heading="What This Means for You"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                 <h3 className="font-bold text-green-900 text-xl mb-4 flex items-center">
@@ -443,9 +454,11 @@ export default function MarketInsightsPage() {
 
           {/* CTA */}
           <section className="text-center bg-purple-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Get Personalized Market Analysis
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Get Personalized Market Analysis"
+              invert
+            />
             <p className="text-xl text-purple-100 mb-8">
               Wondering what these trends mean for your specific situation? Dr. Jan Duffy provides
               free consultations with customized market analysis.

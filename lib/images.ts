@@ -65,7 +65,17 @@ export type SiteImageKey =
   | "section-selling"
   | "section-hours"
   | "section-listings-search"
-  | "section-contact";
+  | "section-contact"
+  | "section-buying-process"
+  | "section-selling-process"
+  | "section-bhhs-advantage"
+  | "section-specialization"
+  | "section-valuation-process"
+  | "section-glance"
+  | "section-design-review"
+  | "section-market-forces"
+  | "section-equity-move-up"
+  | "section-builder-incentives";
 
 export type SiteImage = {
   key: SiteImageKey;
@@ -485,6 +495,86 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
     heading: "Get In Touch",
     alt: "Phone, house keys, and a neighborhood map on a Providence Real Estate desk",
     file: "section-contact.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-buying-process": {
+    key: "section-buying-process",
+    heading: "The Home Buying Process in Providence",
+    alt: "Front porch and house keys at a tile-roof home on an HOA street in Providence Las Vegas",
+    file: "section-buying-process.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-selling-process": {
+    key: "section-selling-process",
+    heading: "The Home Selling Process",
+    alt: "Listing-ready Providence Las Vegas home exterior at dusk with desert landscaping",
+    file: "section-selling-process.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-bhhs-advantage": {
+    key: "section-bhhs-advantage",
+    heading: "Why Berkshire Hathaway HomeServices",
+    alt: "Professional real estate office lobby in northwest Las Vegas",
+    file: "section-bhhs-advantage.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-specialization": {
+    key: "section-specialization",
+    heading: "Areas of Specialization",
+    alt: "Neighborhood map, floor plan, and house keys on a Providence Real Estate consultation table",
+    file: "section-specialization.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-valuation-process": {
+    key: "section-valuation-process",
+    heading: "The BHHS Home Valuation Process",
+    alt: "Kitchen island with a comparable-sales report, calculator, and house keys in Providence Las Vegas",
+    file: "section-valuation-process.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-glance": {
+    key: "section-glance",
+    heading: "Providence at a Glance",
+    alt: "Elevated view of Providence Las Vegas streets, parks, and tile-roof homes with desert mountains",
+    file: "section-glance.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-design-review": {
+    key: "section-design-review",
+    heading: "Design Review",
+    alt: "Architectural drawings and paint samples for Providence HOA design review in Las Vegas",
+    file: "section-design-review.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-market-forces": {
+    key: "section-market-forces",
+    heading: "5 Forces Driving Las Vegas Real Estate in 2026",
+    alt: "Northwest Las Vegas desert basin and suburban rooftops used for market analysis",
+    file: "section-market-forces.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-equity-move-up": {
+    key: "section-equity-move-up",
+    heading: "Your Equity Position is Stronger Than You Think",
+    alt: "Two different-sized stucco homes on a Providence Las Vegas street illustrating a move-up path",
+    file: "section-equity-move-up.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-builder-incentives": {
+    key: "section-builder-incentives",
+    heading: "Current Builder Incentives",
+    alt: "Newly finished model home exterior in a Providence Las Vegas subdivision",
+    file: "section-builder-incentives.png",
     width: 1600,
     height: 1200,
   },

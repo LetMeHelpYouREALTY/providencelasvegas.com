@@ -8,6 +8,7 @@ import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "luc
 import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -77,9 +78,11 @@ export default function WhyBerkshireHathawayPage() {
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                  Backed by Warren Buffett's Legacy
-                </h2>
+                <SectionMedia
+                  imageKey="section-bhhs-advantage"
+                  heading="Backed by Warren Buffett's Legacy"
+                  invert
+                />
                 <p className="text-slate-300 mb-6">
                   <strong>Berkshire Hathaway HomeServices</strong> is the only real estate brand
                   backed by Berkshire Hathaway Inc., Warren Buffett's legendary holding company.
@@ -103,9 +106,10 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* Key Benefits */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
-              The BHHS Advantage
-            </h2>
+            <SectionMedia
+              imageKey="hero-why-bhhs"
+              heading="The BHHS Advantage"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               <div className="bg-white border border-slate-200 rounded-lg p-8 hover:shadow-lg transition-shadow">
                 <div className="bg-blue-100 rounded-full p-4 w-16 h-16 flex items-center justify-center mb-6">
@@ -177,9 +181,11 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* Stats Section */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Berkshire Hathaway HomeServices By The Numbers
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Berkshire Hathaway HomeServices By The Numbers"
+              invert
+            />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               <div className="text-center">
                 <div className="text-4xl md:text-5xl font-bold mb-2">50K+</div>
@@ -204,9 +210,10 @@ export default function WhyBerkshireHathawayPage() {
           <section className="mb-16 max-w-5xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                  Your Local BHHS Expert for Providence Las Vegas
-                </h2>
+                <SectionMedia
+                  imageKey="hero-about"
+                  heading="Your Local BHHS Expert for Providence Las Vegas"
+                />
                 <p className="text-lg text-slate-700 mb-6">
                   Dr. Jan Duffy brings the power of <strong>Berkshire Hathaway HomeServices</strong>{" "}
                   to Providence Las Vegas and all 27 Providence neighborhoods.
@@ -257,9 +264,11 @@ export default function WhyBerkshireHathawayPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Experience the Berkshire Hathaway Difference
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Experience the Berkshire Hathaway Difference"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Ready to work with the most trusted name in real estate? Contact Dr. Jan Duffy today.
             </p>
