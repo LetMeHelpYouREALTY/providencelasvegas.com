@@ -75,7 +75,18 @@ export type SiteImageKey =
   | "section-design-review"
   | "section-market-forces"
   | "section-equity-move-up"
-  | "section-builder-incentives";
+  | "section-builder-incentives"
+  | "section-why-move-vegas"
+  | "section-relocation-services"
+  | "section-california-move"
+  | "section-relocation-sale"
+  | "section-downsizing-options"
+  | "section-sensitive-sales"
+  | "section-property-details"
+  | "section-education"
+  | "section-recently-sold"
+  | "section-in-contract"
+  | "section-ready-home";
 
 export type SiteImage = {
   key: SiteImageKey;
@@ -575,6 +586,94 @@ export const siteImages: Record<SiteImageKey, SiteImage> = {
     heading: "Current Builder Incentives",
     alt: "Newly finished model home exterior in a Providence Las Vegas subdivision",
     file: "section-builder-incentives.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-why-move-vegas": {
+    key: "section-why-move-vegas",
+    heading: "Why People Are Moving to Las Vegas",
+    alt: "Sunny HOA street of tile-roof homes in Providence Las Vegas with Spring Mountains beyond",
+    file: "section-why-move-vegas.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-relocation-services": {
+    key: "section-relocation-services",
+    heading: "Comprehensive Relocation Services",
+    alt: "Moving boxes and house keys on the porch of a Providence Las Vegas home",
+    file: "section-relocation-services.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-california-move": {
+    key: "section-california-move",
+    heading: "Moving from California?",
+    alt: "Packed SUV in the driveway of a Providence Las Vegas home for a California-to-Nevada move",
+    file: "section-california-move.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-relocation-sale": {
+    key: "section-relocation-sale",
+    heading: "How We Handle Your Relocation Sale",
+    alt: "Listing-ready Providence Las Vegas home with a lockbox and packed boxes on the porch",
+    file: "section-relocation-sale.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-downsizing-options": {
+    key: "section-downsizing-options",
+    heading: "Popular Downsizing Destinations",
+    alt: "Single-story patio home with a covered backyard in northwest Las Vegas near Providence",
+    file: "section-downsizing-options.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-sensitive-sales": {
+    key: "section-sensitive-sales",
+    heading: "Situations We Help Navigate",
+    alt: "Quiet closing table with house keys and documents at a Las Vegas real estate office",
+    file: "section-sensitive-sales.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-property-details": {
+    key: "section-property-details",
+    heading: "Property Details",
+    alt: "Open living room and kitchen of a Providence Las Vegas home prepared for listing",
+    file: "section-property-details.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-education": {
+    key: "section-education",
+    heading: "Las Vegas Schools & Education",
+    alt: "Empty northwest Las Vegas school campus exterior after hours with desert landscaping",
+    file: "section-education.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-recently-sold": {
+    key: "section-recently-sold",
+    heading: "Recently Sold in Providence",
+    alt: "Dusk lights in tile-roof homes along a Providence Las Vegas HOA street",
+    file: "section-recently-sold.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-in-contract": {
+    key: "section-in-contract",
+    heading: "Properties In Contract",
+    alt: "Front door lockbox on a Providence Las Vegas home pending sale",
+    file: "section-in-contract.png",
+    width: 1600,
+    height: 1200,
+  },
+  "section-ready-home": {
+    key: "section-ready-home",
+    heading: "Ready to Find Your Dream Home?",
+    alt: "House keys in the front door of a Providence Las Vegas home at golden hour",
+    file: "section-ready-home.png",
     width: 1600,
     height: 1200,
   },

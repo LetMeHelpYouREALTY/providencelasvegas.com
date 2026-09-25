@@ -7,7 +7,6 @@ import Link from "next/link";
 import {
   Phone,
   Plane,
-  Globe,
   Clock,
   CheckCircle,
   Home as HomeIcon,
@@ -19,6 +18,7 @@ import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -85,10 +85,11 @@ export default function RelocationPage() {
 
           {/* Network Advantage */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <div className="flex items-center justify-center mb-6">
-              <Globe className="h-8 w-8 mr-3 text-blue-400" />
-              <h2 className="text-3xl font-bold">Berkshire Hathaway HomeServices Network</h2>
-            </div>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="Berkshire Hathaway HomeServices Network"
+              invert
+            />
             <p className="text-center text-slate-300 mb-8 max-w-2xl mx-auto">
               When you work with Dr. Jan, you're not just getting a Providence Las Vegas agent—you're
               tapping into the most trusted real estate network in America.
@@ -115,9 +116,10 @@ export default function RelocationPage() {
 
           {/* How We Help */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              How We Handle Your Relocation Sale
-            </h2>
+            <SectionMedia
+              imageKey="section-relocation-sale"
+              heading="How We Handle Your Relocation Sale"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-xl text-slate-900 mb-4 flex items-center">
@@ -221,9 +223,10 @@ export default function RelocationPage() {
 
           {/* Timeline Options */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Relocation Timeline Options
-            </h2>
+            <SectionMedia
+              imageKey="section-relocation-services"
+              heading="Relocation Timeline Options"
+            />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white rounded-xl p-6 border border-slate-200">
                 <div className="flex items-center mb-4">
@@ -325,9 +328,10 @@ export default function RelocationPage() {
 
           {/* Common Relocation Destinations */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Popular Relocation Destinations from Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="Popular Relocation Destinations from Las Vegas"
+            />
             <p className="text-slate-600 text-center mb-8 max-w-3xl mx-auto">
               Whether you're relocating for tech jobs in the Bay Area, corporate opportunities in Texas,
               or sunshine in Florida, Dr. Jan connects you with top BHHS agents in your new city.
@@ -352,9 +356,10 @@ export default function RelocationPage() {
 
           {/* The Relocation Process */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              The Relocation Process Step by Step
-            </h2>
+            <SectionMedia
+              imageKey="section-buying-process"
+              heading="The Relocation Process Step by Step"
+            />
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
@@ -418,9 +423,10 @@ export default function RelocationPage() {
 
           {/* Coming TO Las Vegas */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Relocating TO Las Vegas?
-            </h2>
+            <SectionMedia
+              imageKey="section-why-move-vegas"
+              heading="Relocating TO Las Vegas?"
+            />
             <div className="bg-green-50 border border-green-200 rounded-xl p-8">
               <p className="text-slate-700 mb-4">
                 If you're moving TO Las Vegas from another city, Dr. Jan welcomes referrals from BHHS
@@ -480,9 +486,11 @@ export default function RelocationPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Make Your Move?
-            </h2>
+            <SectionMedia
+              imageKey="section-ready-home"
+              heading="Ready to Make Your Move?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Let's create a relocation plan that works with your timeline.
               Dr. Jan will coordinate everything so you can focus on your new opportunity.

@@ -15,6 +15,7 @@ import type { Metadata } from "next";
 import { realscoutUrls } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -107,9 +108,10 @@ export default function CaliforniaRelocatorPage() {
           <RealScoutListings />
 
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Why California Buyers Love Providence
-            </h2>
+            <SectionMedia
+              imageKey="section-california-move"
+              heading="Why California Buyers Love Providence"
+            />
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <div className="flex items-center mb-4">
@@ -155,9 +157,10 @@ export default function CaliforniaRelocatorPage() {
           </section>
 
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4 text-center">
-              Providence at a Glance
-            </h2>
+            <SectionMedia
+              imageKey="section-glance"
+              heading="Providence at a Glance"
+            />
             <ul className="grid md:grid-cols-2 gap-4 text-slate-700 max-w-2xl mx-auto">
               <li className="flex items-center">
                 <CheckCircle className="h-5 w-5 text-green-500 mr-2 flex-shrink-0" />
@@ -185,9 +188,11 @@ export default function CaliforniaRelocatorPage() {
           />
 
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Explore Providence?
-            </h2>
+            <SectionMedia
+              imageKey="section-ready-home"
+              heading="Ready to Explore Providence?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Dr. Jan Duffy helps California relocators find their perfect Providence home. 
               Zero state income tax. More home for your money.

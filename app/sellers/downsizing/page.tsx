@@ -19,6 +19,7 @@ import type { Metadata } from "next";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { realscoutUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -85,9 +86,11 @@ export default function DownsizingPage() {
 
           {/* Equity Extraction */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold mb-8 text-center">
-              Extract Your Equity, Enjoy Your Life
-            </h2>
+            <SectionMedia
+              imageKey="section-equity-move-up"
+              heading="Extract Your Equity, Enjoy Your Life"
+              invert
+            />
             <div className="grid md:grid-cols-2 gap-8 mb-8">
               <div className="bg-white/10 rounded-xl p-6">
                 <h3 className="font-bold text-xl mb-4 flex items-center">
@@ -121,9 +124,10 @@ export default function DownsizingPage() {
 
           {/* Transition Options */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Popular Downsizing Destinations
-            </h2>
+            <SectionMedia
+              imageKey="section-downsizing-options"
+              heading="Popular Downsizing Destinations"
+            />
             <div className="grid md:grid-cols-3 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <div className="bg-amber-100 w-12 h-12 rounded-full flex items-center justify-center mb-4">
@@ -187,9 +191,10 @@ export default function DownsizingPage() {
 
           {/* Dual Transaction Expertise */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              We Handle Both Sides of Your Transition
-            </h2>
+            <SectionMedia
+              imageKey="section-selling-process"
+              heading="We Handle Both Sides of Your Transition"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-lg text-slate-900 mb-4">Selling Your Large Home</h3>
@@ -261,9 +266,10 @@ export default function DownsizingPage() {
 
           {/* 55+ Community Comparison */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Top 55+ Communities for Las Vegas Downsizers
-            </h2>
+            <SectionMedia
+              imageKey="hero-55-plus"
+              heading="Top 55+ Communities for Las Vegas Downsizers"
+            />
             <p className="text-slate-600 text-center mb-8 max-w-3xl mx-auto">
               Las Vegas offers some of the nation's best 55+ communities. Here's how the most popular
               options compare for downsizers looking to maximize their lifestyle while minimizing maintenance.
@@ -305,9 +311,10 @@ export default function DownsizingPage() {
 
           {/* What to Consider */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Key Considerations When Downsizing
-            </h2>
+            <SectionMedia
+              imageKey="section-valuation-process"
+              heading="Key Considerations When Downsizing"
+            />
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <h3 className="font-bold text-lg text-slate-900 mb-4">Financial Factors</h3>
@@ -360,9 +367,10 @@ export default function DownsizingPage() {
 
           {/* The Downsizing Process */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              The Downsizing Process with Dr. Jan Duffy
-            </h2>
+            <SectionMedia
+              imageKey="section-selling-process"
+              heading="The Downsizing Process with Dr. Jan Duffy"
+            />
             <div className="space-y-6">
               <div className="flex items-start">
                 <div className="bg-blue-600 text-white w-10 h-10 rounded-full flex items-center justify-center font-bold mr-4 flex-shrink-0">1</div>
@@ -437,9 +445,11 @@ export default function DownsizingPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Simplify Your Life?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Simplify Your Life?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Get a free home valuation and explore your downsizing options.
               Dr. Jan will show you what's possible without any pressure.

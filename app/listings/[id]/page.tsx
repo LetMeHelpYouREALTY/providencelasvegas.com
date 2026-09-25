@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import { siteConfig, realscoutUrls } from "@/lib/site-config";
 import { generateBreadcrumbSchema, generateRealEstateListingSchema } from "@/lib/schema";
 import { getSiteImage } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
 
 type PropertyPageProps = {
   params: Promise<{ id: string }>;
@@ -132,7 +133,7 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {/* Main Content */}
             <div className="md:col-span-2">
-              <h2 className="text-2xl font-bold text-slate-900 mb-4">Property Details</h2>
+              <SectionMedia imageKey="section-property-details" heading="Property Details" />
               <p className="text-slate-700 mb-6">{property.description}</p>
 
               <div className="bg-slate-50 rounded-lg p-6 mb-6">

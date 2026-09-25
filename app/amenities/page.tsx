@@ -86,9 +86,11 @@ export default function AmenitiesPage() {
 
         <section className="py-12 md:py-16 bg-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Explore Providence Real Estate
-            </h2>
+            <SectionMedia
+              imageKey="section-ready-home"
+              heading="Explore Providence Real Estate"
+              invert
+            />
             <p className="text-blue-100 mb-6 max-w-xl mx-auto">
               Dr. Jan Duffy knows Providence and can guide you through buying or selling in any of
               the 27 neighborhoods.

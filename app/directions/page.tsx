@@ -121,9 +121,11 @@ export default function DirectionsPage() {
 
         <section className="py-12 md:py-16 bg-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Ready to Visit?
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Ready to Visit?"
+              invert
+            />
             <p className="text-blue-100 mb-6 max-w-xl mx-auto">
               Schedule an appointment before you come, or give us a call when you&apos;re on your way.
             </p>
