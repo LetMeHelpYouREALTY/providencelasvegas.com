@@ -68,7 +68,7 @@ export default function GbpActionBar({
       {showHours && (
         <span className={`inline-flex items-center gap-2 px-3 py-2 text-sm ${muted}`}>
           <Clock className="h-4 w-4" />
-          Mon–Fri {businessInfo.hours.monday.replace("-", "–")}, Sat {businessInfo.hours.saturday.replace("-", "–")}
+          Daily {businessInfo.hours.monday.replace("-", "–")}
         </span>
       )}
     </div>

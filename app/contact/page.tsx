@@ -113,7 +113,7 @@ export default function ContactPage() {
                       (702) 744-2993
                     </a>
                     <p className="text-sm text-slate-500 mt-1">
-                      Available Mon-Fri 9am-6pm, Sat 10am-4pm, Sun By Appointment
+                      Available daily 8:00 AM-8:00 PM
                     </p>
                   </div>
                 </div>
@@ -158,9 +158,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold text-slate-900 mb-1">Office Hours</h3>
                     <p className="text-slate-700">
-                      Monday - Friday: 9:00 AM - 6:00 PM<br />
-                      Saturday: 10:00 AM - 4:00 PM<br />
-                      Sunday: By Appointment
+                      Monday - Sunday: 8:00 AM - 8:00 PM
                     </p>
                     <p className="text-sm text-slate-500 mt-1">
                       Available by appointment outside these hours

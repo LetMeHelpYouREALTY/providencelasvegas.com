@@ -153,13 +153,13 @@ export default function GoogleBusinessPage() {
             <SectionMedia imageKey="section-hours" heading="Business Hours" />
             <div className="bg-slate-50 rounded-xl p-6">
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                <div><span className="font-medium">Monday:</span> 9am - 6pm</div>
-                <div><span className="font-medium">Tuesday:</span> 9am - 6pm</div>
-                <div><span className="font-medium">Wednesday:</span> 9am - 6pm</div>
-                <div><span className="font-medium">Thursday:</span> 9am - 6pm</div>
-                <div><span className="font-medium">Friday:</span> 9am - 6pm</div>
-                <div><span className="font-medium">Saturday:</span> 10am - 4pm</div>
-                <div><span className="font-medium">Sunday:</span> By Appointment</div>
+                <div><span className="font-medium">Monday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Tuesday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Wednesday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Thursday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Friday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Saturday:</span> 8am - 8pm</div>
+                <div><span className="font-medium">Sunday:</span> 8am - 8pm</div>
               </div>
             </div>
           </section>

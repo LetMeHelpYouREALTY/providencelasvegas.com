@@ -24,15 +24,15 @@ export const businessInfo = {
   license: "S.0197614.LLC",
   priceRange: "$$",
 
-  // Hours - GBP single source of truth: M-F 9-6, Sat 10-4, Sun By Appointment
+  // Hours - GBP single source of truth: 8:00 AM-8:00 PM daily
   hours: {
-    monday: "09:00-18:00",
-    tuesday: "09:00-18:00",
-    wednesday: "09:00-18:00",
-    thursday: "09:00-18:00",
-    friday: "09:00-18:00",
-    saturday: "10:00-16:00",
-    sunday: "By Appointment",
+    monday: "08:00-20:00",
+    tuesday: "08:00-20:00",
+    wednesday: "08:00-20:00",
+    thursday: "08:00-20:00",
+    friday: "08:00-20:00",
+    saturday: "08:00-20:00",
+    sunday: "08:00-20:00",
   },
 
   // Geo coordinates (Providence, North Las Vegas area)
@@ -142,6 +142,8 @@ export const businessInfo = {
 /**
  * Opening hours for schema.org - generated from businessInfo.hours.
  * Days with "By Appointment" are omitted (no fixed hours in schema).
+ * When every day shares the same schedule, collapses to a single
+ * OpeningHoursSpecification covering all days.
  */
 export const gbpOpeningHoursSpecification = (() => {
   const dayMap: Record<string, string> = {
@@ -153,17 +155,28 @@ export const gbpOpeningHoursSpecification = (() => {
     saturday: "Saturday",
     sunday: "Sunday",
   };
-  return Object.entries(businessInfo.hours)
-    .filter(([, value]) => value !== "By Appointment")
-    .map(([day, value]) => {
-      const [opens, closes] = value.split("-");
-      return {
-        "@type": "OpeningHoursSpecification" as const,
-        dayOfWeek: dayMap[day],
-        opens: opens.trim(),
-        closes: closes.trim(),
-      };
-    });
+  const entries = Object.entries(businessInfo.hours).filter(
+    ([, value]) => value !== "By Appointment"
+  );
+  const allSame = entries.length > 0 && entries.every(([, value]) => value === entries[0][1]);
+  if (allSame) {
+    const [opens, closes] = entries[0][1].split("-");
+    return {
+      "@type": "OpeningHoursSpecification" as const,
+      dayOfWeek: entries.map(([day]) => dayMap[day]),
+      opens: opens.trim(),
+      closes: closes.trim(),
+    };
+  }
+  return entries.map(([day, value]) => {
+    const [opens, closes] = value.split("-");
+    return {
+      "@type": "OpeningHoursSpecification" as const,
+      dayOfWeek: dayMap[day],
+      opens: opens.trim(),
+      closes: closes.trim(),
+    };
+  });
 })();
 
 // 750-word GBP Description (3 sections)
@@ -185,7 +198,7 @@ Dr. Jan's approach is simple: treat every client like family, know the market in
 
 For age-restricted options, Sun City Aliante (5 mi north of Providence) and Del Webb communities are nearby. Dr. Jan provides expertise in Providence HOA resale certificates, Design Review, new construction, and neighborhood comparisons.
 
-Office located at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Available Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday By Appointment. Call (702) 744-2993 for a free consultation or visit www.providencelasvegas.com to start your Providence real estate journey today.`,
+Office located at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Available daily 8:00 AM-8:00 PM. Call (702) 744-2993 for a free consultation or visit www.providencelasvegas.com to start your Providence real estate journey today.`,
 };
 
 // FAQ Schema for GBP Q&A section
@@ -224,7 +237,7 @@ export const gbpFAQs = [
   },
   {
     question: "How do I schedule a consultation with Dr. Jan Duffy?",
-    answer: "Call or text (702) 744-2993 for immediate assistance, or email DrDuffy@ProvidenceLasVegas.com. Office visits available at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday By Appointment.",
+    answer: "Call or text (702) 744-2993 for immediate assistance, or email DrDuffy@ProvidenceLasVegas.com. Office visits available at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Daily 8:00 AM-8:00 PM.",
   },
   {
     question: "Does Dr. Jan help with investment properties in Las Vegas?",

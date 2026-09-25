@@ -131,7 +131,7 @@ export default function Footer() {
               </Link>
             </p>
             <p className="text-slate-400 text-sm mt-3">
-              Hours: Mon–Fri 9am–6pm · Sat 10am–4pm · Sun By Appointment
+              Hours: Daily 8am–8pm
             </p>
             <div className="mt-4 flex flex-wrap gap-3">
               <a

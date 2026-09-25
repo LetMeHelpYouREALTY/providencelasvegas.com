@@ -96,11 +96,7 @@ export default function DirectionsPage() {
                   Office Hours
                 </h3>
                 <p className="text-slate-700">
-                  Monday – Friday: 9:00 AM – 6:00 PM
-                  <br />
-                  Saturday: 10:00 AM – 4:00 PM
-                  <br />
-                  Sunday: By Appointment
+                  Monday – Sunday: 8:00 AM – 8:00 PM
                 </p>
                 <a
                   href="tel:+17027442993"

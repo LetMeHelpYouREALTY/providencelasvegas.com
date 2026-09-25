@@ -74,7 +74,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "How can I schedule a consultation with Dr. Jan Duffy?",
       answer:
-        "Call or text (702) 744-2993 for immediate assistance, or email DrDuffy@ProvidenceLasVegas.com. Office visits are available at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday By Appointment.",
+        "Call or text (702) 744-2993 for immediate assistance, or email DrDuffy@ProvidenceLasVegas.com. Office visits are available at 7181 N Hualapai Way #135, Las Vegas, NV 89166. Daily 8am-8pm.",
     },
     {
       question: "What neighborhoods does Dr. Jan Duffy specialize in?",
@@ -92,7 +92,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "What are Dr. Jan Duffy's office hours?",
       answer:
-        "Office hours are Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday By Appointment. The office is located at 7181 N Hualapai Way #135, Las Vegas, NV 89166.",
+        "Office hours are 8am-8pm daily. The office is located at 7181 N Hualapai Way #135, Las Vegas, NV 89166.",
     },
     {
       question: "Can I get a free home valuation without visiting the office?",
@@ -780,7 +780,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "How do I contact Dr. Jan Duffy?",
       answer:
-        "Call (702) 744-2993 or email DrDuffy@ProvidenceLasVegas.com. Office: 7181 N Hualapai Way #135, Las Vegas, NV 89166. Monday-Friday 9am-6pm, Saturday 10am-4pm, Sunday By Appointment.",
+        "Call (702) 744-2993 or email DrDuffy@ProvidenceLasVegas.com. Office: 7181 N Hualapai Way #135, Las Vegas, NV 89166. Daily 8am-8pm.",
     },
   ],
 
