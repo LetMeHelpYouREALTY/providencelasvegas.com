@@ -4,8 +4,6 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import Link from "next/link";
 import { 
   Phone, 
-  Plane, 
-  MapPin, 
   Users, 
   CheckCircle, 
   Sun, 
@@ -14,7 +12,6 @@ import {
   Home,
   School,
   ArrowRight,
-  Car,
   Shield,
   Globe,
 } from "lucide-react";
@@ -23,6 +20,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -58,37 +56,37 @@ const relocationSchema = {
 const popularRelocationAreas = [
   {
     name: "Summerlin",
-    best: "Families, professionals",
-    highlights: "Top-rated schools, 150+ parks, Red Rock Canyon proximity, master-planned living",
+    best: "Parks and Red Rock access",
+    highlights: "150+ parks, Red Rock Canyon proximity, master-planned living",
     from: "$500K",
   },
   {
     name: "Henderson",
-    best: "Families, retirees",
-    highlights: "Lowest crime rates, excellent schools, community feel, diverse neighborhoods",
+    best: "Henderson location and amenities",
+    highlights: "Community parks, shopping, dining, and diverse neighborhoods",
     from: "$450K",
   },
   {
     name: "Green Valley",
-    best: "Established families",
+    best: "Mature landscaping and golf",
     highlights: "Mature landscaping, championship golf, shopping and dining, Henderson location",
     from: "$480K",
   },
   {
     name: "Skye Canyon",
-    best: "Young families",
+    best: "Newer construction",
     highlights: "Newest construction, mountain trail access, modern amenities, growing area",
     from: "$500K",
   },
   {
     name: "Southern Highlands",
-    best: "Luxury buyers, golfers",
+    best: "Golf and mountain views",
     highlights: "Guard-gated sections, championship golf, mountain views, resort living",
     from: "$700K",
   },
   {
     name: "Inspirada",
-    best: "Families, active adults",
+    best: "Trails and community pools",
     highlights: "Resort-style pools, extensive trails, new homes, Henderson convenience",
     from: "$450K",
   },
@@ -149,7 +147,11 @@ export default function RelocationPage() {
 
           {/* Why Las Vegas */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">Why People Are Moving to Las Vegas</h2>
+            <SectionMedia
+              imageKey="section-why-move-vegas"
+              heading="Why People Are Moving to Las Vegas"
+              invert
+            />
             <p className="text-slate-300 text-center max-w-3xl mx-auto mb-8">
               Las Vegas has become one of the fastest-growing cities in America, attracting 
               families, professionals, and retirees from across the country. Here's why so 
@@ -181,9 +183,10 @@ export default function RelocationPage() {
 
           {/* Expert Quote */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-6 text-center">
-              Expert Relocation Guidance
-            </h2>
+            <SectionMedia
+              imageKey="section-why-choose"
+              heading="Expert Relocation Guidance"
+            />
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-4">
                 "Moving to a new city is stressful enough. I handle everything from neighborhood
@@ -200,9 +203,10 @@ export default function RelocationPage() {
 
           {/* Relocation Services */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Comprehensive Relocation Services
-            </h2>
+            <SectionMedia
+              imageKey="section-relocation-services"
+              heading="Comprehensive Relocation Services"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Relocating involves much more than just finding a home. Dr. Jan Duffy provides 
               end-to-end relocation services that address every aspect of your move, from 
@@ -220,9 +224,10 @@ export default function RelocationPage() {
 
           {/* Neighborhoods */}
           <section className="mb-16 bg-slate-50 rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Popular Relocation Destinations
-            </h2>
+            <SectionMedia
+              imageKey="section-neighborhoods"
+              heading="Popular Relocation Destinations"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               Choosing the right neighborhood is crucial for a successful relocation. Each Las 
               Vegas community offers a unique lifestyle, price point, and amenities. Dr. Jan 
@@ -255,19 +260,20 @@ export default function RelocationPage() {
 
           {/* School Information */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              Las Vegas Schools & Education
-            </h2>
+            <SectionMedia
+              imageKey="section-education"
+              heading="Las Vegas Schools & Education"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
-              For families with children, school quality is often the top priority when 
-              relocating. Las Vegas offers a range of public, charter, and private school 
-              options. Dr. Jan provides detailed school research to help you make informed decisions.
+              Zoned campuses and named schools vary by address. Las Vegas offers public, charter,
+              and private options. Dr. Jan provides campus names, commute times, and enrollment
+              contacts so you can compare by the specifics that matter to you.
             </p>
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-white border border-slate-200 rounded-xl p-6">
                 <h3 className="font-bold text-lg text-slate-900 mb-4 flex items-center">
                   <School className="h-5 w-5 text-blue-600 mr-2" />
-                  Top-Rated School Areas
+                  School Names by Area
                 </h3>
                 <ul className="space-y-2 text-slate-700">
                   <li className="flex items-start">
@@ -313,7 +319,11 @@ export default function RelocationPage() {
 
           {/* Coming From California */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">
-            <h2 className="text-2xl font-bold mb-4 text-center">Moving from California?</h2>
+            <SectionMedia
+              imageKey="section-california-move"
+              heading="Moving from California?"
+              invert
+            />
             <p className="text-blue-100 text-center max-w-3xl mx-auto mb-8">
               California to Nevada is one of the most popular relocation routes in the country. 
               Thousands of California families move to Las Vegas each year seeking lower costs, 
@@ -353,9 +363,10 @@ export default function RelocationPage() {
 
           {/* BHHS Network */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4 text-center">
-              The Berkshire Hathaway HomeServices Advantage
-            </h2>
+            <SectionMedia
+              imageKey="section-bhhs-advantage"
+              heading="The Berkshire Hathaway HomeServices Advantage"
+            />
             <p className="text-slate-600 text-center max-w-3xl mx-auto mb-8">
               With 50,000+ agents in 1,500+ offices worldwide, Berkshire Hathaway HomeServices 
               provides seamless coordination for relocations. Your agent back home can connect 
@@ -395,7 +406,11 @@ export default function RelocationPage() {
 
           {/* CTA */}
           <section className="text-center bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Planning Your Move to Las Vegas?</h2>
+            <SectionMedia
+              imageKey="section-ready-home"
+              heading="Planning Your Move to Las Vegas?"
+              invert
+            />
             <p className="text-xl text-slate-300 mb-8">
               Let Dr. Jan Duffy and Berkshire Hathaway HomeServices make your relocation stress-free.
               Whether you're moving next month or exploring options, a free consultation can help 

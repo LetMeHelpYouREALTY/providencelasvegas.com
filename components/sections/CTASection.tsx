@@ -2,15 +2,18 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, Home } from "lucide-react";
 import { realscoutUrls } from "@/lib/site-config";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export default function CTASection() {
   return (
     <section className="py-16 md:py-24 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
-            Ready to Find Your Dream Home?
-          </h2>
+          <SectionMedia
+            imageKey="section-ready-home"
+            heading="Ready to Find Your Dream Home?"
+            invert
+          />
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
             Let's start your real estate journey today. Get expert guidance, personalized service,
             and results that exceed your expectations.

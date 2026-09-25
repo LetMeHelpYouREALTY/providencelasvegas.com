@@ -6,7 +6,8 @@ import { Phone } from "lucide-react";
 import type { Metadata } from "next";
 import SchemaScript from "@/components/SchemaScript";
 import PageHero from "@/components/media/PageHero";
-import { pageImageMetadata } from "@/lib/images";
+import SectionMedia from "@/components/media/SectionMedia";
+import { pageImageMetadata, type SiteImageKey } from "@/lib/images";
 import {
   generateBreadcrumbSchema,
   generateFAQSchema,
@@ -35,9 +36,14 @@ const breadcrumbs = [
   { name: "FAQ", url: "/faq" },
 ];
 
-const faqCategories = [
+const faqCategories: {
+  title: string;
+  imageKey: SiteImageKey;
+  faqs: { q: string; a: string }[];
+}[] = [
   {
     title: "About Berkshire Hathaway HomeServices",
+    imageKey: "section-bhhs-advantage",
     faqs: [
       {
         q: "Why should I choose a Berkshire Hathaway HomeServices agent?",
@@ -59,6 +65,7 @@ const faqCategories = [
   },
   {
     title: "Buying a Home in Providence",
+    imageKey: "section-buying-process",
     faqs: [
       {
         q: "How long does the home buying process take?",
@@ -84,6 +91,7 @@ const faqCategories = [
   },
   {
     title: "Selling Your Home",
+    imageKey: "section-selling-process",
     faqs: [
       {
         q: "What is my home worth in today's market?",
@@ -91,7 +99,7 @@ const faqCategories = [
       },
       {
         q: "How long will it take to sell my home?",
-        a: "Currently, well-priced Providence homes are selling in an average of 28 days. Premium homes may take longer (45+ days). Pricing strategy is crucial—overpriced homes can sit for months.",
+        a: `Currently, ZIP 89166 median list time is 25 days. Premium homes may take longer. Pricing strategy is crucial—overpriced homes can sit for months.`,
       },
       {
         q: "What do I need to do to prepare my home for sale?",
@@ -103,12 +111,13 @@ const faqCategories = [
       },
       {
         q: "Should I wait for prices to go higher?",
-        a: "Current appreciation of 4.2% YoY suggests prices are stable with gradual increases. Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized market analysis.",
+        a: "Valley sold medians and 89166 list prices move independently. Timing the market is difficult—most sellers do better by listing when ready rather than waiting. Dr. Jan can provide a personalized market analysis.",
       },
     ],
   },
   {
     title: "Investment Properties",
+    imageKey: "hero-investment",
     faqs: [
       {
         q: "Is Providence good for real estate investing?",
@@ -126,14 +135,15 @@ const faqCategories = [
   },
   {
     title: "Relocating to Providence Las Vegas",
+    imageKey: "section-california-move",
     faqs: [
       {
         q: "Can BHHS help with relocations?",
         a: "Absolutely! Our global network of 50,000+ agents makes relocations seamless. Dr. Jan can coordinate with BHHS agents in your current city while providing expert guidance on Providence Las Vegas neighborhoods, schools, and communities.",
       },
       {
-        q: "What are the best Providence neighborhoods for families?",
-        a: "Providence has 27 diverse neighborhoods—Oxford Commons, Saratoga Highlands, Auburn & Bradford, and more—each with its own amenities. All offer access to three community parks. Dr. Jan can match you with the right Providence neighborhood based on your priorities.",
+        q: "How do I choose a Providence neighborhood?",
+        a: "Providence has 27 neighborhoods—Oxford Commons, Saratoga Highlands, Auburn & Bradford, and more—each with its own amenities and commute patterns. All offer access to three community parks. Dr. Jan can match you with the right Providence neighborhood based on square footage, HOA rules, and commute times.",
       },
       {
         q: "How is the cost of living in Providence Las Vegas?",
@@ -143,6 +153,7 @@ const faqCategories = [
   },
   {
     title: "Working with Dr. Jan Duffy",
+    imageKey: "hero-about",
     faqs: [
       {
         q: "What is Dr. Jan Duffy's experience?",
@@ -207,9 +218,7 @@ export default function FAQPage() {
           <div className="max-w-4xl mx-auto space-y-12">
             {faqCategories.map((category) => (
               <section key={category.title}>
-                <h2 className="text-2xl font-bold text-slate-900 mb-6 pb-2 border-b border-slate-200">
-                  {category.title}
-                </h2>
+                <SectionMedia imageKey={category.imageKey} heading={category.title} />
                 <div className="space-y-4">
                   {category.faqs.map((faq, index) => (
                     <div key={index} className="bg-slate-50 rounded-lg p-6">
@@ -224,7 +233,11 @@ export default function FAQPage() {
 
           {/* CTA */}
           <section className="mt-16 text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Still Have Questions?</h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Still Have Questions?"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Dr. Jan Duffy is happy to answer any questions about Las Vegas real estate or working
               with Berkshire Hathaway HomeServices.

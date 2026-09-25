@@ -4,7 +4,7 @@ import RealScoutListings from "@/components/realscout/RealScoutListings";
 import RelatedPages from "@/components/navigation/RelatedPages";
 import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
-import { TrendingUp, TrendingDown, Home, Calendar, DollarSign, BarChart, Phone } from "lucide-react";
+import { TrendingUp, TrendingDown, Home, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { marketStats } from "@/lib/site-config";
 import { generateBreadcrumbSchema } from "@/lib/schema";
@@ -12,6 +12,7 @@ import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const revalidate = 86400;
@@ -81,9 +82,11 @@ export default function MarketReportPage() {
 
           {/* Key Stats Overview - from site-config marketStats */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold mb-8 text-center">
-              Market Snapshot | {marketStats.lastUpdated}
-            </h2>
+            <SectionMedia
+              imageKey="section-market-stats"
+              heading={`Market Snapshot | ${marketStats.lastUpdated}`}
+              invert
+            />
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold text-blue-400 mb-2">{marketStats.lasVegas.medianPriceFormatted}</div>
@@ -113,9 +116,10 @@ export default function MarketReportPage() {
 
           {/* Area Breakdown - uses marketStats where available */}
           <section className="mb-16 max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Market Data by Area
-            </h2>
+            <SectionMedia
+              imageKey="section-market-forces"
+              heading="Market Data by Area"
+            />
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
                 {
@@ -170,9 +174,10 @@ export default function MarketReportPage() {
 
           {/* Expert Analysis */}
           <section className="mb-16 max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Expert Market Analysis
-            </h2>
+            <SectionMedia
+              imageKey="hero-market-insights"
+              heading="Expert Market Analysis"
+            />
             <div className="bg-slate-50 rounded-lg p-8">
               <blockquote className="text-lg text-slate-700 italic mb-6">
                 "Southern Nevada's August 2026 sold median is $475,000, down 1% from a year earlier. ZIP 89166 list prices sit higher than the valley sold median, so Providence pricing needs a neighborhood CMA—not a valley average."
@@ -212,9 +217,10 @@ export default function MarketReportPage() {
 
           {/* Market Trends */}
           <section className="mb-16 max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8 text-center">
-              Key Market Trends to Watch
-            </h2>
+            <SectionMedia
+              imageKey="section-builder-incentives"
+              heading="Key Market Trends to Watch"
+            />
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center">
                 <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
@@ -240,10 +246,10 @@ export default function MarketReportPage() {
                 <div className="bg-blue-100 rounded-full p-4 w-16 h-16 mx-auto mb-4 flex items-center justify-center">
                   <BarChart className="h-8 w-8 text-blue-600" />
                 </div>
-                <h3 className="font-bold text-lg mb-2">Luxury Strength</h3>
+                <h3 className="font-bold text-lg mb-2">Premium Segment</h3>
                 <p className="text-slate-600 text-sm">
-                  The $1M+ segment showing strongest appreciation at 8.5% YoY. The Ridges and
-                  Southern Highlands leading the luxury market.
+                  Premium and $1M+ pricing is neighborhood-specific. Call (702) 744-2993 for a
+                  comparable-sales CMA rather than a valley average.
                 </p>
               </div>
             </div>
@@ -263,9 +269,11 @@ export default function MarketReportPage() {
 
           {/* CTA */}
           <section className="text-center bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Get Personalized Market Insights
-            </h2>
+            <SectionMedia
+              imageKey="section-cta"
+              heading="Get Personalized Market Insights"
+              invert
+            />
             <p className="text-xl text-blue-100 mb-8">
               Want to know what these numbers mean for your specific neighborhood or situation? Dr.
               Jan Duffy provides free market consultations.

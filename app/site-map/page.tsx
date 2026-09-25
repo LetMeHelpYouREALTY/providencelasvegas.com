@@ -4,6 +4,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { providenceNeighborhoods } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata } from "@/lib/images";
 
 export const metadata: Metadata = {
@@ -30,7 +31,7 @@ export default function SiteMapPage() {
           </p>
 
           <section className="mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Main Pages</h2>
+            <SectionMedia imageKey="section-services" heading="Main Pages" />
             <ul className="space-y-2 text-slate-700">
               <li><Link href="/" className="text-blue-600 hover:text-blue-700 hover:underline">Home</Link></li>
               <li><Link href="/providence" className="text-blue-600 hover:text-blue-700 hover:underline">Providence Las Vegas</Link></li>
@@ -45,7 +46,7 @@ export default function SiteMapPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Buying & Selling</h2>
+            <SectionMedia imageKey="section-buying-process" heading="Buying & Selling" />
             <ul className="space-y-2 text-slate-700">
               <li><Link href="/buyers" className="text-blue-600 hover:text-blue-700 hover:underline">Buy in Providence</Link></li>
               <li><Link href="/buyers/first-time-buyers" className="text-blue-600 hover:text-blue-700 hover:underline">First-Time Home Buyers</Link></li>
@@ -59,7 +60,7 @@ export default function SiteMapPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Services & Tools</h2>
+            <SectionMedia imageKey="section-core-services" heading="Services & Tools" />
             <ul className="space-y-2 text-slate-700">
               <li><Link href="/home-valuation" className="text-blue-600 hover:text-blue-700 hover:underline">Free Home Valuation</Link></li>
               <li><Link href="/luxury-homes" className="text-blue-600 hover:text-blue-700 hover:underline">Premium Providence Homes</Link></li>
@@ -71,7 +72,7 @@ export default function SiteMapPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">Market & Resources</h2>
+            <SectionMedia imageKey="section-market-stats" heading="Market & Resources" />
             <ul className="space-y-2 text-slate-700">
               <li><Link href="/market-report" className="text-blue-600 hover:text-blue-700 hover:underline">Market Report</Link></li>
               <li><Link href="/market-update" className="text-blue-600 hover:text-blue-700 hover:underline">Market Update</Link></li>
@@ -83,7 +84,7 @@ export default function SiteMapPage() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-xl font-bold text-slate-900 mb-4">All 27 Providence Neighborhoods</h2>
+            <SectionMedia imageKey="section-neighborhoods" heading="All 27 Providence Neighborhoods" />
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 text-slate-700">
               {providenceNeighborhoods.map((n) => (
                 <li key={n.slug}>

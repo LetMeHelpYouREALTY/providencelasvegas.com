@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MapPin, Home } from "lucide-react";
 import { recentSales } from "@/lib/site-config";
+import SectionMedia from "@/components/media/SectionMedia";
 
 export default function RecentlySoldSection() {
   if (!recentSales.length) return null;
@@ -8,9 +9,11 @@ export default function RecentlySoldSection() {
   return (
     <section className="py-12 md:py-16 bg-white" aria-labelledby="recently-sold">
       <div className="container mx-auto px-4">
-        <h2 id="recently-sold" className="text-2xl md:text-3xl font-bold text-slate-900 mb-6 text-center">
-          Recently Sold in Providence
-        </h2>
+        <SectionMedia
+          imageKey="section-recently-sold"
+          heading="Recently Sold in Providence"
+          headingId="recently-sold"
+        />
         <p className="text-slate-600 text-center mb-8 max-w-2xl mx-auto">
           Providence Real Estate helps buyers and sellers across Providence, North Las Vegas, and Las Vegas.
         </p>

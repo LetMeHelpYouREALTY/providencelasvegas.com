@@ -14,6 +14,7 @@ import { generateBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
+import SectionMedia from "@/components/media/SectionMedia";
 import { neighborhoodImageKey, ogImageFor } from "@/lib/images";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -111,7 +112,10 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
 
             {/* Market snapshot - data-rich for AI parsing */}
             <section className="mt-6 max-w-3xl" aria-label="Market snapshot">
-              <h2 className="text-xl font-bold text-slate-900 mb-3">Providence & Las Vegas Market Snapshot</h2>
+              <SectionMedia
+                imageKey="section-market-stats"
+                heading="Providence & Las Vegas Market Snapshot"
+              />
               <p className="text-slate-700 text-sm mb-2">
                 {neighborhood.name} is one of {providenceCommunity.neighborhoodCount} Providence neighborhoods; Providence has {providenceCommunity.homeCount} homes and {providenceCommunity.parks.length} community parks. Southern Nevada median sold ({marketStats.lastUpdated}): {marketStats.lasVegas.medianPriceFormatted}. ZIP 89166 median list: {marketStats.zip89166.medianListPriceFormatted}; {marketStats.zip89166.daysOnMarket} days on market (list).
               </p>
@@ -127,9 +131,10 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              Community Parks Near {neighborhood.name}, Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-parks"
+              heading={`Community Parks Near ${neighborhood.name}, Providence Las Vegas`}
+            />
             <p className="text-slate-700 mb-4">
               All Providence Las Vegas residents, including {neighborhood.name}, have access to
               three community parks:
@@ -166,9 +171,10 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              HOA & Resale in {neighborhood.name}, Providence Las Vegas
-            </h2>
+            <SectionMedia
+              imageKey="section-design-review"
+              heading={`HOA & Resale in ${neighborhood.name}, Providence Las Vegas`}
+            />
             <p className="text-slate-700 mb-4">
               For Design Review, Realtors/Resale, and community documents for Providence Las
               Vegas and {neighborhood.name}, visit the official Providence Master HOA website.
@@ -213,9 +219,11 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
 
         <section className="py-12 md:py-16 bg-blue-600 text-white">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="text-2xl font-bold mb-4">
-              Buy or Sell in {neighborhood.name}
-            </h2>
+            <SectionMedia
+              imageKey="section-ready-home"
+              heading={`Buy or Sell in ${neighborhood.name}`}
+              invert
+            />
             <p className="text-blue-100 mb-6 max-w-xl mx-auto">
               Dr. Jan Duffy knows Providence and can help you in {neighborhood.name} and every
               neighborhood.
