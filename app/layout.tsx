@@ -3,19 +3,11 @@ import "./globals.css";
 import React from "react";
 import type { Metadata } from "next";
 import Script from "next/script";
-import dynamic from "next/dynamic";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "lib/utils";
 import SchemaScript from "@/components/SchemaScript";
-
-const AIChatWidget = dynamic(() => import("@/components/chat/AIChatWidget").then((m) => ({ default: m.default })), {
-  ssr: false,
-  loading: () => null,
-});
-const CalendlyBadge = dynamic(() => import("@/components/calendly/CalendlyBadge").then((m) => ({ default: m.default })), {
-  ssr: false,
-  loading: () => null,
-});
+import AIChatWidget from "@/components/chat/AIChatWidgetClient";
+import CalendlyBadge from "@/components/calendly/CalendlyBadgeClient";
 import {
   generateRealEstateAgentSchema,
   generateWebSiteSchema,

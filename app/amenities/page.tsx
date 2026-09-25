@@ -2,7 +2,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 import RelatedPages from "@/components/navigation/RelatedPages";
-import dynamic from "next/dynamic";
+import AmenityMap from "@/components/location/AmenityMapClient";
 import { MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -10,18 +10,6 @@ import { getRelatedPages } from "@/lib/related-pages";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
-
-const AmenityMap = dynamic(
-  () => import("@/components/location/AmenityMap").then((m) => ({ default: m.default })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="rounded-xl overflow-hidden bg-slate-100 h-[500px] flex items-center justify-center">
-        <p className="text-slate-600">Loading map...</p>
-      </div>
-    ),
-  }
-);
 
 export const metadata: Metadata = {
   title: "Nearby Amenities | Providence Las Vegas Area Map",

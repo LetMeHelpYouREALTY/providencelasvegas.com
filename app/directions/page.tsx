@@ -2,7 +2,7 @@ import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import Breadcrumbs from "@/components/navigation/Breadcrumbs";
 import RelatedPages from "@/components/navigation/RelatedPages";
-import dynamic from "next/dynamic";
+import DirectionsMap from "@/components/location/DirectionsMapClient";
 import { MapPin, Phone, Clock, Star } from "lucide-react";
 import Link from "next/link";
 import type { Metadata } from "next";
@@ -11,19 +11,6 @@ import { officeInfo, gbpUrls } from "@/lib/site-config";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
-
-const DirectionsMap = dynamic(
-  () =>
-    import("@/components/location/DirectionsMap").then((m) => ({ default: m.default })),
-  {
-    ssr: false,
-    loading: () => (
-      <div className="rounded-xl overflow-hidden bg-slate-100 h-[500px] flex items-center justify-center">
-        <p className="text-slate-600">Loading directions...</p>
-      </div>
-    ),
-  }
-);
 
 export const metadata: Metadata = {
   title: "Directions | Plan Your Visit | Providence Real Estate Las Vegas",
