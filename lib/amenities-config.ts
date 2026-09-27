@@ -32,23 +32,22 @@ export type AmenityCategoryId =
 export type AmenityCategory = {
   id: AmenityCategoryId;
   label: string;
-  /** Google Places API (New) includedPrimaryTypes — first entry used for searchNearby */
-  placeType: string;
+  /** Google Places API (New) includedPrimaryTypes — one searchNearby per category */
+  placeTypes: string[];
 };
 
-/** Family master-planned community: schools included; parks and grocery near top after dining */
 export const AMENITY_CATEGORIES: AmenityCategory[] = [
-  { id: "restaurants", label: "Restaurants", placeType: "restaurant" },
-  { id: "cafes", label: "Cafes", placeType: "cafe" },
-  { id: "grocery", label: "Grocery", placeType: "grocery_store" },
-  { id: "parks", label: "Parks", placeType: "park" },
-  { id: "golf", label: "Golf", placeType: "golf_course" },
-  { id: "healthcare", label: "Healthcare", placeType: "hospital" },
-  { id: "pharmacies", label: "Pharmacies", placeType: "pharmacy" },
-  { id: "shopping", label: "Shopping", placeType: "shopping_mall" },
-  { id: "parking", label: "Parking", placeType: "parking" },
-  { id: "fitness", label: "Fitness", placeType: "gym" },
-  { id: "schools", label: "Schools", placeType: "school" },
+  { id: "restaurants", label: "Restaurants", placeTypes: ["restaurant"] },
+  { id: "cafes", label: "Cafes", placeTypes: ["cafe"] },
+  { id: "grocery", label: "Grocery", placeTypes: ["grocery_store"] },
+  { id: "parks", label: "Parks", placeTypes: ["park"] },
+  { id: "golf", label: "Golf", placeTypes: ["golf_course"] },
+  { id: "healthcare", label: "Healthcare", placeTypes: ["hospital"] },
+  { id: "pharmacies", label: "Pharmacies", placeTypes: ["pharmacy"] },
+  { id: "shopping", label: "Shopping", placeTypes: ["shopping_mall"] },
+  { id: "parking", label: "Parking", placeTypes: ["parking"] },
+  { id: "fitness", label: "Fitness", placeTypes: ["gym"] },
+  { id: "schools", label: "Schools", placeTypes: ["school"] },
 ];
 
 export function getAmenityCategory(id: AmenityCategoryId): AmenityCategory {
@@ -67,20 +66,23 @@ export type CuratedPlace = {
   name: string;
   category: AmenityCategoryId | "community";
   schemaType: string;
-  streetAddress: string;
+  /** Official primary source used to verify name/address */
+  sourceUrl: string;
+  streetAddress?: string;
   addressLocality: string;
   addressRegion: string;
-  postalCode: string;
+  postalCode?: string;
   description?: string;
 };
 
-/** Verified names and addresses only — used for fallback list and ItemList JSON-LD */
+/** Verified names and addresses — fallback list and ItemList JSON-LD */
 export const curatedNearbyPlaces: CuratedPlace[] = [
   {
     name: "The Promenade",
     category: "community",
     schemaType: "Park",
-    streetAddress: "Providence Master HOA community park",
+    sourceUrl: "https://www.providencelvhoa.com/community-parks/",
+    streetAddress: "7195 Egan Crest Ln",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89166",
@@ -90,7 +92,8 @@ export const curatedNearbyPlaces: CuratedPlace[] = [
     name: "Knickerbocker Park",
     category: "parks",
     schemaType: "Park",
-    streetAddress: "Providence community park",
+    sourceUrl: "https://www.providencelvhoa.com/community-parks/",
+    streetAddress: "10695 Dorrell Ln",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89166",
@@ -101,7 +104,8 @@ export const curatedNearbyPlaces: CuratedPlace[] = [
     name: "Huckleberry Park",
     category: "parks",
     schemaType: "Park",
-    streetAddress: "Providence community park",
+    sourceUrl: "https://www.providencelvhoa.com/community-parks/",
+    streetAddress: "10325 Farm Rd",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89166",
@@ -112,6 +116,7 @@ export const curatedNearbyPlaces: CuratedPlace[] = [
     name: "Albertsons",
     category: "grocery",
     schemaType: "GroceryStore",
+    sourceUrl: "https://local.albertsons.com/nv/las-vegas/6730-n-hualapai-way.html",
     streetAddress: "6730 N Hualapai Way",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
@@ -119,39 +124,45 @@ export const curatedNearbyPlaces: CuratedPlace[] = [
     description: "Full-service grocery on N Hualapai Way, a primary supermarket for Providence shoppers.",
   },
   {
-    name: "Centennial Hills Hospital",
+    name: "Centennial Hills Hospital Medical Center",
     category: "healthcare",
     schemaType: "Hospital",
-    streetAddress: "6900 N Durango Dr",
+    sourceUrl: "https://www.centennialhillshospital.com/patients-visitors/maps-directions",
+    streetAddress: "6900 North Durango Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89149",
     description: "Acute-care hospital serving northwest Las Vegas and Providence-area residents.",
   },
   {
-    name: "Bill & Lillie Heinrich Elementary School",
+    name: "Henry and Evelyn Bozarth Elementary School",
     category: "schools",
     schemaType: "School",
-    streetAddress: "7250 Gilman St",
+    sourceUrl: "https://bozarthelementary.org/",
+    streetAddress: "7431 Egan Crest Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
     postalCode: "89166",
-    description: "Clark County School District elementary school within Providence Las Vegas.",
+    description:
+      "Clark County School District elementary school within Providence; confirm zoning for your address.",
   },
   {
-    name: "Irwin & Susan Molasky Junior High School",
+    name: "Edmundo Eddie Escobedo Sr. Middle School",
     category: "schools",
     schemaType: "MiddleSchool",
-    streetAddress: "7801 Gilman St",
+    sourceUrl: "https://www.escobedoms.com/",
+    streetAddress: "9501 Echelon Point Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
-    postalCode: "89166",
-    description: "Clark County School District junior high serving Providence-area students.",
+    postalCode: "89149",
+    description:
+      "Clark County School District middle school serving many Providence-area students; confirm zoning.",
   },
   {
     name: "Painted Desert Golf Club",
     category: "golf",
     schemaType: "GolfCourse",
+    sourceUrl: "https://arcisgolf.com/clubs/painted-desert-golf-club/hours-and-directions",
     streetAddress: "5555 Painted Mirage Dr",
     addressLocality: "Las Vegas",
     addressRegion: "NV",
@@ -160,8 +171,10 @@ export const curatedNearbyPlaces: CuratedPlace[] = [
   },
 ];
 
-export function buildMapEmbedFallbackUrl(): string {
-  const { lat, lng } = providenceMapCenter;
+export function buildMapEmbedFallbackUrl(
+  center?: { lat: number; lng: number }
+): string {
+  const { lat, lng } = center ?? providenceMapCenter;
   return `https://www.google.com/maps?q=${lat},${lng}&z=14&output=embed`;
 }
 

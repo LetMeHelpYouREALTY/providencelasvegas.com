@@ -636,14 +636,19 @@ export function generateCuratedAmenitiesItemListSchema() {
       item: {
         "@type": place.schemaType,
         name: place.name,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: place.streetAddress,
-          addressLocality: place.addressLocality,
-          addressRegion: place.addressRegion,
-          postalCode: place.postalCode,
-          addressCountry: "US",
-        },
+        url: place.sourceUrl,
+        ...(place.streetAddress
+          ? {
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: place.streetAddress,
+                addressLocality: place.addressLocality,
+                addressRegion: place.addressRegion,
+                ...(place.postalCode ? { postalCode: place.postalCode } : {}),
+                addressCountry: "US",
+              },
+            }
+          : {}),
       },
     })),
   };

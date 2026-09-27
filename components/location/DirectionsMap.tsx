@@ -3,7 +3,8 @@
 import { useEffect, useRef, useState } from "react";
 import { MapPin, Car, Footprints, Bus, Bike, Loader2, Navigation } from "lucide-react";
 import { officeInfo } from "@/lib/site-config";
-import { loadGoogleMaps } from "@/lib/google-maps-loader";
+import { loadGoogleMaps, mapsAuthFailed } from "@/lib/google-maps-loader";
+import { buildMapEmbedFallbackUrl } from "@/lib/amenities-config";
 
 const TRAVEL_MODES = [
   { value: "DRIVING" as const, label: "Driving", icon: Car },
@@ -35,8 +36,18 @@ export default function DirectionsMap({
   const [error, setError] = useState<string | null>(null);
   const mapInstanceRef = useRef<google.maps.Map | null>(null);
   const directionsRendererRef = useRef<google.maps.DirectionsRenderer | null>(null);
+  const [useFallback, setUseFallback] = useState(
+    () => mapsAuthFailed || !process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY
+  );
 
   useEffect(() => {
+    const onAuthFailure = () => setUseFallback(true);
+    window.addEventListener("gmaps:auth-failure", onAuthFailure);
+    return () => window.removeEventListener("gmaps:auth-failure", onAuthFailure);
+  }, []);
+
+  useEffect(() => {
+    if (useFallback) return;
     let cancelled = false;
 
     loadGoogleMaps()
@@ -79,12 +90,8 @@ export default function DirectionsMap({
           });
         }
       })
-      .catch((err) => {
-        if (!cancelled) {
-          setError(
-            err instanceof Error ? err.message : "Failed to load Google Maps"
-          );
-        }
+      .catch(() => {
+        if (!cancelled) setUseFallback(true);
       });
 
     return () => {
@@ -92,7 +99,7 @@ export default function DirectionsMap({
       directionsRendererRef.current?.setMap(null);
       mapInstanceRef.current = null;
     };
-  }, []);
+  }, [useFallback]);
 
   const calculateRoute = (originOverride?: string) => {
     if (!directionsRendererRef.current) return;
@@ -146,23 +153,46 @@ export default function DirectionsMap({
     calculateRoute();
   }, [travelMode]);
 
-  // Full error UI only for setup/config failures
-  const isSetupError =
-    error &&
-    (error.includes("API key") ||
-      error.includes("Failed to load Google Maps") ||
-      error.includes("enable Directions API"));
-  if (isSetupError) {
+  if (useFallback) {
+    const dest =
+      typeof destination === "string"
+        ? destination
+        : { lat: destination.lat, lng: destination.lng };
+    const embedCenter =
+      typeof dest === "string"
+        ? { lat: officeInfo.coordinates.lat, lng: officeInfo.coordinates.lng }
+        : dest;
     return (
       <div
-        className={`rounded-xl overflow-hidden bg-slate-100 p-8 text-center ${className}`}
+        className={`rounded-xl overflow-hidden bg-white border border-slate-200 ${className}`}
       >
-        <MapPin className="h-12 w-12 text-slate-400 mx-auto mb-4" />
-        <p className="text-slate-700 font-medium mb-2">Directions</p>
-        <p className="text-slate-600 text-sm">{error}</p>
-        <p className="text-slate-500 text-xs mt-2">
-          Add <code className="bg-slate-200 px-1 rounded">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code> and enable Directions API in Google Cloud.
-        </p>
+        <div className="p-4 border-b border-slate-200 bg-slate-50">
+          <p className="text-sm text-slate-700">
+            Interactive directions are unavailable. Use the map below or open Google Maps for turn-by-turn
+            directions to{" "}
+            {typeof dest === "string" ? dest : officeInfo.address.full}.
+          </p>
+          <a
+            href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(
+              typeof dest === "string" ? dest : `${dest.lat},${dest.lng}`
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 mt-2 text-blue-600 hover:text-blue-700 text-sm font-medium"
+          >
+            Open in Google Maps
+            <MapPin className="h-4 w-4" aria-hidden />
+          </a>
+        </div>
+        <div className="relative w-full h-[450px]">
+          <iframe
+            title="Directions map"
+            src={buildMapEmbedFallbackUrl(embedCenter)}
+            className="absolute inset-0 w-full h-full border-0"
+            loading="lazy"
+            allowFullScreen
+          />
+        </div>
       </div>
     );
   }

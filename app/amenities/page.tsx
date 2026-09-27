@@ -133,10 +133,10 @@ export default function AmenitiesPage() {
 
             <SectionMedia imageKey="section-neighborhoods" heading="Schools" as="h2" />
             <p className="text-slate-700">
-              Clark County School District serves Providence with on-community schools including{" "}
-              <strong>Bill &amp; Lillie Heinrich Elementary</strong> (7250 Gilman St) and{" "}
-              <strong>Irwin &amp; Susan Molasky Junior High</strong> (7801 Gilman St). Always confirm
-              attendance zones with CCSD for your specific address.
+              Clark County School District serves Providence; many homes are zoned for{" "}
+              <strong>Henry and Evelyn Bozarth Elementary</strong> (7431 Egan Crest Dr) and{" "}
+              <strong>Edmundo Eddie Escobedo Sr. Middle School</strong> (9501 Echelon Point Dr).
+              Always confirm attendance zones with CCSD for your specific address.
             </p>
 
             <SectionMedia imageKey="section-market-stats" heading="Commute & Regional Access" as="h2" />

@@ -30,8 +30,12 @@ export default function CuratedAmenityList({
       <h3 className="font-bold text-slate-900 mb-3 text-lg">{categoryLabel}</h3>
       <ul className="space-y-3" aria-label="Curated nearby places in Providence Las Vegas">
         {places.map((place) => {
-          const address = `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion} ${place.postalCode}`;
-          const mapsQuery = encodeURIComponent(`${place.name} ${address}`);
+          const addressLine = place.streetAddress
+            ? `${place.streetAddress}, ${place.addressLocality}, ${place.addressRegion}${place.postalCode ? ` ${place.postalCode}` : ""}`
+            : null;
+          const mapsQuery = encodeURIComponent(
+            addressLine ? `${place.name} ${addressLine}` : place.name
+          );
           return (
             <li
               key={place.name}
@@ -41,19 +45,32 @@ export default function CuratedAmenityList({
               {place.description && (
                 <p className="text-slate-600 text-sm mt-1">{place.description}</p>
               )}
-              <p className="text-slate-600 text-xs mt-2 flex items-start gap-1">
-                <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden />
-                <span>{address}</span>
-              </p>
-              <a
-                href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 mt-2 text-blue-600 hover:text-blue-700 text-xs font-medium"
-              >
-                Directions
-                <ExternalLink className="h-3 w-3" aria-hidden />
-              </a>
+              {addressLine && (
+                <p className="text-slate-600 text-xs mt-2 flex items-start gap-1">
+                  <MapPin className="h-3.5 w-3.5 shrink-0 mt-0.5" aria-hidden />
+                  <span>{addressLine}</span>
+                </p>
+              )}
+              <div className="flex flex-wrap gap-3 mt-2">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${mapsQuery}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-blue-600 hover:text-blue-700 text-xs font-medium"
+                >
+                  Directions
+                  <ExternalLink className="h-3 w-3" aria-hidden />
+                </a>
+                <a
+                  href={place.sourceUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-slate-600 hover:text-slate-800 text-xs font-medium"
+                >
+                  Official source
+                  <ExternalLink className="h-3 w-3" aria-hidden />
+                </a>
+              </div>
             </li>
           );
         })}

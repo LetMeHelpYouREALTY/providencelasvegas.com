@@ -25,10 +25,7 @@ export default function AmenityMapFallback({
       <div className="p-4 border-b border-slate-200 bg-slate-50 flex items-start gap-2">
         <MapPin className="h-5 w-5 text-blue-600 shrink-0 mt-0.5" aria-hidden />
         <p className="text-sm text-slate-700">
-          Interactive amenity search loads when{" "}
-          <code className="bg-slate-200 px-1 rounded text-xs">NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code>{" "}
-          is configured. Below is a map centered on {providenceMapCenter.label} plus verified nearby
-          places.
+          Map centered on {providenceMapCenter.label} with verified nearby places listed below.
         </p>
       </div>
       <div className={`flex flex-col ${compact ? "" : "md:flex-row"}`}>

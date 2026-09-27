@@ -163,7 +163,7 @@ const faqLibrary: Record<string, FAQItem[]> = {
     {
       question: "What schools serve Providence Las Vegas?",
       answer:
-        "Clark County School District schools in the community include Bill & Lillie Heinrich Elementary and Irwin & Susan Molasky Junior High on Gilman Street; verify attendance zones with CCSD for your address.",
+        "Many Providence addresses are zoned for Henry and Evelyn Bozarth Elementary (7431 Egan Crest Dr) and Edmundo Eddie Escobedo Sr. Middle School; assignments vary by address—confirm current CCSD zoning for your home before you buy.",
     },
     {
       question: "How far is Providence from Harry Reid International Airport?",
