@@ -6,6 +6,7 @@ import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { cn } from "lib/utils";
 import SchemaScript from "@/components/SchemaScript";
+import GlobalBreadcrumbSchema from "@/components/navigation/GlobalBreadcrumbSchema";
 import AIChatWidget from "@/components/chat/AIChatWidgetClient";
 import CalendlyBadge from "@/components/calendly/CalendlyBadgeClient";
 import {
@@ -88,6 +89,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://assets.calendly.com" />
         {/* Site-wide JSON-LD Schema: RealEstateAgent + WebSite */}
         <SchemaScript schema={siteWideSchemas} id="site-schema" />
+        <GlobalBreadcrumbSchema />
         {/* Google tag (gtag.js) - Providence Las Vegas - afterInteractive so GA4 receives data */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-MRG4ZVGKDK"

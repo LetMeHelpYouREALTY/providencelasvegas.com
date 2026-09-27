@@ -10,7 +10,6 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { Phone, MapPin, ExternalLink } from "lucide-react";
 import { providenceNeighborhoods, providenceCommunity, marketStats } from "@/lib/site-config";
-import { generateBreadcrumbSchema } from "@/lib/schema";
 import { siteConfig } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
@@ -47,18 +46,12 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
   const { slug } = await params;
   const neighborhood = providenceNeighborhoods.find((n) => n.slug === slug);
   if (!neighborhood) notFound();
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Providence", url: "/providence" },
-    { name: neighborhood.name, url: `/providence/neighborhoods/${slug}` },
-  ]);
   const providenceFaqs = getFAQsForPage("providenceNeighborhood", {
     neighborhoodName: neighborhood.name,
   });
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <FAQSchema faqs={providenceFaqs} />
       <Navbar />
       <main>

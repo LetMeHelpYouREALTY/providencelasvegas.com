@@ -9,7 +9,6 @@ import PageHero from "@/components/media/PageHero";
 import SectionMedia from "@/components/media/SectionMedia";
 import { pageImageMetadata, type SiteImageKey } from "@/lib/images";
 import {
-  generateBreadcrumbSchema,
   generateFAQSchema,
   generateWebPageSchema,
   combineSchemas,
@@ -29,12 +28,6 @@ export const metadata: Metadata = {
   ],
   ...pageImageMetadata("hero-faq"),
 };
-
-// Breadcrumb items
-const breadcrumbs = [
-  { name: "Home", url: "/" },
-  { name: "FAQ", url: "/faq" },
-];
 
 const faqCategories: {
   title: string;
@@ -181,7 +174,6 @@ const allFaqs = faqCategories.flatMap((category) =>
 
 // Combined page schemas including all FAQs
 const pageSchemas = combineSchemas(
-  generateBreadcrumbSchema(breadcrumbs),
   generateWebPageSchema({
     name: "Frequently Asked Questions | Providence Las Vegas Real Estate",
     description:
