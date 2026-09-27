@@ -18,6 +18,7 @@ import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
 import NeighborhoodCard from "@/components/neighborhoods/NeighborhoodCard";
 import SectionMedia from "@/components/media/SectionMedia";
+import NearbyAmenitiesSection from "@/components/sections/NearbyAmenitiesSection";
 
 export const metadata: Metadata = {
   title: "Providence Las Vegas Community | Dr. Jan Duffy, REALTOR®",
@@ -87,6 +88,8 @@ export default function ProvidencePage() {
         </section>
 
         <RealScoutListings />
+
+        <NearbyAmenitiesSection heading="Life Near Providence Las Vegas" />
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">

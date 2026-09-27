@@ -64,7 +64,8 @@ NEXT_PUBLIC_GOOGLE_MAPS_PLACE_ID=ChIJxxxxxxxxxxxxxxxxxxxxxxxxx
 ### 4. Deploy
 
 - **LocationMap** (Footer, Contact): When the API key is set and Maps Embed API is enabled, the office location map loads as an iframe. If the key is missing, a "View on Google Maps" fallback card is shown instead.
-- **AmenityMap** (`/amenities`) and **DirectionsMap** (`/directions`): If the key is missing, a helpful error message with setup instructions is shown. The loader uses `loadGoogleMaps()` from `lib/google-maps-loader.ts`; navigating between map pages reuses the same script load.
+- **AmenityMap** (`/amenities`, homepage, `/providence`, `/listings`): If `NEXT_PUBLIC_GOOGLE_MAPS_API_KEY` is missing or live search fails, the UI shows a keyless Google Maps iframe centered on Providence plus a curated list of verified nearby places (`lib/amenities-config.ts`). With a key, the map lazy-loads on scroll, uses Places API (New) `Place.searchNearby`, category filter chips, info windows, and a Providence community marker. Optional `NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID` enables Map ID styling. The loader uses `loadGoogleMaps()` from `lib/google-maps-loader.ts`.
+- **DirectionsMap** (`/directions`): If the key is missing, a helpful error message with setup instructions is shown.
 
 ### Legacy `output=embed` Format
 
