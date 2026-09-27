@@ -26,6 +26,7 @@ import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
 import { pageImageMetadata } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
+import NearbyAmenitiesSection from "@/components/sections/NearbyAmenitiesSection";
 
 export const revalidate = 3600;
 
@@ -234,6 +235,11 @@ export default function ListingsPage() {
               </Link>
             </div>
           </section>
+
+          <NearbyAmenitiesSection
+            heading="Amenities Near Providence Listings"
+            className="mb-16 !py-10"
+          />
 
           {/* Why Use an Agent Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-6xl mx-auto">

@@ -139,6 +139,49 @@ const faqLibrary: Record<string, FAQItem[]> = {
     },
   ],
 
+  amenities: [
+    {
+      question: "What grocery stores are near Providence Las Vegas?",
+      answer:
+        "Albertsons at 6730 N Hualapai Way is the primary full-service grocery on the corridor that serves Providence Las Vegas; many residents also shop at Centennial Hills and Skye Canyon retailers a short drive north.",
+    },
+    {
+      question: "How far is Providence Las Vegas from the Las Vegas Strip?",
+      answer:
+        "From Providence in northwest Las Vegas, the Strip is roughly a 25–35 minute drive depending on traffic and your starting neighborhood—often via US-95 or the 215 Beltway.",
+    },
+    {
+      question: "Are there hospitals near Providence Las Vegas?",
+      answer:
+        "Centennial Hills Hospital at 6900 N Durango Dr provides acute care for northwest valley and Providence-area residents; always confirm current services and directions before an emergency.",
+    },
+    {
+      question: "What parks do Providence residents use?",
+      answer:
+        "All Providence homeowners have access to three Master HOA parks: The Promenade, Knickerbocker Park, and Huckleberry Park, with walking paths, sports courts, splash pads, and dog parks.",
+    },
+    {
+      question: "What schools serve Providence Las Vegas?",
+      answer:
+        "Clark County School District schools in the community include Bill & Lillie Heinrich Elementary and Irwin & Susan Molasky Junior High on Gilman Street; verify attendance zones with CCSD for your address.",
+    },
+    {
+      question: "How far is Providence from Harry Reid International Airport?",
+      answer:
+        "Harry Reid International Airport is typically about 30–40 minutes from Providence Las Vegas by car, depending on traffic and route—often via US-95 and the 215 Beltway.",
+    },
+    {
+      question: "Where do Providence residents shop for big-box retail?",
+      answer:
+        "Daily needs cluster along N Hualapai Way; larger runs often head to Centennial Hills or Skye Canyon shopping centers north of Providence for warehouse clubs and major retailers.",
+    },
+    {
+      question: "Who can help me buy or sell a home in Providence?",
+      answer:
+        "Dr. Jan Duffy at Berkshire Hathaway HomeServices Nevada Properties specializes in all 27 Providence neighborhoods—call (702) 744-2993 for tours, HOA resale guidance, and market advice.",
+    },
+  ],
+
   providence: [
     {
       question: "What is Providence Las Vegas?",

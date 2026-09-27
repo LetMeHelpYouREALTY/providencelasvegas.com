@@ -18,6 +18,7 @@ import NeighborhoodCard from "@/components/neighborhoods/NeighborhoodCard";
 import { getFAQsForPage } from "@/lib/faq-library";
 import { pageImageMetadata } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
+import NearbyAmenitiesSection from "@/components/sections/NearbyAmenitiesSection";
 
 export const metadata: Metadata = {
   title: "Providence Real Estate | Homes for Sale in Providence Las Vegas",
@@ -224,6 +225,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <NearbyAmenitiesSection heading="What's Nearby Providence Las Vegas" />
 
         <WhyChooseUs />
         <ReviewsSection subtitle="Real testimonials from satisfied Providence homeowners" />

@@ -9,6 +9,7 @@
 import { siteConfig, agentInfo, officeInfo, agentStats, gbpUrls } from "./site-config";
 import { gbpOpeningHoursSpecification } from "./gbp-schema";
 import { absoluteSiteImageSrc } from "./images";
+import { curatedNearbyPlaces, providenceMapCenter } from "./amenities-config";
 
 // ============================================================================
 // Types
@@ -592,6 +593,78 @@ export function generateWebPageSchema(page: {
     },
     ...(page.datePublished && { datePublished: page.datePublished }),
     ...(page.dateModified && { dateModified: page.dateModified }),
+  };
+}
+
+// ============================================================================
+// Amenities / hyperlocal map page
+// ============================================================================
+
+/** Community Place with geo coordinates for /amenities */
+export function generateProvidenceCommunityPlaceSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Place",
+    "@id": `${BASE_URL}/amenities#providence-community`,
+    name: providenceMapCenter.label,
+    description:
+      "Master-planned residential community in northwest Las Vegas, Nevada (ZIP 89166) with 27 neighborhoods and three community parks.",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: providenceMapCenter.lat,
+      longitude: providenceMapCenter.lng,
+    },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: providenceMapCenter.city,
+      addressRegion: providenceMapCenter.state,
+      postalCode: providenceMapCenter.zip,
+      addressCountry: "US",
+    },
+  };
+}
+
+/** Verified curated places for ItemList on /amenities */
+export function generateCuratedAmenitiesItemListSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured places near Providence Las Vegas",
+    itemListElement: curatedNearbyPlaces.map((place, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": place.schemaType,
+        name: place.name,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: place.streetAddress,
+          addressLocality: place.addressLocality,
+          addressRegion: place.addressRegion,
+          postalCode: place.postalCode,
+          addressCountry: "US",
+        },
+      },
+    })),
+  };
+}
+
+/** Extends site RealEstateAgent with hyperlocal areaServed for amenities content */
+export function generateAmenitiesAgentAreaServedSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
+    "@id": `${BASE_URL}#organization`,
+    name: agentInfo.name,
+    areaServed: {
+      "@type": "Place",
+      name: providenceMapCenter.label,
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: providenceMapCenter.lat,
+        longitude: providenceMapCenter.lng,
+      },
+    },
   };
 }
 
