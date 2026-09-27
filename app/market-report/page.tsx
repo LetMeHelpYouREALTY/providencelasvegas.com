@@ -7,7 +7,6 @@ import { getRelatedPages } from "@/lib/related-pages";
 import { TrendingUp, TrendingDown, Home, DollarSign, BarChart, Phone } from "lucide-react";
 import type { Metadata } from "next";
 import { marketStats } from "@/lib/site-config";
-import { generateBreadcrumbSchema } from "@/lib/schema";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import { getFAQsForPage } from "@/lib/faq-library";
@@ -48,17 +47,11 @@ const reportSchema = {
   },
 };
 
-const marketReportBreadcrumbs = generateBreadcrumbSchema([
-  { name: "Home", url: "/" },
-  { name: "Market Report", url: "/market-report" },
-]);
-
 export default function MarketReportPage() {
   const marketReportFAQs = getFAQsForPage("market-report");
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(marketReportBreadcrumbs) }} />
       <FAQSchema faqs={marketReportFAQs} />
       <script
         type="application/ld+json"

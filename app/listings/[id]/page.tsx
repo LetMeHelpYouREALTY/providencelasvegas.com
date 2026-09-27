@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import GbpActionBar from "@/components/gbp/GbpActionBar";
 import type { Metadata } from "next";
 import { siteConfig, realscoutUrls } from "@/lib/site-config";
-import { generateBreadcrumbSchema, generateRealEstateListingSchema } from "@/lib/schema";
+import { generateRealEstateListingSchema } from "@/lib/schema";
 import { getSiteImage } from "@/lib/images";
 import SectionMedia from "@/components/media/SectionMedia";
 
@@ -58,11 +58,6 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
   const { id } = await params;
   const property = await getProperty(id);
   const listingUrl = `${siteConfig.url}/listings/${id}`;
-  const breadcrumbSchema = generateBreadcrumbSchema([
-    { name: "Home", url: "/" },
-    { name: "Listings", url: "/listings" },
-    { name: property.name, url: `/listings/${id}` },
-  ]);
   const listingSchema = generateRealEstateListingSchema({
     name: property.name,
     description: property.description,
@@ -77,7 +72,6 @@ export default async function PropertyPage({ params }: PropertyPageProps) {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listingSchema) }} />
       <Navbar />
       <main className="pt-24 pb-16">

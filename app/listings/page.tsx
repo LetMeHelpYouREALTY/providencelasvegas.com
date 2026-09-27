@@ -20,7 +20,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import type { Metadata } from "next";
-import { generateBreadcrumbSchema } from "@/lib/schema";
 import { realscoutUrls, providenceNeighborhoods, marketStats } from "@/lib/site-config";
 import { getFAQsForPage } from "@/lib/faq-library";
 import PageHero from "@/components/media/PageHero";
@@ -29,11 +28,6 @@ import SectionMedia from "@/components/media/SectionMedia";
 import NearbyAmenitiesSection from "@/components/sections/NearbyAmenitiesSection";
 
 export const revalidate = 3600;
-
-const listingsBreadcrumbs = generateBreadcrumbSchema([
-  { name: "Home", url: "/" },
-  { name: "Listings", url: "/listings" },
-]);
 
 export const metadata: Metadata = {
   title: "Providence Homes for Sale | MLS Property Search | Dr. Jan Duffy",
@@ -94,7 +88,6 @@ export default function ListingsPage() {
   return (
     <>
       <FAQSchema faqs={listingsFAQs} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsBreadcrumbs) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(listingsSchema) }}
