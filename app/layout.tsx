@@ -122,6 +122,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Script src="/ads-conversions.js" strategy="afterInteractive" />
         <AIChatWidget />
         <CalendlyBadge />
                 {/* Google Tag */}
