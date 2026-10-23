@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import RelatedPages from "@/components/navigation/RelatedPages";
 import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
@@ -111,6 +112,7 @@ export default function FiftyFiveCommunitiesPage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           <section className="mb-16 max-w-5xl mx-auto">
             <SectionMedia

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import HeroSection from "@/components/sections/HeroSection";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import RealScoutInContractSection from "@/components/sections/RealScoutInContractSection";
 import WhyChooseUs from "@/components/sections/WhyChooseUs";
 import ReviewsSection from "@/components/sections/ReviewsSection";
@@ -70,6 +71,7 @@ export default function Home() {
       <main>
         <HeroSection />
         <RealScoutListings />
+        <CalendlyAfterListings />
         <RealScoutInContractSection />
 
         {/* Services + Locations - Providence Real Estate */}

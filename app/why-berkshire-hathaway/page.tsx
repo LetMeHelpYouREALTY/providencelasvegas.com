@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import Link from "next/link";
 import { Shield, Users, Globe, Award, TrendingUp, CheckCircle, Phone } from "lucide-react";
 import type { Metadata } from "next";
@@ -73,6 +74,7 @@ export default function WhyBerkshireHathawayPage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* Warren Buffett Section */}
           <section className="mb-16 bg-slate-900 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

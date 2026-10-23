@@ -1,6 +1,8 @@
 "use client";
 
 import Script from "next/script";
+import { usePathname } from "next/navigation";
+import { calendlyUrlFor } from "@/lib/calendly";
 import "./types";
 
 interface CalendlyButtonProps {
@@ -11,11 +13,12 @@ interface CalendlyButtonProps {
 }
 
 export default function CalendlyButton({
-  url = "https://calendly.com/drjanduffy/appointment",
+  url: eventUrl,
   text = "Schedule time with me",
   className = "inline-flex items-center justify-center bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition-colors",
   children,
 }: CalendlyButtonProps) {
+  const url = calendlyUrlFor(usePathname() || "/", "button", eventUrl);
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     if (window.Calendly) {
@@ -34,7 +37,7 @@ export default function CalendlyButton({
         strategy="lazyOnload"
       />
       <a
-        href=""
+        href={url}
         onClick={handleClick}
         className={className}
       >
