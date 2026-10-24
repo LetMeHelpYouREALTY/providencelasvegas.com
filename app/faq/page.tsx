@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import Link from "next/link";
 import { Phone } from "lucide-react";
 import type { Metadata } from "next";
@@ -205,6 +206,7 @@ export default function FAQPage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* FAQ Categories */}
           <div className="max-w-4xl mx-auto space-y-12">

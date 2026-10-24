@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import Link from "next/link";
 import {
   Home,
@@ -222,6 +223,7 @@ export default function ServicesPage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* Core Services Section */}
           <section className="mb-16 max-w-6xl mx-auto">

@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import RelatedPages from "@/components/navigation/RelatedPages";
 import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
@@ -160,6 +161,7 @@ export default function NewConstructionPage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* Why Free Representation */}
           <section className="mb-16 bg-blue-600 text-white rounded-2xl p-8 md:p-12 max-w-5xl mx-auto">

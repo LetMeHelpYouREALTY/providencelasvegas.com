@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import Link from "next/link";
 import {
   Phone,
@@ -80,6 +81,7 @@ export default function DivorceProbatePage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* Situations We Help With */}
           <section className="mb-16 max-w-5xl mx-auto">

@@ -1,6 +1,8 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useEffect, useRef } from "react";
+import { calendlyUrlFor } from "@/lib/calendly";
 
 interface CalendlyWidgetProps {
   url?: string;
@@ -9,11 +11,12 @@ interface CalendlyWidgetProps {
 }
 
 export default function CalendlyWidget({
-  url = "https://calendly.com/drjanduffy/showing",
+  url: eventUrl,
   minWidth = "320px",
   height = "700px",
 }: CalendlyWidgetProps) {
   const widgetRef = useRef<HTMLDivElement>(null);
+  const url = calendlyUrlFor(usePathname() || "/", "inline", eventUrl);
 
   useEffect(() => {
     // Ensure Calendly script is loaded and widget is initialized

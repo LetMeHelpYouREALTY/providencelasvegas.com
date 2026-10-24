@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import Script from "next/script";
+import { calendlyUrlFor } from "@/lib/calendly";
 import "./types";
 
 interface CalendlyBadgeProps {
@@ -13,38 +15,35 @@ interface CalendlyBadgeProps {
 }
 
 export default function CalendlyBadge({
-  url = "https://calendly.com/drjanduffy/showing",
+  url,
   text = "Schedule time with me",
   color = "#0069ff",
   textColor = "#ffffff",
   branding = true,
 }: CalendlyBadgeProps) {
-  useEffect(() => {
-    // Initialize badge widget when Calendly script is loaded
-    const initBadge = () => {
-      if (window.Calendly) {
-        window.Calendly.initBadgeWidget({
-          url,
-          text,
-          color,
-          textColor,
-          branding,
-        });
-      }
-    };
+  const pathname = usePathname() || "/";
 
-    // Check if Calendly is already loaded
-    if (window.Calendly) {
-      initBadge();
+  // Rebuild the badge on each route change so its booking URL (event and
+  // utm_campaign) matches the page the visitor is on.
+  const initBadge = useCallback(() => {
+    if (!window.Calendly) return;
+    if (window.Calendly.destroyBadgeWidget) {
+      window.Calendly.destroyBadgeWidget();
     } else {
-      // Wait for script to load
-      window.addEventListener("calendly-loaded", initBadge);
+      document.querySelector(".calendly-badge-widget")?.remove();
     }
+    window.Calendly.initBadgeWidget({
+      url: url ?? calendlyUrlFor(pathname, "badge"),
+      text,
+      color,
+      textColor,
+      branding,
+    });
+  }, [url, pathname, text, color, textColor, branding]);
 
-    return () => {
-      window.removeEventListener("calendly-loaded", initBadge);
-    };
-  }, [url, text, color, textColor, branding]);
+  useEffect(() => {
+    initBadge();
+  }, [initBadge]);
 
   return (
     <>
@@ -55,17 +54,7 @@ export default function CalendlyBadge({
       <Script
         src="https://assets.calendly.com/assets/external/widget.js"
         strategy="lazyOnload"
-        onLoad={() => {
-          if (window.Calendly) {
-            window.Calendly.initBadgeWidget({
-              url,
-              text,
-              color,
-              textColor,
-              branding,
-            });
-          }
-        }}
+        onLoad={initBadge}
       />
     </>
   );

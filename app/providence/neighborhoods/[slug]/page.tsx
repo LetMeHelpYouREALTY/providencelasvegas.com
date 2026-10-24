@@ -3,6 +3,7 @@ import Footer from "@/components/layouts/Footer";
 import FAQSection from "@/components/sections/FAQSection";
 import FAQSchema from "@/components/schemas/FAQSchema";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import RelatedPages from "@/components/navigation/RelatedPages";
 import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
@@ -121,6 +122,7 @@ export default async function ProvidenceNeighborhoodPage({ params }: Props) {
         </section>
 
         <RealScoutListings />
+        <CalendlyAfterListings />
 
         <section className="py-12 md:py-16 bg-white">
           <div className="container mx-auto px-4">

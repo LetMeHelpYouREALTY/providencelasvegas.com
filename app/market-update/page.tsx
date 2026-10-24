@@ -1,6 +1,7 @@
 import Navbar from "@/components/layouts/Navbar";
 import Footer from "@/components/layouts/Footer";
 import RealScoutListings from "@/components/realscout/RealScoutListings";
+import CalendlyAfterListings from "@/components/calendly/CalendlyAfterListings";
 import Link from "next/link";
 import {
   Phone,
@@ -106,6 +107,7 @@ export default function MarketUpdatePage() {
           </div>
 
           <RealScoutListings />
+          <CalendlyAfterListings />
 
           {/* Key Statistics */}
           <section className="mb-16 max-w-5xl mx-auto">
