@@ -270,7 +270,7 @@ export function generateLocalBusinessSchema() {
       latitude: businessInfo.geo.latitude,
       longitude: businessInfo.geo.longitude,
     },
-    hasMap: "https://maps.app.goo.gl/mDMRBtoF7WSJSdkZ7",
+    hasMap: "https://maps.google.com/?cid=15889515902907998383",
     openingHoursSpecification: gbpOpeningHoursSpecification,
     areaServed: businessInfo.serviceAreas.map((area) => ({
       "@type": "City",
@@ -288,13 +288,8 @@ export function generateLocalBusinessSchema() {
         },
       })),
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
-      bestRating: "5",
-    },
     sameAs: [
+      "https://maps.google.com/?cid=15889515902907998383", // GBP Maps listing (CID)
       "https://g.page/r/Ca9gwAWH5oLcEBM", // GBP profile – links site to Business Profile
       "https://www.facebook.com/ProvidenceLasVegasRealEstate",
       "https://www.instagram.com/drjanduffy",

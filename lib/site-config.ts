@@ -42,6 +42,8 @@ export const officeInfo = {
 // GBP CTA URLs – from Google Business Profile
 export const gbpUrls = {
   profile: "https://g.page/r/Ca9gwAWH5oLcEBM",
+  /** Canonical Maps listing by CID (decoded from the g.page link above; same GBP). */
+  cid: "https://maps.google.com/?cid=15889515902907998383",
   directions: "https://www.google.com/maps/dir//7181+N+Hualapai+Way+%23135,+Las+Vegas,+NV+89166",
   /** Place link (View on Google Maps) – short URL to Providence Real Estate on Google Maps */
   maps: "https://maps.app.goo.gl/mDMRBtoF7WSJSdkZ7",
