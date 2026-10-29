@@ -158,13 +158,6 @@ export function generateRealEstateAgentSchema() {
         sameAs: "https://en.wikipedia.org/wiki/Berkshire_Hathaway_HomeServices",
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: agentStats.averageRating.toString(),
-      reviewCount: agentStats.reviewCount.toString(),
-      bestRating: "5",
-      worstRating: "1",
-    },
     knowsAbout: [
       "Providence Las Vegas real estate",
       "Providence master-planned community",
@@ -306,10 +299,6 @@ export function generateReviewSchema(reviews: ReviewItem[]) {
     "@id": `${BASE_URL}#organization`,
     name: "Providence Real Estate",
     url: BASE_URL,
-    aggregateRating: generateAggregateRatingSchema(
-      agentStats.averageRating,
-      agentStats.reviewCount
-    ),
     review: reviews.map((review) => ({
       "@type": "Review",
       itemReviewed: itemReviewedRef,

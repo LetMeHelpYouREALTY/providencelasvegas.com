@@ -58,7 +58,7 @@ const homeReviewSchemaData = [
     date: "2025-09-08",
   },
 ];
-const homeAggregateRating = { ratingValue: 4.9, reviewCount: 500 };
+const homeAggregateRating = { ratingValue: 5.0, reviewCount: 50 };
 
 export default function Home() {
   const homeFAQs = getFAQsForPage("home");
