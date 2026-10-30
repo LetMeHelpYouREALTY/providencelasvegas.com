@@ -288,12 +288,6 @@ export function generateLocalBusinessSchema() {
         },
       })),
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "200",
-      bestRating: "5",
-    },
     sameAs: [
       "https://g.page/r/Ca9gwAWH5oLcEBM", // GBP profile – links site to Business Profile
       "https://www.facebook.com/ProvidenceLasVegasRealEstate",
