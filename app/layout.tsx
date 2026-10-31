@@ -15,6 +15,8 @@ import {
   combineSchemas,
 } from "@/lib/schema";
 import { ogImageFor } from "@/lib/images";
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const title = "Providence Las Vegas Real Estate | All 27 Neighborhoods | Dr. Jan Duffy";
 const description =
@@ -171,6 +173,8 @@ e.parentNode.insertBefore(t,e);})
 window.widgetTracker("create", "WT-XQHVYQWW");
 window.widgetTracker("send", "pageview");}
         `}</Script>
+  <VercelAnalytics />
+  <VercelSpeedInsights />
 </body>
     </html>
   );
