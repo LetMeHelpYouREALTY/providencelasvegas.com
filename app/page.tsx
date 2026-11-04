@@ -8,7 +8,6 @@ import ReviewsSection from "@/components/sections/ReviewsSection";
 import FAQSection from "@/components/sections/FAQSection";
 import Footer from "@/components/layouts/Footer";
 import FAQSchema from "@/components/schemas/FAQSchema";
-import { ReviewSchema } from "@/components/SchemaScript";
 import RelatedPages from "@/components/navigation/RelatedPages";
 import Link from "next/link";
 import { getRelatedPages } from "@/lib/related-pages";
@@ -37,28 +36,8 @@ export const metadata: Metadata = {
   ...pageImageMetadata("hero-homes-for-sale"),
 };
 
-// RealEstateAgent schema from root layout; ReviewSchema adds JSON-LD with itemReviewed for GSC
-const homeReviewSchemaData = [
-  {
-    author: "Tom Sanders",
-    rating: 5,
-    text: "Dr. Duffy made our home buying experience seamless. Her knowledge of the Providence market is unmatched, and she guided us through every step with professionalism and care.",
-    date: "2025-11-15",
-  },
-  {
-    author: "Vitor Palmer",
-    rating: 5,
-    text: "We couldn't be happier with our new home! The entire process was smooth, and Dr. Duffy's attention to detail and negotiation skills saved us thousands. Highly recommend!",
-    date: "2025-10-22",
-  },
-  {
-    author: "Emily Rodriguez",
-    rating: 5,
-    text: "As first-time homebuyers, we were nervous about the process. Dr. Duffy patiently explained everything and helped us find the perfect home in our budget. Thank you!",
-    date: "2025-09-08",
-  },
-];
-const homeAggregateRating = { ratingValue: 5.0, reviewCount: 50 };
+// No Review JSON-LD here: Google ignores reviews a business publishes about itself, and the
+// markup triggered a critical "Review snippets" error in Search Console. Testimonials stay visible in ReviewsSection.
 
 export default function Home() {
   const homeFAQs = getFAQsForPage("home");
@@ -66,7 +45,6 @@ export default function Home() {
   return (
     <>
       <FAQSchema faqs={homeFAQs} />
-      <ReviewSchema reviews={homeReviewSchemaData} aggregateRating={homeAggregateRating} />
       <Navbar />
       <main>
         <HeroSection />
